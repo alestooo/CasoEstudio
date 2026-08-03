@@ -1,0 +1,120 @@
+name: Pipeline CI E-commerce
+
+on:
+  push:
+    branches:
+      - main
+      - caso-estudio-3-ci
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas-y-calidad:
+    name: Pruebas API, unitarias y SonarQube
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval 'db.runCommand({ ping: 1 })'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      PORT: 5000
+      MONGO_URI: mongodb://127.0.0.1:27017/ecommerce_test
+
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: Backend/package-lock.json
+
+      - name: Instalar dependencias del backend
+        working-directory: Backend
+        run: npm ci
+
+      - name: Ejecutar pruebas unitarias
+        working-directory: Backend
+        run: npm test
+
+      - name: Preparar datos de prueba
+        working-directory: Backend
+        run: npm run seed:test
+
+      - name: Iniciar la API
+        working-directory: Backend
+        run: |
+          npm start > backend.log 2>&1 &
+          for intento in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:5000/ > /dev/null; then
+              echo "API disponible"
+              exit 0
+            fi
+            sleep 2
+          done
+          cat backend.log
+          exit 1
+
+      - name: Configurar Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+
+      - name: Ejecutar las 25 pruebas API
+        working-directory: api-automation
+        run: mvn --batch-mode test
+
+      - name: Guardar evidencias de las pruebas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencias-pruebas
+          path: |
+            Backend/coverage/
+            Backend/backend.log
+            api-automation/target/surefire-reports/
+          if-no-files-found: warn
+
+      - name: Verificar configuración de SonarQube
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}
+          SONAR_ORGANIZATION: ${{ vars.SONAR_ORGANIZATION }}
+        run: |
+          test -n "$SONAR_TOKEN" || (echo "Falta SONAR_TOKEN" && exit 1)
+          test -n "$SONAR_PROJECT_KEY" || (echo "Falta SONAR_PROJECT_KEY" && exit 1)
+          test -n "$SONAR_ORGANIZATION" || (echo "Falta SONAR_ORGANIZATION" && exit 1)
+
+      - name: Ejecutar análisis de SonarQube
+        uses: SonarSource/sonarqube-scan-action@v8.2.1
+        with:
+          args: >-
+            -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+            -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Verificar Quality Gate
+        uses: SonarSource/sonarqube-quality-gate-action@v1.2.0
+        with:
+          pollingTimeoutSec: 600
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

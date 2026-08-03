@@ -2,3 +2,18 @@
 *.log
 __pycache__/
 .vscode/
+
+# Dependencias instaladas
+node_modules/
+Backend/node_modules/
+
+# Variables privadas
+.env
+Backend/.env
+
+# Resultados generados por las pruebas
+Backend/coverage/
+api-automation/target/
+
+# Archivos temporales de SonarQube
+.scannerwork/
