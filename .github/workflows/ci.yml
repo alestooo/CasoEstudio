@@ -53,6 +53,17 @@ jobs:
         working-directory: Backend
         run: npm test
 
+      - name: Verificar reporte de cobertura
+        shell: bash
+        run: |
+          if [ ! -f Backend/coverage/lcov.info ]; then
+            echo "No se encontró Backend/coverage/lcov.info"
+            exit 1
+          fi
+
+          echo "Reporte de cobertura encontrado"
+          ls -lh Backend/coverage/lcov.info
+
       - name: Preparar datos de prueba
         working-directory: Backend
         run: npm run seed:test
@@ -137,6 +148,7 @@ jobs:
           args: >-
             -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
             -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+            -Dsonar.javascript.lcov.reportPaths=Backend/coverage/lcov.info
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
