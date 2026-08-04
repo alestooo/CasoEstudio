@@ -5,9 +5,11 @@ on:
     branches:
       - main
       - caso-estudio-3-ci
+
   pull_request:
     branches:
       - main
+      - caso-estudio-3-ci
 
 permissions:
   contents: read
@@ -34,12 +36,12 @@ jobs:
 
     steps:
       - name: Descargar el repositorio
-        uses: actions/checkout@v7
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
@@ -59,15 +61,22 @@ jobs:
 
       - name: Iniciar la API
         working-directory: Backend
+        shell: bash
         run: |
           npm start > backend.log 2>&1 &
+          echo $! > backend.pid
+
           for intento in {1..20}; do
             if curl --fail --silent http://127.0.0.1:5000/ > /dev/null; then
-              echo "API disponible"
+              echo "API disponible en el puerto 5000"
               exit 0
             fi
+
+            echo "Esperando la API: intento $intento de 20"
             sleep 2
           done
+
+          echo "La API no respondió dentro del tiempo esperado"
           cat backend.log
           exit 1
 
@@ -80,7 +89,7 @@ jobs:
 
       - name: Ejecutar las 25 pruebas API
         working-directory: api-automation
-        run: mvn --batch-mode test
+        run: mvn --batch-mode clean test
 
       - name: Guardar evidencias de las pruebas
         if: always()
@@ -92,16 +101,31 @@ jobs:
             Backend/backend.log
             api-automation/target/surefire-reports/
           if-no-files-found: warn
+          retention-days: 30
 
       - name: Verificar configuración de SonarQube
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}
           SONAR_ORGANIZATION: ${{ vars.SONAR_ORGANIZATION }}
+        shell: bash
         run: |
-          test -n "$SONAR_TOKEN" || (echo "Falta SONAR_TOKEN" && exit 1)
-          test -n "$SONAR_PROJECT_KEY" || (echo "Falta SONAR_PROJECT_KEY" && exit 1)
-          test -n "$SONAR_ORGANIZATION" || (echo "Falta SONAR_ORGANIZATION" && exit 1)
+          test -n "$SONAR_TOKEN" || {
+            echo "Falta el secreto SONAR_TOKEN"
+            exit 1
+          }
+
+          test -n "$SONAR_PROJECT_KEY" || {
+            echo "Falta la variable SONAR_PROJECT_KEY"
+            exit 1
+          }
+
+          test -n "$SONAR_ORGANIZATION" || {
+            echo "Falta la variable SONAR_ORGANIZATION"
+            exit 1
+          }
+
+          echo "La configuración de SonarQube está disponible"
 
       - name: Ejecutar análisis de SonarQube
         uses: SonarSource/sonarqube-scan-action@v8.2.1
