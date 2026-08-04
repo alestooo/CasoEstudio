@@ -4,12 +4,10 @@ on:
   push:
     branches:
       - main
-      - caso-estudio-3-ci
 
   pull_request:
     branches:
       - main
-      - caso-estudio-3-ci
 
 permissions:
   contents: read
