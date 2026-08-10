@@ -1,0 +1,14 @@
+[
+  {
+    "email": "usuario@incorrecto.com",
+    "password": "123456"
+  },
+  {
+    "email": "correo@prueba.com",
+    "password": "abcdef"
+  },
+  {
+    "email": "test@cenfotec.ac.cr",
+    "password": "password123"
+  }
+]

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="56.571" tests="18" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Alejandro\OneDrive\Desktop\programacion-web-avanzada-dev-ale-backend\e2e-automation\target\test-classes;C:\Users\Alejandro\OneDrive\Desktop\programacion-web-avanzada-dev-ale-backend\e2e-automation\target\classes;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-java\4.46.0\selenium-java-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-api\4.46.0\selenium-api-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.46.0\selenium-chrome-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.46.0\selenium-chromium-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-json\4.46.0\selenium-json-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.46.0\selenium-manager-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-latest\4.46.0\selenium-devtools-latest-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v148\4.46.0\selenium-devtools-v148-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v149\4.46.0\selenium-devtools-v149-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v150\4.46.0\selenium-devtools-v150-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.46.0\selenium-edge-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.46.0\selenium-firefox-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-http\4.46.0\selenium-http-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.46.0\selenium-ie-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.46.0\selenium-remote-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\guava\33.6.0-jre\guava-33.6.0-jre.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Alejandro\.m2\repository\com\google\errorprone\error_prone_annotations\2.47.0\error_prone_annotations-2.47.0.jar;C:\Users\Alejandro\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-api\1.64.0\opentelemetry-api-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-context\1.64.0\opentelemetry-context-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-common\1.64.0\opentelemetry-common-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.64.0\opentelemetry-exporter-logging-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.64.0\opentelemetry-sdk-common-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.64.0\opentelemetry-sdk-extension-autoconfigure-spi-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.64.0\opentelemetry-sdk-extension-autoconfigure-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.64.0\opentelemetry-sdk-trace-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.64.0\opentelemetry-sdk-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.64.0\opentelemetry-sdk-metrics-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.64.0\opentelemetry-sdk-logs-1.64.0.jar;C:\Users\Alejandro\.m2\repository\net\bytebuddy\byte-buddy\1.18.11\byte-buddy-1.18.11.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-os\4.46.0\selenium-os-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.46.0\selenium-safari-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-support\4.46.0\selenium-support-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\Alejandro\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\Alejandro\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\Alejandro\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.20.0\jackson-databind-2.20.0.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.20\jackson-annotations-2.20.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.20.0\jackson-core-2.20.0.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="America/Costa_Rica"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.19.10-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\Alejandro\AppData\Local\Temp\surefire8517977858552625129\surefirebooter-20260810173504624_3.jar C:\Users\Alejandro\AppData\Local\Temp\surefire8517977858552625129 2026-08-10T17-35-04_410-jvmRun1 surefire-20260810173504624_1tmp surefire_0-20260810173504624_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Alejandro\OneDrive\Desktop\programacion-web-avanzada-dev-ale-backend\e2e-automation\target\test-classes;C:\Users\Alejandro\OneDrive\Desktop\programacion-web-avanzada-dev-ale-backend\e2e-automation\target\classes;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-java\4.46.0\selenium-java-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-api\4.46.0\selenium-api-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.46.0\selenium-chrome-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.46.0\selenium-chromium-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-json\4.46.0\selenium-json-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.46.0\selenium-manager-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-latest\4.46.0\selenium-devtools-latest-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v148\4.46.0\selenium-devtools-v148-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v149\4.46.0\selenium-devtools-v149-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v150\4.46.0\selenium-devtools-v150-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.46.0\selenium-edge-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.46.0\selenium-firefox-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-http\4.46.0\selenium-http-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.46.0\selenium-ie-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.46.0\selenium-remote-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\guava\33.6.0-jre\guava-33.6.0-jre.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Alejandro\.m2\repository\com\google\errorprone\error_prone_annotations\2.47.0\error_prone_annotations-2.47.0.jar;C:\Users\Alejandro\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-api\1.64.0\opentelemetry-api-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-context\1.64.0\opentelemetry-context-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-common\1.64.0\opentelemetry-common-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.64.0\opentelemetry-exporter-logging-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.64.0\opentelemetry-sdk-common-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.64.0\opentelemetry-sdk-extension-autoconfigure-spi-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.64.0\opentelemetry-sdk-extension-autoconfigure-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.64.0\opentelemetry-sdk-trace-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.64.0\opentelemetry-sdk-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.64.0\opentelemetry-sdk-metrics-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.64.0\opentelemetry-sdk-logs-1.64.0.jar;C:\Users\Alejandro\.m2\repository\net\bytebuddy\byte-buddy\1.18.11\byte-buddy-1.18.11.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-os\4.46.0\selenium-os-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.46.0\selenium-safari-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-support\4.46.0\selenium-support-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\Alejandro\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\Alejandro\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\Alejandro\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.20.0\jackson-databind-2.20.0.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.20\jackson-annotations-2.20.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.20.0\jackson-core-2.20.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Alejandro"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.19.10-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Alejandro\OneDrive\Desktop\programacion-web-avanzada-dev-ale-backend\e2e-automation"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Alejandro\AppData\Local\Temp\surefire8517977858552625129\surefirebooter-20260810173504624_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.19+10"/>
+    <property name="user.name" value="Alejandro"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.19+10"/>
+    <property name="localRepository" value="C:\Users\Alejandro\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\ALEJAN~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.19"/>
+    <property name="user.dir" value="C:\Users\Alejandro\OneDrive\Desktop\programacion-web-avanzada-dev-ale-backend\e2e-automation"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.19.10-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-17.0.19.10-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;D:\node.js\;C:\Users\Alejandro\.local\bin;C:\Users\Alejandro\AppData\Local\Microsoft\WindowsApps;Y:\VisualStudioCode\Microsoft VS Code\bin;C:\Users\Alejandro\.dotnet\tools;C:\Users\Alejandro\AppData\Local\GitHubDesktop\bin;C:\Users\Alejandro\AppData\Roaming\npm;C:\Maven\bin;c:\Users\Alejandro\.vscode\extensions\vscjava.vscode-java-debug-0.59.0\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.19+10"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="cambiarARegistro" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.722">
+    <system-out><![CDATA[[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] cambiarARegistro
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+ago. 10, 2026 5:35:06 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="loginConCredencialesInvalidas[usuario@incorrecto.com, 123456](1)" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.818">
+    <system-out><![CDATA[[TEST EXITOSO] cambiarARegistro
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] loginConCredencialesInvalidas
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:09 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="loginConCredencialesInvalidas[correo@prueba.com, abcdef](2)" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.771">
+    <system-out><![CDATA[[TEST EXITOSO] loginConCredencialesInvalidas
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] loginConCredencialesInvalidas
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:12 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="loginConCredencialesInvalidas[test@cenfotec.ac.cr, password123](3)" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.833">
+    <system-out><![CDATA[[TEST EXITOSO] loginConCredencialesInvalidas
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] loginConCredencialesInvalidas
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:15 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="validarCamposObligatoriosLogin" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.673">
+    <system-out><![CDATA[[TEST EXITOSO] loginConCredencialesInvalidas
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] validarCamposObligatoriosLogin
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:18 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="navegarDesdeCarritoATienda" classname="com.cenfotec.e2e.tests.CartPageTest" time="0.703">
+    <system-out><![CDATA[[TEST EXITOSO] validarCamposObligatoriosLogin
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] navegarDesdeCarritoATienda
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:21 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="validarCarritoVacio" classname="com.cenfotec.e2e.tests.CartPageTest" time="0.628">
+    <system-out><![CDATA[[TEST EXITOSO] navegarDesdeCarritoATienda
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] validarCarritoVacio
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:24 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="validarMensajeCarritoVacio" classname="com.cenfotec.e2e.tests.CartPageTest" time="0.633">
+    <system-out><![CDATA[[TEST EXITOSO] validarCarritoVacio
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] validarMensajeCarritoVacio
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:27 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="abrirChrome" classname="com.cenfotec.e2e.tests.ChromeTest" time="0.57">
+    <system-out><![CDATA[[TEST EXITOSO] validarMensajeCarritoVacio
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] abrirChrome
+Título: Google
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:30 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="abrirProductoDestacado" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.723">
+    <system-out><![CDATA[[TEST EXITOSO] abrirChrome
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] abrirProductoDestacado
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:33 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="navegarACategoriaMice" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.778">
+    <system-out><![CDATA[[TEST EXITOSO] abrirProductoDestacado
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] navegarACategoriaMice
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:36 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="navegarATienda" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.722">
+    <system-out><![CDATA[[TEST EXITOSO] navegarACategoriaMice
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] navegarATienda
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:39 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="incrementarCantidadProducto" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.688">
+    <system-out><![CDATA[[TEST EXITOSO] navegarATienda
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] incrementarCantidadProducto
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:42 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="seleccionarColorBlanco" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.68">
+    <system-out><![CDATA[[TEST EXITOSO] incrementarCantidadProducto
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] seleccionarColorBlanco
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:45 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="validarInformacionDelProducto" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.655">
+    <system-out><![CDATA[[TEST EXITOSO] seleccionarColorBlanco
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] validarInformacionDelProducto
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:48 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="abrirProductoSuperlight" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.766">
+    <system-out><![CDATA[[TEST EXITOSO] validarInformacionDelProducto
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] abrirProductoSuperlight
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:51 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="filtrarProductosInalambricos" classname="com.cenfotec.e2e.tests.ShopPageTest" time="1.846">
+    <system-out><![CDATA[[TEST EXITOSO] abrirProductoSuperlight
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] filtrarProductosInalambricos
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:54 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="validarCantidadDeProductos" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.673">
+    <system-out><![CDATA[[TEST EXITOSO] filtrarProductosInalambricos
+[TEARDOWN] Navegador cerrado.
+[SETUP] Navegador iniciado: chrome
+[TEST INICIADO] validarCantidadDeProductos
+]]></system-out>
+    <system-err><![CDATA[ago. 10, 2026 5:35:59 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+</testsuite>
