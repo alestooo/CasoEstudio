@@ -1,5 +1,8 @@
 package com.cenfotec.e2e.pages;
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,12 +10,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.List;
-
 public class ProductPage {
 
     private final WebDriver driver;
+
     private final WebDriverWait wait;
 
 
@@ -80,9 +81,8 @@ public class ProductPage {
         this.wait =
                 new WebDriverWait(
                         driver,
-                        Duration.ofSeconds(3)
+                        Duration.ofSeconds(5)
                 );
-
     }
 
 
@@ -91,7 +91,6 @@ public class ProductPage {
         return isVisible(
                 productLayout
         );
-
     }
 
 
@@ -104,20 +103,18 @@ public class ProductPage {
                             productError
                     );
 
-
             return !elements.isEmpty()
-                    && elements
-                    .get(0)
-                    .isDisplayed();
+                    &&
+                    elements
+                            .get(0)
+                            .isDisplayed();
 
         } catch (
-                Exception exception
+                RuntimeException exception
         ) {
 
             return false;
-
         }
-
     }
 
 
@@ -126,7 +123,6 @@ public class ProductPage {
         return getText(
                 productTitle
         );
-
     }
 
 
@@ -135,7 +131,6 @@ public class ProductPage {
         return getText(
                 currentPrice
         );
-
     }
 
 
@@ -152,11 +147,9 @@ public class ProductPage {
                                 "value"
                         );
 
-
         return Integer.parseInt(
                 value
         );
-
     }
 
 
@@ -165,7 +158,6 @@ public class ProductPage {
         int before =
                 getQuantity();
 
-
         wait.until(
                 ExpectedConditions
                         .elementToBeClickable(
@@ -173,13 +165,11 @@ public class ProductPage {
                         )
         ).click();
 
-
         wait.until(
                 webDriver ->
                         getQuantity()
                                 > before
         );
-
     }
 
 
@@ -191,11 +181,13 @@ public class ProductPage {
                                 qtyMinus
                         )
         ).click();
-
     }
 
 
     public void addToCart() {
+
+        int before =
+                getCartCount();
 
         wait.until(
                 ExpectedConditions
@@ -204,6 +196,11 @@ public class ProductPage {
                         )
         ).click();
 
+        wait.until(
+                webDriver ->
+                        getCartCount()
+                                > before
+        );
     }
 
 
@@ -216,40 +213,56 @@ public class ProductPage {
                             cartCount
                     );
 
-
             if (
                     elements.isEmpty()
             ) {
 
                 return 0;
-
             }
 
 
-            String value =
-                    elements
-                            .get(0)
-                            .getText()
-                            .replaceAll(
-                                    "[^0-9]",
-                                    ""
-                            );
+            for (
+                    WebElement element
+                    : elements
+            ) {
+
+                String value =
+                        element.getAttribute(
+                                "textContent"
+                        );
+
+                if (
+                        value == null
+                ) {
+
+                    continue;
+                }
 
 
-            return value.isBlank()
-                    ? 0
-                    : Integer.parseInt(
+                value =
+                        value.replaceAll(
+                                "\\D",
+                                ""
+                        );
+
+                if (
+                        !value.isBlank()
+                ) {
+
+                    return Integer.parseInt(
                             value
                     );
-
-        } catch (
-                Exception exception
-        ) {
+                }
+            }
 
             return 0;
 
-        }
+        } catch (
+                RuntimeException exception
+        ) {
 
+            return 0;
+        }
     }
 
 
@@ -265,7 +278,6 @@ public class ProductPage {
         )
                 .getText()
                 .trim();
-
     }
 
 
@@ -283,13 +295,10 @@ public class ProductPage {
             ).isDisplayed();
 
         } catch (
-                Exception exception
+                RuntimeException exception
         ) {
 
             return false;
-
         }
-
     }
-
 }

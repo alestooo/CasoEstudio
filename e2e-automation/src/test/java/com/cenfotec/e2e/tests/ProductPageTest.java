@@ -19,12 +19,10 @@ public class ProductPageTest extends BaseTest {
                 "product.html?id=pro-x-superlight-2"
         );
 
-
         productPage =
                 new ProductPage(
                         driver
                 );
-
     }
 
 
@@ -35,11 +33,9 @@ public class ProductPageTest extends BaseTest {
                 productPage.isProductLayoutVisible()
         );
 
-
         Assert.assertFalse(
                 productPage.isProductErrorVisible()
         );
-
 
         Assert.assertFalse(
                 productPage
@@ -47,13 +43,11 @@ public class ProductPageTest extends BaseTest {
                         .isBlank()
         );
 
-
         Assert.assertFalse(
                 productPage
                         .getCurrentPrice()
                         .isBlank()
         );
-
     }
 
 
@@ -63,20 +57,16 @@ public class ProductPageTest extends BaseTest {
         int before =
                 productPage.getQuantity();
 
-
         productPage.increaseQuantity();
-
 
         int after =
                 productPage.getQuantity();
-
 
         Assert.assertEquals(
                 after,
                 before + 1,
                 "Un clic debe aumentar solamente una unidad."
         );
-
     }
 
 
@@ -86,18 +76,14 @@ public class ProductPageTest extends BaseTest {
         int before =
                 productPage.getCartCount();
 
-
         productPage.addToCart();
-
 
         int after =
                 productPage.getCartCount();
 
-
         Assert.assertTrue(
-                after > before
+                after > before,
+                "El contador del carrito debería aumentar después de añadir el producto."
         );
-
     }
-
 }

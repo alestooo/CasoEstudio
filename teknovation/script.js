@@ -348,39 +348,38 @@ function formatPrice(
 function generateId() {
 
     if (
-
         window.crypto
-
         &&
-
-        typeof window.crypto.randomUUID
-        === 'function'
-
+        typeof window.crypto.randomUUID === 'function'
     ) {
 
-        return window.crypto
-            .randomUUID();
+        return window.crypto.randomUUID();
 
     }
 
 
-    return (
+    const randomValues =
+        new Uint32Array(2);
 
+
+    window.crypto.getRandomValues(
+        randomValues
+    );
+
+
+    return (
         Date.now()
-            .toString(
-                36
-            )
+            .toString(36)
 
         +
 
-        Math.random()
-            .toString(
-                36
-            )
-            .slice(
-                2
-            )
+        randomValues[0]
+            .toString(36)
 
+        +
+
+        randomValues[1]
+            .toString(36)
     );
 
 }
@@ -1950,14 +1949,8 @@ function initializeStoreResultActions(
 
 
                         if (
-
-                            title
-
-                            &&
-
-                            title.textContent
+                            title?.textContent
                             === 'Mis favoritos'
-
                         ) {
 
                             renderFavoritesModal();
@@ -3487,107 +3480,107 @@ function updateVisibleProductCount() {
 }
 
 
-/* ============================================================
-   11. FAVORITOS
-   ============================================================ */
+// /* ============================================================
+//    11. FAVORITOS
+//    ============================================================ */
 
-function toggleFavorite(
-    productId,
-    button = null
-) {
+// function toggleFavorite(
+//     productId,
+//     button = null
+// ) {
 
-    const index =
-        state.favorites
-            .indexOf(
-                productId
-            );
-
-
-    if (
-        index >= 0
-    ) {
-
-        state.favorites.splice(
-            index,
-            1
-        );
-
-    } else {
-
-        state.favorites.push(
-            productId
-        );
-
-    }
+//     const index =
+//         state.favorites
+//             .indexOf(
+//                 productId
+//             );
 
 
-    saveFavorites();
+//     if (
+//         index >= 0
+//     ) {
+
+//         state.favorites.splice(
+//             index,
+//             1
+//         );
+
+//     } else {
+
+//         state.favorites.push(
+//             productId
+//         );
+
+//     }
 
 
-    const isFavorite =
-        state.favorites
-            .includes(
-                productId
-            );
+//     saveFavorites();
 
 
-    document
-        .querySelectorAll(
-            `[data-product-id="${productId}"].favorite-btn,
-             [data-favorite-product="${productId}"]`
-        )
-        .forEach(
-            favoriteButton => {
-
-                favoriteButton
-                    .classList
-                    .toggle(
-                        'active',
-                        isFavorite
-                    );
+//     const isFavorite =
+//         state.favorites
+//             .includes(
+//                 productId
+//             );
 
 
-                const icon =
-                    favoriteButton
-                        .querySelector(
-                            '.material-icons'
-                        );
+//     document
+//         .querySelectorAll(
+//             `[data-product-id="${productId}"].favorite-btn,
+//              [data-favorite-product="${productId}"]`
+//         )
+//         .forEach(
+//             favoriteButton => {
+
+//                 favoriteButton
+//                     .classList
+//                     .toggle(
+//                         'active',
+//                         isFavorite
+//                     );
 
 
-                if (icon) {
-
-                    icon.textContent =
-                        isFavorite
-                            ? 'favorite'
-                            : 'favorite_border';
-
-                }
-
-            }
-        );
+//                 const icon =
+//                     favoriteButton
+//                         .querySelector(
+//                             '.material-icons'
+//                         );
 
 
-    if (button) {
+//                 if (icon) {
 
-        button.classList.toggle(
-            'active',
-            isFavorite
-        );
+//                     icon.textContent =
+//                         isFavorite
+//                             ? 'favorite'
+//                             : 'favorite_border';
 
-    }
+//                 }
+
+//             }
+//         );
 
 
-    updateFavoritesCount();
+//     if (button) {
+
+//         button.classList.toggle(
+//             'active',
+//             isFavorite
+//         );
+
+//     }
 
 
-    notify(
-        isFavorite
-            ? 'Añadido a favoritos'
-            : 'Eliminado de favoritos',
-        'success'
-    );
+//     updateFavoritesCount();
 
-}
+
+//     notify(
+//         isFavorite
+//             ? 'Añadido a favoritos'
+//             : 'Eliminado de favoritos',
+//         'success'
+//     );
+
+// }
 
 
 /* ============================================================
@@ -3671,34 +3664,32 @@ function renderProductPage(
         document.getElementById(
             'breadcrumbProduct'
         )
-        || document.querySelector(
+        ||
+        document.querySelector(
             '.breadcrumb li[aria-current="page"]'
         );
 
 
-    if (breadcrumb) {
-
-        breadcrumb.textContent =
-            product.name;
-
-    }
+    setTextContent(
+        breadcrumb,
+        product.name
+    );
 
 
     const series =
         document.getElementById(
             'productSeries'
         )
-        || document.querySelector(
+        ||
+        document.querySelector(
             '.product-badge-series'
         );
 
 
-    if (series) {
-
-        series.textContent =
-            `${product.series.toUpperCase()} Series`;
-
-    }
+    setTextContent(
+        series,
+        `${product.series.toUpperCase()} Series`
+    );
 
 
     const title =
@@ -3707,12 +3698,10 @@ function renderProductPage(
         );
 
 
-    if (title) {
-
-        title.textContent =
-            product.name;
-
-    }
+    setTextContent(
+        title,
+        product.name
+    );
 
 
     const description =
@@ -3721,12 +3710,10 @@ function renderProductPage(
         );
 
 
-    if (description) {
-
-        description.textContent =
-            product.subtitle;
-
-    }
+    setTextContent(
+        description,
+        product.subtitle
+    );
 
 
     const price =
@@ -3735,45 +3722,102 @@ function renderProductPage(
         );
 
 
-    if (price) {
-
-        price.textContent =
-            formatPrice(
-                product.price
-            );
-
-    }
+    setTextContent(
+        price,
+        formatPrice(
+            product.price
+        )
+    );
 
 
-    const originalPrice =
+    updateOriginalPrice(
+        product
+    );
+
+
+    const ratingCount =
         document.getElementById(
-            'originalPrice'
+            'ratingCount'
+        )
+        ||
+        document.querySelector(
+            '.rating-count'
         );
 
 
-    if (originalPrice) {
-
-        if (
-            product.originalPrice
-        ) {
-
-            originalPrice.textContent =
-                formatPrice(
-                    product.originalPrice
-                );
+    setTextContent(
+        ratingCount,
+        `(${product.reviewCount} reseñas)`
+    );
 
 
-            originalPrice.style.display =
-                'inline';
+    renderProductStars(
+        product.rating
+    );
 
-        } else {
 
-            originalPrice.style.display =
-                'none';
+    renderProductImages(
+        product
+    );
 
-        }
 
-    }
+    renderProductColors(
+        product.colors || []
+    );
+
+
+    renderProductInformation(
+        product
+    );
+
+
+    renderRelatedProducts(
+        product
+    );
+
+
+    setProductId(
+        product
+    );
+
+
+    updateProductAvailability(
+        product
+    );
+
+
+    setElementDisplay(
+        document.getElementById(
+            'productLoading'
+        ),
+        'none'
+    );
+
+
+    setElementDisplay(
+        document.getElementById(
+            'productLayout'
+        ),
+        ''
+    );
+
+
+    setElementDisplay(
+        document.getElementById(
+            'productTabsSection'
+        ),
+        ''
+    );
+
+
+    setElementDisplay(
+        document.getElementById(
+            'relatedProductsSection'
+        ),
+        ''
+    );
+
+}
 
 
     const ratingCount =
@@ -3912,8 +3956,6 @@ function renderProductPage(
             '';
 
     }
-
-}
 
 
 function renderProductImages(
@@ -4936,8 +4978,7 @@ function addToCartById(
 
 
     if (
-        !product
-        || !product.inStock
+        !product?.inStock
     ) {
 
         notify(
@@ -4964,11 +5005,17 @@ function addToCartById(
                 (
                     item.productId
                     === product.id
-                    || item.id
+
+                    ||
+
+                    item.id
                     === product.id
                 )
-                && item.color
-                    === selectedColor
+
+                &&
+
+                item.color
+                === selectedColor
         );
 
 
@@ -4980,7 +5027,10 @@ function addToCartById(
                     existing.quantity
                     || 0
                 )
-                + Number(quantity),
+                +
+                Number(
+                    quantity
+                ),
                 10
             );
 
@@ -5015,7 +5065,9 @@ function addToCartById(
 
             quantity:
                 Math.min(
-                    Number(quantity),
+                    Number(
+                        quantity
+                    ),
                     10
                 ),
 
@@ -5049,7 +5101,6 @@ function addToCartById(
     );
 
 }
-
 
 /* ============================================================
    14. CART PAGE
@@ -5872,12 +5923,23 @@ async function handleCheckout() {
     }
 
 
-    const orderNumber =
-        `TKN-${Math.floor(
-            10000
-            + Math.random()
-            * 90000
-        )}`;
+const randomValues =
+    new Uint32Array(1);
+
+
+window.crypto.getRandomValues(
+    randomValues
+);
+
+
+const orderNumber =
+    `TKN-${
+        10000
+        + (
+            randomValues[0]
+            % 90000
+        )
+    }`;
 
 
     const orders =
@@ -5927,73 +5989,129 @@ async function handleCheckout() {
     updateCartCount();
 
 
-    if (
-        typeof Swal
-        !== 'undefined'
-    ) {
+   if (
+    typeof Swal
+    !== 'undefined'
+) {
 
-        await Swal.fire({
+await Swal.fire({
 
-            icon:
-                'success',
+    icon:
+        'success',
 
-            title:
-                '¡Compra finalizada!',
+    title:
+        '¡Compra finalizada!',
 
-            html: `
-                <div class="checkout-success-content">
+    html: `
+        <div class="checkout-success-modal">
 
-                    <p>
-                        Tu pedido fue realizado correctamente.
-                    </p>
+            <div class="checkout-success-badge">
+                <span class="material-icons">
+                    shopping_bag
+                </span>
+            </div>
 
-                    <div class="checkout-order-number">
-                        Número de pedido
+            <p class="checkout-success-text">
+                Tu pedido fue realizado correctamente.
+            </p>
 
-                        <strong>
-                            #${orderNumber}
-                        </strong>
-                    </div>
+            <div class="checkout-success-order">
 
-                    <p class="checkout-success-message">
-                        ¡Gracias por comprar en Teknovation!
-                    </p>
+                <span class="checkout-success-order-label">
+                    Número de pedido
+                </span>
 
-                </div>
-            `,
+                <strong class="checkout-success-order-number">
+                    #${orderNumber}
+                </strong>
 
-            confirmButtonText:
-                'Continuar',
+            </div>
 
-            confirmButtonColor:
-                '#00b8db',
+            <div class="checkout-success-info">
 
-            allowOutsideClick:
-                false,
+                <span class="material-icons">
+                    verified
+                </span>
 
-            allowEscapeKey:
-                false
+                <span>
+                    Pedido confirmado y guardado correctamente
+                </span>
 
-        });
+            </div>
 
+            <p class="checkout-success-thanks">
+                ¡Gracias por comprar en Teknovation!
+            </p>
 
-        renderCartPage();
+        </div>
+    `,
 
+    confirmButtonText:
+        'Continuar comprando',
 
-        window.location.href =
-            'index.html';
+    confirmButtonColor:
+        '#00b8db',
 
-    } else {
+    background:
+        '#ffffff',
 
-        alert(
-            `Compra finalizada correctamente. Pedido: ${orderNumber}`
-        );
+    color:
+        '#111111',
 
+    width:
+        520,
 
-        window.location.href =
-            'index.html';
+    padding:
+        '2rem',
+
+    showClass: {
+        popup:
+            'swal2-show'
+    },
+
+    hideClass: {
+        popup:
+            'swal2-hide'
+    },
+
+    allowOutsideClick:
+        false,
+
+    allowEscapeKey:
+        false,
+
+    customClass: {
+
+        popup:
+            'teknovation-checkout-popup',
+
+        title:
+            'teknovation-checkout-title',
+
+        confirmButton:
+            'teknovation-checkout-button'
 
     }
+
+});
+
+  renderCartPage();
+
+
+    window.location.href =
+        'index.html';
+
+} else {
+
+    alert(
+        `Compra finalizada correctamente. Pedido: ${orderNumber}`
+    );
+
+
+    window.location.href =
+        'index.html';
+
+}
 
 }
 
@@ -6410,49 +6528,44 @@ function initializePasswordStrength() {
                 password.value;
 
 
-            let level = 0;
+            const rules = [
 
+                value.length >= 8,
 
-            if (
-                value.length >= 8
-            ) {
-
-                level++;
-
-            }
-
-
-            if (
                 /[A-Z]/.test(
                     value
-                )
-            ) {
+                ),
 
-                level++;
+                /\d/.test(
+                    value
+                ),
 
-            }
-
-
-            if (
-                /[0-9]/.test(
+                /[^A-Za-z\d]/.test(
                     value
                 )
-            ) {
 
-                level++;
-
-            }
+            ];
 
 
-            if (
-                /[^A-Za-z0-9]/.test(
-                    value
-                )
-            ) {
+            const level =
+                rules.filter(
+                    Boolean
+                ).length;
 
-                level++;
 
-            }
+            const strengthClasses = [
+
+                '',
+
+                'weak',
+
+                'medium',
+
+                'good',
+
+                'strong'
+
+            ];
 
 
             for (
@@ -6490,41 +6603,15 @@ function initializePasswordStrength() {
 
                 if (
                     index <= level
+                    &&
+                    level > 0
                 ) {
 
-                    if (
-                        level === 1
-                    ) {
-
-                        bar.classList.add(
-                            'weak'
-                        );
-
-                    } else if (
-                        level === 2
-                    ) {
-
-                        bar.classList.add(
-                            'medium'
-                        );
-
-                    } else if (
-                        level === 3
-                    ) {
-
-                        bar.classList.add(
-                            'good'
-                        );
-
-                    } else if (
-                        level === 4
-                    ) {
-
-                        bar.classList.add(
-                            'strong'
-                        );
-
-                    }
+                    bar.classList.add(
+                        strengthClasses[
+                            level
+                        ]
+                    );
 
                 }
 
@@ -6552,14 +6639,13 @@ function initializePasswordStrength() {
                 );
 
 
-            if (label) {
-
-                label.textContent =
-                    labels[level];
-
-            }
+            setTextContent(
+                label,
+                labels[level]
+            );
 
         }
+
     );
 
 }
@@ -7361,8 +7447,8 @@ function initializeForgotPassword() {
                 getUsers();
 
 
-            const user =
-                users.find(
+            const userExists =
+                users.some(
                     item =>
                         String(
                             item.email || ''
@@ -7372,7 +7458,7 @@ function initializeForgotPassword() {
                 );
 
 
-            if (!user) {
+            if (!userExists) {
 
                 await Swal.fire({
 
@@ -7428,12 +7514,45 @@ function validateEmail(
     email
 ) {
 
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        .test(
-            String(
-                email
-            )
+    const value =
+        String(
+            email
+        )
+            .trim();
+
+
+    const atIndex =
+        value.indexOf('@');
+
+
+    const lastAtIndex =
+        value.lastIndexOf('@');
+
+
+    if (
+        atIndex <= 0
+        ||
+        atIndex !== lastAtIndex
+    ) {
+
+        return false;
+
+    }
+
+
+    const domain =
+        value.slice(
+            atIndex + 1
         );
+
+
+    return (
+        domain.length > 2
+        &&
+        domain.includes('.')
+        &&
+        !value.includes(' ')
+    );
 
 }
 

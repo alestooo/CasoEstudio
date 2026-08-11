@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 
 public class CartPageTest extends BaseTest {
 
-
     /*
      * =========================================================
      * 22. CHECKOUT COMPLETO
@@ -21,8 +20,8 @@ public class CartPageTest extends BaseTest {
     public void checkoutShouldCompletePurchase() {
 
         /*
-         * Abrir Teknovation primero para poder
-         * manipular localStorage.
+         * Abrimos una página del dominio primero
+         * para poder utilizar localStorage.
          */
 
         openTeknovationPage(
@@ -35,7 +34,7 @@ public class CartPageTest extends BaseTest {
 
 
         /*
-         * Usuario autenticado de prueba.
+         * Usuario autenticado.
          */
 
         js.executeScript(
@@ -53,7 +52,7 @@ public class CartPageTest extends BaseTest {
 
 
         /*
-         * Producto real en carrito.
+         * Producto de prueba en el carrito.
          */
 
         js.executeScript(
@@ -80,7 +79,7 @@ public class CartPageTest extends BaseTest {
 
         /*
          * Abrir carrito después de preparar
-         * el almacenamiento.
+         * localStorage.
          */
 
         openTeknovationPage(
@@ -117,7 +116,5 @@ public class CartPageTest extends BaseTest {
                         ),
                 "La compra debería generar un número de pedido."
         );
-
     }
-
 }

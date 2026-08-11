@@ -1,35 +1,52 @@
 package com.cenfotec.e2e.pages;
 
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.List;
 
 public class CartPage {
 
     private final WebDriver driver;
+
     private final WebDriverWait wait;
 
 
-    /* =========================================================
-       CART
-       ========================================================= */
+    /*
+     * =========================================================
+     * CART
+     * =========================================================
+     */
 
     private final By cartPageTitle =
-            By.id("cartPageTitle");
+            By.id(
+                    "cartPageTitle"
+            );
+
 
     private final By clearCartBtn =
-            By.id("clearCartBtn");
+            By.id(
+                    "clearCartBtn"
+            );
+
 
     private final By cartEmpty =
-            By.id("cartEmpty");
+            By.id(
+                    "cartEmpty"
+            );
+
 
     private final By cartContent =
-            By.id("cartContent");
+            By.id(
+                    "cartContent"
+            );
+
 
     private final By cartRows =
             By.cssSelector(
@@ -37,30 +54,41 @@ public class CartPage {
             );
 
 
-    /* =========================================================
-       HEADER
-       ========================================================= */
+    /*
+     * =========================================================
+     * HEADER
+     * =========================================================
+     */
 
     private final By cartCount =
             By.cssSelector(
                     ".cart-count"
             );
 
+
     private final By wishlistCount =
             By.cssSelector(
                     ".wishlist-count"
             );
+
 
     private final By cartButton =
             By.cssSelector(
                     ".cart-btn, #cartBtn"
             );
 
+
     private final By wishlistButton =
-            By.id("wishlistBtn");
+            By.id(
+                    "wishlistBtn"
+            );
+
 
     private final By searchButton =
-            By.id("searchBtn");
+            By.id(
+                    "searchBtn"
+            );
+
 
     private final By accountButton =
             By.cssSelector(
@@ -68,100 +96,143 @@ public class CartPage {
             );
 
 
-    /* =========================================================
-       CART ROW
-       ========================================================= */
+    /*
+     * =========================================================
+     * CART ROW
+     * =========================================================
+     */
 
     private final By productNames =
             By.cssSelector(
-                    "#cartTableBody .cart-product-name, " +
-                    "#cartTableBody .product-name, " +
-                    "#cartTableBody h3, " +
-                    "#cartTableBody h4"
+                    "#cartTableBody .cart-product-name, "
+                            + "#cartTableBody .product-name, "
+                            + "#cartTableBody h3, "
+                            + "#cartTableBody h4"
             );
+
 
     private final By plusButtons =
             By.cssSelector(
-                    "#cartTableBody [data-cart-action='plus'], " +
-                    "#cartTableBody .qty-plus"
+                    "#cartTableBody [data-cart-action='plus'], "
+                            + "#cartTableBody .qty-plus"
             );
+
 
     private final By minusButtons =
             By.cssSelector(
-                    "#cartTableBody [data-cart-action='minus'], " +
-                    "#cartTableBody .qty-minus"
+                    "#cartTableBody [data-cart-action='minus'], "
+                            + "#cartTableBody .qty-minus"
             );
+
 
     private final By removeButtons =
             By.cssSelector(
-                    "#cartTableBody [data-cart-action='remove'], " +
-                    "#cartTableBody .remove-item"
+                    "#cartTableBody [data-cart-action='remove'], "
+                            + "#cartTableBody .remove-item"
             );
 
 
-    /* =========================================================
-       COUPON
-       ========================================================= */
+    /*
+     * =========================================================
+     * COUPON
+     * =========================================================
+     */
 
     private final By couponInput =
-            By.id("couponInput");
+            By.id(
+                    "couponInput"
+            );
+
 
     private final By applyCoupon =
-            By.id("applyCoupon");
+            By.id(
+                    "applyCoupon"
+            );
+
 
     private final By couponFeedback =
-            By.id("couponFeedback");
+            By.id(
+                    "couponFeedback"
+            );
 
 
-    /* =========================================================
-       SUMMARY
-       ========================================================= */
+    /*
+     * =========================================================
+     * SUMMARY
+     * =========================================================
+     */
 
     private final By summaryItemCount =
-            By.id("summaryItemCount");
+            By.id(
+                    "summaryItemCount"
+            );
+
 
     private final By summarySubtotal =
-            By.id("summarySubtotal");
+            By.id(
+                    "summarySubtotal"
+            );
+
 
     private final By discountRow =
-            By.id("discountRow");
+            By.id(
+                    "discountRow"
+            );
+
 
     private final By summaryDiscount =
-            By.id("summaryDiscount");
+            By.id(
+                    "summaryDiscount"
+            );
+
 
     private final By summaryShipping =
-            By.id("summaryShipping");
+            By.id(
+                    "summaryShipping"
+            );
+
 
     private final By summaryTotal =
-            By.id("summaryTotal");
+            By.id(
+                    "summaryTotal"
+            );
+
 
     private final By checkoutBtn =
-            By.id("checkoutBtn");
+            By.id(
+                    "checkoutBtn"
+            );
 
 
-    /* =========================================================
-       SWEET ALERT
-       ========================================================= */
+    /*
+     * =========================================================
+     * SWEET ALERT
+     * =========================================================
+     */
 
     private final By sweetAlert =
             By.cssSelector(
                     ".swal2-popup"
             );
 
+
     private final By sweetAlertTitle =
             By.cssSelector(
                     ".swal2-title"
             );
+
 
     private final By sweetAlertHtml =
             By.cssSelector(
                     ".swal2-html-container"
             );
 
+
     private final By sweetAlertConfirm =
             By.cssSelector(
                     ".swal2-confirm"
             );
+
 
     private final By sweetAlertCancel =
             By.cssSelector(
@@ -169,9 +240,11 @@ public class CartPage {
             );
 
 
-    /* =========================================================
-       CONSTRUCTOR
-       ========================================================= */
+    /*
+     * =========================================================
+     * CONSTRUCTOR
+     * =========================================================
+     */
 
     public CartPage(
             WebDriver driver
@@ -185,20 +258,20 @@ public class CartPage {
                         driver,
                         Duration.ofSeconds(10)
                 );
-
     }
 
 
-    /* =========================================================
-       EMPTY / CONTENT
-       ========================================================= */
+    /*
+     * =========================================================
+     * EMPTY / CONTENT
+     * =========================================================
+     */
 
     public boolean isCartEmptyVisible() {
 
         return isVisible(
                 cartEmpty
         );
-
     }
 
 
@@ -207,7 +280,6 @@ public class CartPage {
         return isVisible(
                 cartContent
         );
-
     }
 
 
@@ -227,13 +299,11 @@ public class CartPage {
                     .trim();
 
         } catch (
-                Exception exception
+                RuntimeException exception
         ) {
 
             return "";
-
         }
-
     }
 
 
@@ -244,7 +314,6 @@ public class CartPage {
                         cartRows
                 )
                 .size();
-
     }
 
 
@@ -253,13 +322,14 @@ public class CartPage {
         return getText(
                 cartPageTitle
         );
-
     }
 
 
-    /* =========================================================
-       PRODUCT
-       ========================================================= */
+    /*
+     * =========================================================
+     * PRODUCT
+     * =========================================================
+     */
 
     public String getProductName(
             int index
@@ -273,11 +343,11 @@ public class CartPage {
 
         if (
                 index < 0
-                || index >= elements.size()
+                ||
+                index >= elements.size()
         ) {
 
             return "";
-
         }
 
 
@@ -285,7 +355,6 @@ public class CartPage {
                 .get(index)
                 .getText()
                 .trim();
-
     }
 
 
@@ -297,7 +366,6 @@ public class CartPage {
                 plusButtons,
                 index
         );
-
     }
 
 
@@ -309,7 +377,6 @@ public class CartPage {
                 minusButtons,
                 index
         );
-
     }
 
 
@@ -321,13 +388,14 @@ public class CartPage {
                 removeButtons,
                 index
         );
-
     }
 
 
-    /* =========================================================
-       CLEAR CART
-       ========================================================= */
+    /*
+     * =========================================================
+     * CLEAR CART
+     * =========================================================
+     */
 
     public void clearCart() {
 
@@ -337,7 +405,6 @@ public class CartPage {
                                 clearCartBtn
                         )
         ).click();
-
     }
 
 
@@ -346,13 +413,14 @@ public class CartPage {
         return isVisible(
                 clearCartBtn
         );
-
     }
 
 
-    /* =========================================================
-       COUPON
-       ========================================================= */
+    /*
+     * =========================================================
+     * COUPON
+     * =========================================================
+     */
 
     public void enterCoupon(
             String coupon
@@ -372,7 +440,6 @@ public class CartPage {
         input.sendKeys(
                 coupon
         );
-
     }
 
 
@@ -384,7 +451,6 @@ public class CartPage {
                                 applyCoupon
                         )
         ).click();
-
     }
 
 
@@ -397,7 +463,6 @@ public class CartPage {
         );
 
         clickApplyCoupon();
-
     }
 
 
@@ -406,7 +471,6 @@ public class CartPage {
         return getText(
                 couponFeedback
         );
-
     }
 
 
@@ -417,12 +481,25 @@ public class CartPage {
                         .toLowerCase();
 
 
-        return message.contains("aplic")
-                || message.contains("descuento")
-                || message.contains("10%")
-                || message.contains("20%")
-                || message.contains("30%");
-
+        return message.contains(
+                "aplic"
+        )
+                ||
+                message.contains(
+                        "descuento"
+                )
+                ||
+                message.contains(
+                        "10%"
+                )
+                ||
+                message.contains(
+                        "20%"
+                )
+                ||
+                message.contains(
+                        "30%"
+                );
     }
 
 
@@ -433,24 +510,35 @@ public class CartPage {
                         .toLowerCase();
 
 
-        return message.contains("invál")
-                || message.contains("inval")
-                || message.contains("no existe")
-                || message.contains("incorrect");
-
+        return message.contains(
+                "invál"
+        )
+                ||
+                message.contains(
+                        "inval"
+                )
+                ||
+                message.contains(
+                        "no existe"
+                )
+                ||
+                message.contains(
+                        "incorrect"
+                );
     }
 
 
-    /* =========================================================
-       SUMMARY
-       ========================================================= */
+    /*
+     * =========================================================
+     * SUMMARY
+     * =========================================================
+     */
 
     public String getSummaryItemCount() {
 
         return getText(
                 summaryItemCount
         );
-
     }
 
 
@@ -459,7 +547,6 @@ public class CartPage {
         return getText(
                 summarySubtotal
         );
-
     }
 
 
@@ -468,7 +555,6 @@ public class CartPage {
         return getText(
                 summaryDiscount
         );
-
     }
 
 
@@ -477,7 +563,6 @@ public class CartPage {
         return getText(
                 summaryShipping
         );
-
     }
 
 
@@ -486,7 +571,6 @@ public class CartPage {
         return getText(
                 summaryTotal
         );
-
     }
 
 
@@ -495,13 +579,14 @@ public class CartPage {
         return isVisible(
                 discountRow
         );
-
     }
 
 
-    /* =========================================================
-       CHECKOUT
-       ========================================================= */
+    /*
+     * =========================================================
+     * CHECKOUT
+     * =========================================================
+     */
 
     public void clickCheckout() {
 
@@ -511,20 +596,37 @@ public class CartPage {
                                 checkoutBtn
                         )
         ).click();
-
     }
 
 
-    /* =========================================================
-       SWEET ALERT
-       ========================================================= */
+    /*
+     * =========================================================
+     * SWEET ALERT
+     * =========================================================
+     */
 
     public boolean isSweetAlertVisible() {
 
-        return isVisible(
-                sweetAlert
-        );
+        try {
 
+            List<WebElement> elements =
+                    driver.findElements(
+                            sweetAlert
+                    );
+
+
+            return !elements.isEmpty()
+                    &&
+                    elements
+                            .get(0)
+                            .isDisplayed();
+
+        } catch (
+                RuntimeException exception
+        ) {
+
+            return false;
+        }
     }
 
 
@@ -533,7 +635,6 @@ public class CartPage {
         return getText(
                 sweetAlertTitle
         );
-
     }
 
 
@@ -542,7 +643,6 @@ public class CartPage {
         return getText(
                 sweetAlertHtml
         );
-
     }
 
 
@@ -554,7 +654,6 @@ public class CartPage {
                                 sweetAlertConfirm
                         )
         ).click();
-
     }
 
 
@@ -566,74 +665,164 @@ public class CartPage {
                                 sweetAlertCancel
                         )
         ).click();
-
     }
 
 
     public boolean isLoginRequiredAlertVisible() {
 
+        /*
+         * Primero comprobar alert nativo.
+         */
+
         if (
-                !isSweetAlertVisible()
+                isNativeAlertVisible()
         ) {
 
-            return false;
+            String text =
+                    getNativeAlertText()
+                            .toLowerCase();
 
+
+            return text.contains(
+                    "inicia sesión"
+            )
+                    ||
+                    text.contains(
+                            "iniciar sesión"
+                    );
         }
 
 
-        String text =
-                (
-                        getSweetAlertTitle()
-                                + " "
-                                + getSweetAlertText()
-                )
-                        .toLowerCase();
+        /*
+         * Después comprobar SweetAlert.
+         */
+
+        if (
+                isSweetAlertVisible()
+        ) {
+
+            String text =
+                    (
+                            getSweetAlertTitle()
+                                    + " "
+                                    + getSweetAlertText()
+                    )
+                            .toLowerCase();
 
 
-        return text.contains(
-                "inicia sesión"
-        )
-                || text.contains(
-                "iniciar sesión"
-        );
+            return text.contains(
+                    "inicia sesión"
+            )
+                    ||
+                    text.contains(
+                            "iniciar sesión"
+                    );
+        }
 
+
+        return false;
     }
 
 
     public boolean isPurchaseCompletedAlertVisible() {
 
-        if (
-                !isSweetAlertVisible()
+        try {
+
+            return wait.until(
+                    webDriver -> {
+
+                        /*
+                         * IMPORTANTE:
+                         * Primero comprobar alert nativo.
+                         */
+
+                        if (
+                                isNativeAlertVisible()
+                        ) {
+
+                            String text =
+                                    getNativeAlertText()
+                                            .toLowerCase();
+
+
+                            return text.contains(
+                                    "compra finalizada"
+                            )
+                                    ||
+                                    text.contains(
+                                            "pedido"
+                                    );
+                        }
+
+
+                        /*
+                         * Si no existe alert nativo,
+                         * comprobar SweetAlert.
+                         */
+
+                        if (
+                                isSweetAlertVisible()
+                        ) {
+
+                            String text =
+                                    (
+                                            getSweetAlertTitle()
+                                                    + " "
+                                                    + getSweetAlertText()
+                                    )
+                                            .toLowerCase();
+
+
+                            return text.contains(
+                                    "compra finalizada"
+                            )
+                                    ||
+                                    text.contains(
+                                            "pedido"
+                                    );
+                        }
+
+
+                        return false;
+                    }
+            );
+
+        } catch (
+                RuntimeException exception
         ) {
 
             return false;
-
         }
-
-
-        String text =
-                (
-                        getSweetAlertTitle()
-                                + " "
-                                + getSweetAlertText()
-                )
-                        .toLowerCase();
-
-
-        return text.contains(
-                "compra finalizada"
-        )
-                || text.contains(
-                "pedido"
-        );
-
     }
 
 
     public String getOrderNumberFromAlert() {
 
-        String text =
-                getSweetAlertText();
+        String text;
+
+
+        /*
+         * Primero comprobar alert nativo.
+         */
+
+        if (
+                isNativeAlertVisible()
+        ) {
+
+            text =
+                    getNativeAlertText();
+
+        } else if (
+                isSweetAlertVisible()
+        ) {
+
+            text =
+                    getSweetAlertText();
+
+        } else {
+
+            return "";
+        }
 
 
         int position =
@@ -647,7 +836,6 @@ public class CartPage {
         ) {
 
             return "";
-
         }
 
 
@@ -663,30 +851,39 @@ public class CartPage {
                 );
 
 
-        return parts.length > 0
-                ? parts[0]
-                : "";
+        if (
+                parts.length == 0
+        ) {
 
+            return "";
+        }
+
+
+        return parts[0]
+                .replaceAll(
+                        "[^A-Za-z0-9-]",
+                        ""
+                );
     }
 
 
-    /* =========================================================
-       HEADER
-       ========================================================= */
+    /*
+     * =========================================================
+     * HEADER
+     * =========================================================
+     */
 
     public int getCartCountAsInt() {
 
         return getCounter(
                 cartCount
         );
-
     }
 
 
     public int getCartCount() {
 
         return getCartCountAsInt();
-
     }
 
 
@@ -695,7 +892,6 @@ public class CartPage {
         return getCounter(
                 wishlistCount
         );
-
     }
 
 
@@ -704,7 +900,6 @@ public class CartPage {
         click(
                 cartButton
         );
-
     }
 
 
@@ -713,7 +908,6 @@ public class CartPage {
         click(
                 wishlistButton
         );
-
     }
 
 
@@ -722,7 +916,6 @@ public class CartPage {
         click(
                 searchButton
         );
-
     }
 
 
@@ -731,18 +924,18 @@ public class CartPage {
         click(
                 accountButton
         );
-
     }
 
 
-    /* =========================================================
-       URL
-       ========================================================= */
+    /*
+     * =========================================================
+     * URL
+     * =========================================================
+     */
 
     public String getCurrentUrl() {
 
         return driver.getCurrentUrl();
-
     }
 
 
@@ -752,7 +945,6 @@ public class CartPage {
                 .contains(
                         "cart.html"
                 );
-
     }
 
 
@@ -762,13 +954,54 @@ public class CartPage {
                 .contains(
                         "auth.html"
                 );
-
     }
 
 
-    /* =========================================================
-       HELPERS
-       ========================================================= */
+    /*
+     * =========================================================
+     * HELPERS
+     * =========================================================
+     */
+
+    private boolean isNativeAlertVisible() {
+
+        try {
+
+            driver.switchTo()
+                    .alert();
+
+            return true;
+
+        } catch (
+                RuntimeException exception
+        ) {
+
+            return false;
+        }
+    }
+
+
+    private String getNativeAlertText() {
+
+        try {
+
+            Alert alert =
+                    driver.switchTo()
+                            .alert();
+
+
+            return alert
+                    .getText()
+                    .trim();
+
+        } catch (
+                RuntimeException exception
+        ) {
+
+            return "";
+        }
+    }
+
 
     private boolean isVisible(
             By locator
@@ -784,13 +1017,11 @@ public class CartPage {
             ).isDisplayed();
 
         } catch (
-                Exception exception
+                RuntimeException exception
         ) {
 
             return false;
-
         }
-
     }
 
 
@@ -810,13 +1041,11 @@ public class CartPage {
                     .trim();
 
         } catch (
-                Exception exception
+                RuntimeException exception
         ) {
 
             return "";
-
         }
-
     }
 
 
@@ -837,41 +1066,54 @@ public class CartPage {
             ) {
 
                 return 0;
-
             }
 
 
-            String text =
-                    elements
-                            .get(0)
-                            .getText()
-                            .replaceAll(
-                                    "[^0-9]",
-                                    ""
-                            );
-
-
-            if (
-                    text.isBlank()
+            for (
+                    WebElement element
+                    : elements
             ) {
 
-                return 0;
+                String text =
+                        element.getAttribute(
+                                "textContent"
+                        );
 
+
+                if (
+                        text == null
+                ) {
+
+                    continue;
+                }
+
+
+                text =
+                        text.replaceAll(
+                                "\\D",
+                                ""
+                        );
+
+
+                if (
+                        !text.isBlank()
+                ) {
+
+                    return Integer.parseInt(
+                            text
+                    );
+                }
             }
 
-
-            return Integer.parseInt(
-                    text
-            );
-
-        } catch (
-                Exception exception
-        ) {
 
             return 0;
 
-        }
+        } catch (
+                RuntimeException exception
+        ) {
 
+            return 0;
+        }
     }
 
 
@@ -885,7 +1127,6 @@ public class CartPage {
                                 locator
                         )
         ).click();
-
     }
 
 
@@ -905,14 +1146,14 @@ public class CartPage {
 
         if (
                 index < 0
-                || index >= elements.size()
+                ||
+                index >= elements.size()
         ) {
 
             throw new IllegalArgumentException(
                     "Índice inválido: "
                             + index
             );
-
         }
 
 
@@ -924,7 +1165,5 @@ public class CartPage {
                                 )
                         )
         ).click();
-
     }
-
 }
