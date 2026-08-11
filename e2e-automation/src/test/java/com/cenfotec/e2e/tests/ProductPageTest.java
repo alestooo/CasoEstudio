@@ -2,69 +2,102 @@ package com.cenfotec.e2e.tests;
 
 import com.cenfotec.e2e.base.BaseTest;
 import com.cenfotec.e2e.pages.ProductPage;
+
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import com.cenfotec.e2e.config.ConfigReader;
 
 public class ProductPageTest extends BaseTest {
 
-        private final String PRODUCT_URL =
-                ConfigReader.get("teknovation.url")
-                        + "/product.html?id=pro-x2-superstrike";
+    private ProductPage productPage;
 
-    @Test
-    public void validarInformacionDelProducto() {
 
-        driver.get(PRODUCT_URL);
+    @BeforeMethod
+    public void openProductPage() {
 
-        ProductPage productPage = new ProductPage(driver);
-
-        Assert.assertEquals(
-                productPage.obtenerTituloProducto(),
-                "PRO X2 SUPERSTRIKE",
-                "El nombre del producto no es correcto."
+        openTeknovationPage(
+                "product.html?id=pro-x-superlight-2"
         );
 
-        Assert.assertEquals(
-                productPage.obtenerPrecioProducto(),
-                "179,99 €",
-                "El precio del producto no es correcto."
-        );
+
+        productPage =
+                new ProductPage(
+                        driver
+                );
+
     }
 
-    @Test
-    public void incrementarCantidadProducto() {
-
-        driver.get(PRODUCT_URL);
-
-        ProductPage productPage = new ProductPage(driver);
-
-        Assert.assertEquals(
-                productPage.obtenerCantidad(),
-                "1"
-        );
-
-        productPage.incrementarCantidad();
-
-        Assert.assertEquals(
-                productPage.obtenerCantidad(),
-                "2",
-                "La cantidad no aumentó correctamente."
-        );
-    }
 
     @Test
-    public void seleccionarColorBlanco() {
-
-        driver.get(PRODUCT_URL);
-
-        ProductPage productPage = new ProductPage(driver);
-
-        productPage.seleccionarColorBlanco();
+    public void productShouldLoad() {
 
         Assert.assertTrue(
-                productPage.colorBlancoEstaSeleccionado(),
-                "El color blanco no quedó seleccionado."
+                productPage.isProductLayoutVisible()
         );
+
+
+        Assert.assertFalse(
+                productPage.isProductErrorVisible()
+        );
+
+
+        Assert.assertFalse(
+                productPage
+                        .getProductTitle()
+                        .isBlank()
+        );
+
+
+        Assert.assertFalse(
+                productPage
+                        .getCurrentPrice()
+                        .isBlank()
+        );
+
     }
+
+
+    @Test
+    public void quantityShouldIncrease() {
+
+        int before =
+                productPage.getQuantity();
+
+
+        productPage.increaseQuantity();
+
+
+        int after =
+                productPage.getQuantity();
+
+
+        Assert.assertEquals(
+                after,
+                before + 1,
+                "Un clic debe aumentar solamente una unidad."
+        );
+
+    }
+
+
+    @Test
+    public void addToCartShouldUpdateHeader() {
+
+        int before =
+                productPage.getCartCount();
+
+
+        productPage.addToCart();
+
+
+        int after =
+                productPage.getCartCount();
+
+
+        Assert.assertTrue(
+                after > before
+        );
+
+    }
+
 }

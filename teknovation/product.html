@@ -1,628 +1,2291 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PRO X2 SUPERSTRIKE - Ratón inalámbrico para gaming">
-    <title>PRO X2 SUPERSTRIKE | TechStore</title>
-    
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Producto gaming - TechStore"
+    >
+
+    <title>Producto | TechStore</title>
+
     <!-- Google Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS principal -->
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        .icon-btn {
+            text-decoration: none;
+        }
+
+        .gallery-image {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 430px;
+        }
+
+        .gallery-image.active {
+            display: flex;
+        }
+
+        .gallery-product-img {
+            display: block;
+            width: 100%;
+            max-width: 520px;
+            max-height: 430px;
+            object-fit: contain;
+        }
+
+        .gallery-thumbs {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .thumb {
+            overflow: hidden;
+        }
+
+        .thumb img {
+            display: block;
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .related-product-img {
+            display: block;
+            width: 100%;
+            height: 190px;
+            object-fit: contain;
+        }
+
+        .product-loading {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .product-error {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-    <!-- Header -->
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
     <header class="header">
-      <nav class="header-nav">
-        <div class="container">
-          <div class="nav-content">
-            <div class="nav-left">
-              <a href="index.html" class="logo">
-                <img src="./assets/logo-teknovation.png" alt="logo" height="48"/>
-              </a>
 
-              <ul class="nav-menu">
-                <li><a href="shop.html">Tienda</a></li>
-                <li class="nav-highlight"><a href="#">Ofertas</a></li>
-              </ul>
+        <nav class="header-nav">
+
+            <div class="container">
+
+                <div class="nav-content">
+
+                    <div class="nav-left">
+
+                        <a
+                            href="index.html"
+                            class="logo"
+                        >
+
+                            <img
+                                src="./assets/logo-teknovation.png"
+                                alt="Logo Teknovation"
+                                height="48"
+                            >
+
+                        </a>
+
+
+                        <ul class="nav-menu">
+
+                            <li>
+                                <a href="index.html">
+                                    Inicio
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="shop.html">
+                                    Tienda
+                                </a>
+                            </li>
+
+                            <li class="nav-highlight">
+
+                                <a
+                                    href="#"
+                                    id="nav-offers"
+                                >
+                                    Ofertas
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a
+                                    href="#footer"
+                                    id="nav-support"
+                                >
+                                    Soporte
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="header-actions">
+
+                        <button
+                            type="button"
+                            class="icon-btn"
+                            id="searchBtn"
+                            aria-label="Buscar"
+                        >
+
+                            <span class="material-icons">
+                                search
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="icon-btn"
+                            id="wishlistBtn"
+                            aria-label="Favoritos"
+                        >
+
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+
+                        </button>
+
+
+                        <!-- CUENTA -->
+                        <a
+                            href="auth.html"
+                            class="icon-btn"
+                            id="accountBtn"
+                            aria-label="Mi cuenta"
+                        >
+
+                            <span class="material-icons">
+                                person_outline
+                            </span>
+
+                        </a>
+
+
+                        <!-- CARRITO -->
+                        <a
+                            href="cart.html"
+                            class="icon-btn cart-btn"
+                            id="cartBtn"
+                            aria-label="Carrito"
+                        >
+
+                            <span class="material-icons">
+                                shopping_cart
+                            </span>
+
+                            <span class="cart-count">
+                                0
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="mobile-menu-toggle"
+                        aria-label="Menú"
+                    >
+
+                        <span class="material-icons">
+                            menu
+                        </span>
+
+                    </button>
+
+                </div>
+
             </div>
 
-            <div class="header-actions">
-              <button class="icon-btn" aria-label="Buscar">
-                <span class="material-icons">search</span>
-              </button>
-              <button class="icon-btn" aria-label="Favoritos">
-                <span class="material-icons">favorite_border</span>
-              </button>
-              <button class="icon-btn" aria-label="Mi cuenta">
-                <span class="material-icons">person_outline</span>
-              </button>
-              <button class="icon-btn cart-btn" aria-label="Carrito">
-                <span class="material-icons">shopping_cart</span>
-                <span class="cart-count">0</span>
-              </button>
-            </div>
+        </nav>
 
-            <button class="mobile-menu-toggle" aria-label="Menú">
-              <span class="material-icons">menu</span>
-            </button>
-          </div>
-        </div>
-      </nav>
     </header>
 
-    <!-- Breadcrumb -->
+
+    <!-- =====================================================
+         BREADCRUMB
+    ====================================================== -->
     <div class="breadcrumb">
+
         <div class="container">
+
             <nav aria-label="breadcrumb">
+
                 <ol>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="shop.html">Ratones Gaming</a></li>
-                    <li aria-current="page">PRO X2 SUPERSTRIKE</li>
+
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="shop.html">
+                            Ratones Gaming
+                        </a>
+                    </li>
+
+                    <li
+                        id="breadcrumbProduct"
+                        aria-current="page"
+                    >
+                        Producto
+                    </li>
+
                 </ol>
+
             </nav>
+
         </div>
+
     </div>
 
-    <!-- Product Section -->
-    <section class="product-section">
+
+    <!-- =====================================================
+         PRODUCTO
+    ====================================================== -->
+    <section
+        class="product-section"
+        id="productSection"
+    >
+
         <div class="container">
-            <div class="product-layout">
-                <!-- Product Gallery -->
+
+            <div
+                id="productLoading"
+                class="product-loading"
+            >
+
+                <h2>
+                    Cargando producto...
+                </h2>
+
+            </div>
+
+
+            <div
+                class="product-layout"
+                id="productLayout"
+                style="display: none;"
+            >
+
+
+                <!-- ==========================================
+                     GALERÍA
+                =========================================== -->
                 <div class="product-gallery">
-                    <div class="gallery-main">
-                        <div class="gallery-image active">
-                            <div class="gallery-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </div>
-                        <div class="gallery-image">
-                            <div class="gallery-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </div>
-                        <div class="gallery-image">
-                            <div class="gallery-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </div>
-                        <div class="gallery-image">
-                            <div class="gallery-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </div>
+
+                    <div
+                        class="gallery-main"
+                        id="galleryMain"
+                    >
                     </div>
-                    
-                    <div class="gallery-thumbs">
-                        <button class="thumb active" data-index="0">
-                            <div class="thumb-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </button>
-                        <button class="thumb" data-index="1">
-                            <div class="thumb-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </button>
-                        <button class="thumb" data-index="2">
-                            <div class="thumb-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </button>
-                        <button class="thumb" data-index="3">
-                            <div class="thumb-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </button>
+
+
+                    <div
+                        class="gallery-thumbs"
+                        id="galleryThumbs"
+                    >
                     </div>
+
                 </div>
 
-                <!-- Product Details -->
+
+                <!-- ==========================================
+                     INFORMACIÓN
+                =========================================== -->
                 <div class="product-details">
-                    <div class="product-badge-series">PRO Series</div>
-                    
-                    <h1 class="product-title">PRO X2 SUPERSTRIKE</h1>
-                    <p class="product-description">Ratón inalámbrico LIGHTSPEED para gaming</p>
-                    
+
+
+                    <div
+                        class="product-badge-series"
+                        id="productSeries"
+                    >
+                        Serie
+                    </div>
+
+
+                    <h1 class="product-title">
+                        Producto
+                    </h1>
+
+
+                    <p class="product-description">
+                        Descripción del producto
+                    </p>
+
+
+                    <!-- Rating -->
                     <div class="product-rating">
-                        <div class="stars">
-                            <span class="material-icons">star</span>
-                            <span class="material-icons">star</span>
-                            <span class="material-icons">star</span>
-                            <span class="material-icons">star</span>
-                            <span class="material-icons">star_half</span>
+
+                        <div
+                            class="stars"
+                            id="productStars"
+                        >
                         </div>
-                        <span class="rating-count">(36 reseñas)</span>
+
+                        <span
+                            class="rating-count"
+                            id="ratingCount"
+                        >
+                            (0 reseñas)
+                        </span>
+
                     </div>
-                    
+
+
+                    <!-- Precio -->
                     <div class="product-price-large">
-                        <span class="price-current">179,99 €</span>
+
+                        <span class="price-current">
+                            0,00 €
+                        </span>
+
+                        <span
+                            class="price-original"
+                            id="originalPrice"
+                            style="display: none;"
+                        >
+                        </span>
+
                     </div>
-                    
-                    <!-- Color Selector -->
+
+
+                    <!-- ======================================
+                         OPCIONES
+                    ======================================= -->
                     <div class="product-options">
+
+
+                        <!-- Colores -->
                         <div class="option-group">
-                            <label class="option-label">Color</label>
-                            <div class="color-options">
-                                <button class="color-option active" data-color="black" aria-label="Negro">
-                                    <span class="color-swatch" style="background: #000;"></span>
-                                    <span class="color-name">Negro</span>
-                                </button>
-                                <button class="color-option" data-color="white" aria-label="Blanco">
-                                    <span class="color-swatch" style="background: #fff; border: 1px solid #ddd;"></span>
-                                    <span class="color-name">Blanco</span>
-                                </button>
+
+                            <h3 class="option-label">
+                                Color
+                            </h3>
+
+                            <div
+                                class="color-options"
+                                id="colorOptions"
+                            >
                             </div>
+
                         </div>
-                        
-                        <!-- Quantity Selector -->
+
+
+                        <!-- Cantidad -->
                         <div class="option-group">
-                            <label class="option-label">Cantidad</label>
+
+                            <h3 class="option-label">
+                                Cantidad
+                            </h3>
+
                             <div class="quantity-selector">
-                                <button class="qty-btn" id="qtyMinus">
-                                    <span class="material-icons">remove</span>
+
+                                <button
+                                    type="button"
+                                    class="qty-btn"
+                                    id="qtyMinus"
+                                    aria-label="Disminuir cantidad"
+                                >
+
+                                    <span class="material-icons">
+                                        remove
+                                    </span>
+
                                 </button>
-                                <input type="number" id="quantity" value="1" min="1" max="10" readonly>
-                                <button class="qty-btn" id="qtyPlus">
-                                    <span class="material-icons">add</span>
+
+
+                                <input
+                                    type="number"
+                                    id="quantity"
+                                    value="1"
+                                    min="1"
+                                    max="10"
+                                    readonly
+                                >
+
+
+                                <button
+                                    type="button"
+                                    class="qty-btn"
+                                    id="qtyPlus"
+                                    aria-label="Aumentar cantidad"
+                                >
+
+                                    <span class="material-icons">
+                                        add
+                                    </span>
+
                                 </button>
+
                             </div>
+
                         </div>
+
                     </div>
-                    
-                    <!-- Add to Cart -->
+
+
+                    <!-- ======================================
+                         ACCIONES
+                    ======================================= -->
                     <div class="product-actions-main">
-                        <button class="btn btn-primary btn-large" id="addToCart">
-                            <span class="material-icons">shopping_cart</span>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary btn-large"
+                            id="addToCart"
+                        >
+
+                            <span class="material-icons">
+                                shopping_cart
+                            </span>
+
                             Añadir al Carrito
+
                         </button>
-                        <button class="btn-icon-large" aria-label="Añadir a favoritos">
-                            <span class="material-icons">favorite_border</span>
+
+
+                        <button
+                            type="button"
+                            class="btn-icon-large"
+                            id="favoriteProductBtn"
+                            aria-label="Añadir a favoritos"
+                        >
+
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+
                         </button>
+
                     </div>
-                    
-                    <!-- Product Benefits -->
+
+
+                    <!-- ======================================
+                         BENEFICIOS
+                    ======================================= -->
                     <div class="product-benefits">
+
                         <div class="benefit-item">
-                            <span class="material-icons">local_shipping</span>
-                            <span>Envío gratuito en pedidos +39€</span>
+
+                            <span class="material-icons">
+                                local_shipping
+                            </span>
+
+                            <span>
+                                Envío gratuito en pedidos +39€
+                            </span>
+
                         </div>
+
+
                         <div class="benefit-item">
-                            <span class="material-icons">assignment_return</span>
-                            <span>Devoluciones fáciles - 30 días</span>
+
+                            <span class="material-icons">
+                                assignment_return
+                            </span>
+
+                            <span>
+                                Devoluciones fáciles - 30 días
+                            </span>
+
                         </div>
+
+
                         <div class="benefit-item">
-                            <span class="material-icons">verified_user</span>
-                            <span>2 años de garantía</span>
+
+                            <span class="material-icons">
+                                verified_user
+                            </span>
+
+                            <span>
+                                2 años de garantía
+                            </span>
+
                         </div>
+
                     </div>
-                    
-                    <!-- Special Offers -->
+
+
+                    <!-- Oferta -->
                     <div class="product-offers">
+
                         <div class="offer-card">
-                            <span class="material-icons">card_giftcard</span>
+
+                            <span class="material-icons">
+                                card_giftcard
+                            </span>
+
                             <div class="offer-content">
-                                <h4>Oferta Bundle</h4>
-                                <p>Combina con teclado y auriculares y ahorra hasta 200€</p>
+
+                                <h4>
+                                    Oferta Bundle
+                                </h4>
+
+                                <p>
+                                    Combina con teclado y auriculares
+                                    y ahorra hasta 200€
+                                </p>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
+
+            <!-- Error -->
+            <div
+                id="productError"
+                class="product-error"
+                style="display: none;"
+            >
+
+                <h2>
+                    Producto no encontrado
+                </h2>
+
+                <p>
+                    El producto solicitado no existe.
+                </p>
+
+                <a
+                    href="shop.html"
+                    class="btn btn-primary"
+                >
+                    Volver a la tienda
+                </a>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- Product Information Tabs -->
-    <section class="product-tabs-section">
+
+    <!-- =====================================================
+         TABS DE INFORMACIÓN
+    ====================================================== -->
+    <section
+        class="product-tabs-section"
+        id="productTabsSection"
+        style="display: none;"
+    >
+
         <div class="container">
+
             <div class="tabs">
+
+
+                <!-- Navegación -->
                 <div class="tabs-nav">
-                    <button class="tab-btn active" data-tab="description">Descripción</button>
-                    <button class="tab-btn" data-tab="specs">Especificaciones</button>
-                    <button class="tab-btn" data-tab="features">Características</button>
-                    <button class="tab-btn" data-tab="reviews">Reseñas (36)</button>
+
+                    <button
+                        type="button"
+                        class="tab-btn active"
+                        data-tab="description"
+                    >
+                        Descripción
+                    </button>
+
+                    <button
+                        type="button"
+                        class="tab-btn"
+                        data-tab="specs"
+                    >
+                        Especificaciones
+                    </button>
+
+                    <button
+                        type="button"
+                        class="tab-btn"
+                        data-tab="features"
+                    >
+                        Características
+                    </button>
+
                 </div>
-                
+
+
                 <div class="tabs-content">
-                    <!-- Description Tab -->
-                    <div class="tab-panel active" id="description">
-                        <h2>Descripción del Producto</h2>
-                        <p>PRO X2 SUPERSTRIKE supone un gran avance en la tecnología de latencia de clic ultrabaja. El revolucionario Sistema de Respuesta Háptica Inductiva (HITS) acelera la velocidad de clic con puntos de activación ajustables y puntos de reinicio del disparador rápido para ambas teclas principales del mouse.</p>
-                        
-                        <h3>Características Principales:</h3>
-                        <ul>
-                            <li>Sistema de Respuesta Háptica Inductiva (HITS) para velocidad de clic ultrarrápida</li>
-                            <li>Puntos de activación y reinicio totalmente ajustables</li>
-                            <li>Sensor HERO 2 de 44K DPI con seguimiento sub-micrón</li>
-                            <li>Conectividad inalámbrica LIGHTSPEED con latencia de 1ms</li>
-                            <li>Diseño ultraligero de solo 60g</li>
-                            <li>Batería de hasta 95 horas con una sola carga</li>
-                            <li>Compatible con POWERPLAY para carga inalámbrica continua</li>
-                        </ul>
-                        
-                        <h3>Control Háptico Preciso</h3>
-                        <p>Experimenta una sensación de clic totalmente personalizable con retroalimentación háptica ajustable. Define exactamente cómo y cuándo se activa cada clic para obtener la máxima precisión en cada partida.</p>
-                    </div>
-                    
-                    <!-- Specifications Tab -->
-                    <div class="tab-panel" id="specs">
-                        <h2>Especificaciones Técnicas</h2>
-                        
-                        <div class="specs-grid">
-                            <div class="spec-item">
-                                <h4>Sensor</h4>
-                                <p>HERO 2 de 44,000 DPI</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Conectividad</h4>
-                                <p>LIGHTSPEED Inalámbrico (2.4 GHz)</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Velocidad de Respuesta</h4>
-                                <p>1ms (1000Hz)</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Peso</h4>
-                                <p>60g (sin cable)</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Batería</h4>
-                                <p>Hasta 95 horas</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Botones Programables</h4>
-                                <p>5 botones totalmente programables</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Dimensiones</h4>
-                                <p>125 x 63.5 x 40 mm</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Compatible con</h4>
-                                <p>Windows 10+, macOS 10.14+</p>
-                            </div>
-                        </div>
-                        
-                        <h3>En la Caja</h3>
-                        <ul>
-                            <li>Ratón PRO X2 SUPERSTRIKE</li>
-                            <li>Receptor USB LIGHTSPEED</li>
-                            <li>Cable de carga USB-C a USB-A</li>
-                            <li>Adaptador de extensión USB</li>
-                            <li>Documentación del usuario</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Features Tab -->
-                    <div class="tab-panel" id="features">
-                        <h2>Características Clave</h2>
-                        
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <span class="material-icons">bolt</span>
-                                </div>
-                                <div class="feature-content">
-                                    <h3>Sistema HITS</h3>
-                                    <p>El revolucionario Sistema de Respuesta Háptica Inductiva elimina la necesidad de microinterruptores tradicionales, ofreciendo tiempos de respuesta sin precedentes.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <span class="material-icons">tune</span>
-                                </div>
-                                <div class="feature-content">
-                                    <h3>Ajustes Personalizables</h3>
-                                    <p>Configura puntos de activación y reinicio independientes para cada botón principal a través del software G HUB.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <span class="material-icons">straighten</span>
-                                </div>
-                                <div class="feature-content">
-                                    <h3>Sensor HERO 2</h3>
-                                    <p>Seguimiento de precisión sub-micrón hasta 44,000 DPI sin suavizado, filtrado o aceleración.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <span class="material-icons">network_wifi</span>
-                                </div>
-                                <div class="feature-content">
-                                    <h3>LIGHTSPEED Wireless</h3>
-                                    <p>Conectividad inalámbrica profesional con latencia de 1ms, tan rápida como conexiones cableadas.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <span class="material-icons">battery_charging_full</span>
-                                </div>
-                                <div class="feature-content">
-                                    <h3>Batería de Larga Duración</h3>
-                                    <p>Hasta 95 horas de juego continuo con una sola carga. Compatible con POWERPLAY para carga inalámbrica.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <span class="material-icons">fitness_center</span>
-                                </div>
-                                <div class="feature-content">
-                                    <h3>Diseño Ultraligero</h3>
-                                    <p>Solo 60g de peso para movimientos rápidos y precisos sin fatiga durante sesiones largas.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Reviews Tab -->
-                    <div class="tab-panel" id="reviews">
-                        <div class="reviews-summary">
-                            <div class="reviews-score">
-                                <div class="score-number">4.5</div>
-                                <div class="score-stars">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                </div>
-                                <div class="score-text">Basado en 36 reseñas</div>
-                            </div>
-                            
-                            <div class="reviews-bars">
-                                <div class="review-bar">
-                                    <span>5 estrellas</span>
-                                    <div class="bar"><div class="fill" style="width: 70%;"></div></div>
-                                    <span>25</span>
-                                </div>
-                                <div class="review-bar">
-                                    <span>4 estrellas</span>
-                                    <div class="bar"><div class="fill" style="width: 20%;"></div></div>
-                                    <span>7</span>
-                                </div>
-                                <div class="review-bar">
-                                    <span>3 estrellas</span>
-                                    <div class="bar"><div class="fill" style="width: 8%;"></div></div>
-                                    <span>3</span>
-                                </div>
-                                <div class="review-bar">
-                                    <span>2 estrellas</span>
-                                    <div class="bar"><div class="fill" style="width: 2%;"></div></div>
-                                    <span>1</span>
-                                </div>
-                                <div class="review-bar">
-                                    <span>1 estrella</span>
-                                    <div class="bar"><div class="fill" style="width: 0%;"></div></div>
-                                    <span>0</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="reviews-list">
-                            <div class="review-item">
-                                <div class="review-header">
-                                    <div class="review-author">
-                                        <div class="author-avatar">
-                                            <span class="material-icons">person</span>
-                                        </div>
-                                        <div class="author-info">
-                                            <div class="author-name">Carlos M.</div>
-                                            <div class="review-date">15 de febrero de 2026</div>
-                                        </div>
-                                    </div>
-                                    <div class="review-stars">
-                                        <span class="material-icons">star</span>
-                                        <span class="material-icons">star</span>
-                                        <span class="material-icons">star</span>
-                                        <span class="material-icons">star</span>
-                                        <span class="material-icons">star</span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <h4>Increíble tecnología HITS</h4>
-                                    <p>La tecnología HITS es realmente revolucionaria. Los clics son instantáneos y la capacidad de ajustar los puntos de activación es perfecta para mi estilo de juego. Sin duda el mejor ratón gaming que he tenido.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="review-item">
-                                <div class="review-header">
-                                    <div class="review-author">
-                                        <div class="author-avatar">
-                                            <span class="material-icons">person</span>
-                                        </div>
-                                        <div class="author-info">
-                                            <div class="author-name">Ana R.</div>
-                                            <div class="review-date">12 de febrero de 2026</div>
-                                        </div>
-                                    </div>
-                                    <div class="review-stars">
-                                        <span class="material-icons">star</span>
-                                        <span class="material-icons">star</span>
-                                        <span class="material-icons">star</span>
-                                        <span class="material-icons">star</span>
-                                        <span class="material-icons">star_border</span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <h4>Excelente rendimiento</h4>
-                                    <p>Muy contenta con la compra. Es ultraligero y la batería dura muchísimo. El único pero es el precio, pero la calidad lo justifica.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="btn btn-secondary">Ver Todas las Reseñas</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Related Products -->
-    <section class="related-products">
-        <div class="container">
-            <h2 class="section-title">También te Puede Gustar</h2>
-            
-            <div class="products-carousel" id="relatedProductsGrid">
-                <div class="product-card">
-                    <a href="product.html" class="product-link">
-                        <div class="product-image">
-                            <div class="product-image-placeholder">
-                                <span class="material-icons">keyboard</span>
-                            </div>
+
+                    <!-- ======================================
+                         DESCRIPCIÓN
+                    ======================================= -->
+                    <div
+                        class="tab-panel active"
+                        id="description"
+                    >
+
+                        <h2>
+                            Descripción del Producto
+                        </h2>
+
+                        <p id="fullDescription">
+                        </p>
+
+                    </div>
+
+
+                    <!-- ======================================
+                         ESPECIFICACIONES
+                    ======================================= -->
+                    <div
+                        class="tab-panel"
+                        id="specs"
+                    >
+
+                        <h2>
+                            Especificaciones Técnicas
+                        </h2>
+
+                        <div
+                            class="specs-grid"
+                            id="specsGrid"
+                        >
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-name">PRO X TKL RAPID</h3>
-                            <p class="product-subtitle">Teclado mecánico gaming</p>
-                            <div class="product-price">
-                                <span class="price-current">189,99 €</span>
-                            </div>
-                        </div>
-                    </a>
+
+                    </div>
+
+
+                    <!-- ======================================
+                         CARACTERÍSTICAS
+                    ======================================= -->
+                    <div
+                        class="tab-panel"
+                        id="features"
+                    >
+
+                        <h2>
+                            Características Principales
+                        </h2>
+
+                        <ul id="featuresList">
+                        </ul>
+
+                    </div>
+
                 </div>
-                
-                <div class="product-card">
-                    <a href="product.html" class="product-link">
-                        <div class="product-image">
-                            <div class="product-image-placeholder">
-                                <span class="material-icons">headset</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">PRO X 2</h3>
-                            <p class="product-subtitle">Auriculares inalámbricos</p>
-                            <div class="product-price">
-                                <span class="price-current">249,99 €</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="product-card">
-                    <a href="product.html" class="product-link">
-                        <div class="product-image">
-                            <div class="product-image-placeholder">
-                                <span class="material-icons">crop_square</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">POWERPLAY</h3>
-                            <p class="product-subtitle">Alfombrilla con carga inalámbrica</p>
-                            <div class="product-price">
-                                <span class="price-current">119,99 €</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="product-card">
-                    <a href="product.html" class="product-link">
-                        <div class="product-image">
-                            <div class="product-image-placeholder">
-                                <span class="material-icons">mouse</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">PRO X SUPERLIGHT 2</h3>
-                            <p class="product-subtitle">Ratón inalámbrico ultra ligero</p>
-                            <div class="product-price">
-                                <span class="price-current">159,99 €</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+
             </div>
 
         </div>
+
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+
+    <!-- =====================================================
+         PRODUCTOS RELACIONADOS
+    ====================================================== -->
+    <section
+        class="related-products"
+        id="relatedProductsSection"
+        style="display: none;"
+    >
+
         <div class="container">
+
+            <h2 class="section-title">
+                También te Puede Gustar
+            </h2>
+
+            <div
+                class="products-carousel"
+                id="relatedProductsGrid"
+            >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer
+        class="footer"
+        id="footer"
+    >
+
+        <div class="container">
+
             <div class="footer-content">
-                <div class="footer-column">
-                    <h4>TechStore</h4>
-                    <ul>
-                        <li><a href="#">Nuestra historia</a></li>
-                        <li><a href="#">Empleo</a></li>
-                        <li><a href="#">Inversores</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Sostenibilidad</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Ver Productos</h4>
-                    <ul>
-                        <li><a href="shop.html">Ratones Gaming</a></li>
-                        <li><a href="shop.html">Teclados Gaming</a></li>
-                        <li><a href="shop.html">Auriculares</a></li>
-                        <li><a href="shop.html">Alfombrillas</a></li>
-                        <li><a href="shop.html">Accesorios</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Atención al Cliente</h4>
-                    <ul>
-                        <li><a href="#">Asistencia</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Política de devoluciones</a></li>
-                        <li><a href="#">Envíos</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Síguenos</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram">
-                            <span class="material-icons">photo_camera</span>
-                        </a>
-                        <a href="#" aria-label="Twitter">
-                            <span class="material-icons">chat</span>
-                        </a>
-                        <a href="#" aria-label="Facebook">
-                            <span class="material-icons">public</span>
-                        </a>
-                        <a href="#" aria-label="YouTube">
-                            <span class="material-icons">play_circle</span>
-                        </a>
-                    </div>
-                    
-                    <div class="newsletter">
-                        <h5>Newsletter</h5>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Tu email" required>
-                            <button type="submit" class="btn btn-primary">
-                                <span class="material-icons">send</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 TechStore. Todos los derechos reservados.</p>
-                <div class="footer-legal">
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Términos de Servicio</a>
-                    <a href="#">Cookies</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+                <div class="footer-column">
+
+                    <h4>
+                        TechStore
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="#">
+                                Nuestra historia
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Empleo
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Inversores
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Blog
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Sostenibilidad
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Ver Productos
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="shop.html?category=mice">
+                                Ratones Gaming
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html?category=keyboards">
+                                Teclados Gaming
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html?category=headsets">
+                                Auriculares
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html?category=mousepads">
+                                Alfombrillas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html?category=accessories">
+                                Accesorios
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Atención al Cliente
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="#footer">
+                                Asistencia
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#footer">
+                                Contacto
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#footer">
+                                Política de devoluciones
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#footer">
+                                Envíos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#footer">
+                                FAQ
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Síguenos
+                    </h4>
+
+                    <div class="social-links">
+
+                        <a
+                            href="#"
+                            aria-label="Instagram"
+                        >
+                            <span class="material-icons">
+                                photo_camera
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="#"
+                            aria-label="Twitter"
+                        >
+                            <span class="material-icons">
+                                chat
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="#"
+                            aria-label="Facebook"
+                        >
+                            <span class="material-icons">
+                                public
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="#"
+                            aria-label="YouTube"
+                        >
+                            <span class="material-icons">
+                                play_circle
+                            </span>
+                        </a>
+
+                    </div>
+
+
+                    <div class="newsletter">
+
+                        <h5>
+                            Newsletter
+                        </h5>
+
+                        <form class="newsletter-form">
+
+                            <label for="newsletter-email">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                id="newsletter-email"
+                                type="email"
+                                placeholder="Tu email"
+                                required
+                            >
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                                aria-label="Enviar correo"
+                            >
+
+                                <span class="material-icons">
+                                    send
+                                </span>
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; 2026 TechStore.
+                    Todos los derechos reservados.
+                </p>
+
+                <div class="footer-legal">
+
+                    <a href="#">
+                        Política de Privacidad
+                    </a>
+
+                    <a href="#">
+                        Términos de Servicio
+                    </a>
+
+                    <a href="#">
+                        Cookies
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- SweetAlert -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+    </script>
+
+
+    <!-- =====================================================
+         LÓGICA DEL PRODUCTO
+    ====================================================== -->
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            cargarProducto
+        );
+
+
+        let productoActual = null;
+
+
+        async function cargarProducto() {
+
+            try {
+
+                const parametros =
+                    new URLSearchParams(
+                        window.location.search
+                    );
+
+                const productId =
+                    parametros.get("id")
+                    || "pro-x2-superstrike";
+
+
+                const respuesta =
+                    await fetch("products.json");
+
+
+                if (!respuesta.ok) {
+
+                    throw new Error(
+                        "No fue posible cargar products.json"
+                    );
+
+                }
+
+
+                const datos =
+                    await respuesta.json();
+
+
+                productoActual =
+                    datos.products.find(
+                        producto =>
+                            producto.id === productId
+                    );
+
+
+                if (!productoActual) {
+
+                    mostrarErrorProducto();
+
+                    return;
+
+                }
+
+
+                renderizarProducto(
+                    productoActual,
+                    datos.products
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "[PRODUCT] Error:",
+                    error
+                );
+
+                mostrarErrorProducto();
+
+            }
+
+        }
+
+
+        function renderizarProducto(
+            producto,
+            todosProductos
+        ) {
+
+            document.title =
+                producto.name
+                + " | TechStore";
+
+
+            document.querySelector(
+                'meta[name="description"]'
+            ).setAttribute(
+                "content",
+                producto.name
+                + " - "
+                + producto.subtitle
+            );
+
+
+            document.getElementById(
+                "breadcrumbProduct"
+            ).textContent =
+                producto.name;
+
+
+            document.getElementById(
+                "productSeries"
+            ).textContent =
+                producto.series.toUpperCase()
+                + " Series";
+
+
+            document.querySelector(
+                ".product-title"
+            ).textContent =
+                producto.name;
+
+
+            document.querySelector(
+                ".product-description"
+            ).textContent =
+                producto.subtitle;
+
+
+            document.querySelector(
+                ".price-current"
+            ).textContent =
+                formatearPrecio(
+                    producto.price
+                );
+
+
+            const originalPrice =
+                document.getElementById(
+                    "originalPrice"
+                );
+
+
+            if (producto.originalPrice) {
+
+                originalPrice.textContent =
+                    formatearPrecio(
+                        producto.originalPrice
+                    );
+
+                originalPrice.style.display =
+                    "inline";
+
+            } else {
+
+                originalPrice.style.display =
+                    "none";
+
+            }
+
+
+            document.getElementById(
+                "ratingCount"
+            ).textContent =
+                "("
+                + producto.reviewCount
+                + " reseñas)";
+
+
+            renderizarEstrellas(
+                producto.rating
+            );
+
+
+            renderizarGaleria(
+                producto
+            );
+
+
+            renderizarColores(
+                producto.colors
+            );
+
+
+            document.getElementById(
+                "fullDescription"
+            ).textContent =
+                producto.description;
+
+
+            renderizarCaracteristicas(
+                producto.features_list
+            );
+
+
+            renderizarEspecificaciones(
+                producto.specifications
+            );
+
+
+            renderizarRelacionados(
+                producto.id,
+                todosProductos
+            );
+
+
+            configurarCantidad();
+
+            configurarTabs();
+
+            configurarCarrito();
+
+
+            document.getElementById(
+                "productLoading"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "productLayout"
+            ).style.display =
+                "";
+
+
+            document.getElementById(
+                "productTabsSection"
+            ).style.display =
+                "";
+
+
+            document.getElementById(
+                "relatedProductsSection"
+            ).style.display =
+                "";
+
+        }
+
+
+        function renderizarGaleria(
+            producto
+        ) {
+
+            const galleryMain =
+                document.getElementById(
+                    "galleryMain"
+                );
+
+            const galleryThumbs =
+                document.getElementById(
+                    "galleryThumbs"
+                );
+
+
+            galleryMain.innerHTML = "";
+
+            galleryThumbs.innerHTML = "";
+
+
+            const imagenes =
+                producto.images
+                && producto.images.length > 0
+                    ? producto.images
+                    : [
+                        "./assets/productos/"
+                        + producto.image
+                    ];
+
+
+            imagenes.forEach(
+                (imagen, index) => {
+
+                    const galleryItem =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    galleryItem.className =
+                        "gallery-image"
+                        + (
+                            index === 0
+                                ? " active"
+                                : ""
+                        );
+
+
+                    galleryItem.innerHTML =
+                        `
+                        <img
+                            src="${imagen}"
+                            alt="${producto.name}"
+                            class="gallery-product-img"
+                        >
+                        `;
+
+
+                    galleryMain.appendChild(
+                        galleryItem
+                    );
+
+
+                    const thumb =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    thumb.type =
+                        "button";
+
+
+                    thumb.className =
+                        "thumb"
+                        + (
+                            index === 0
+                                ? " active"
+                                : ""
+                        );
+
+
+                    thumb.dataset.index =
+                        index;
+
+
+                    thumb.innerHTML =
+                        `
+                        <img
+                            src="${imagen}"
+                            alt="Vista ${index + 1} de ${producto.name}"
+                        >
+                        `;
+
+
+                    thumb.addEventListener(
+                        "click",
+                        () =>
+                            cambiarImagenGaleria(
+                                index
+                            )
+                    );
+
+
+                    galleryThumbs.appendChild(
+                        thumb
+                    );
+
+                }
+            );
+
+        }
+
+
+        function cambiarImagenGaleria(
+            index
+        ) {
+
+            const images =
+                document.querySelectorAll(
+                    ".gallery-image"
+                );
+
+
+            const thumbs =
+                document.querySelectorAll(
+                    ".thumb"
+                );
+
+
+            images.forEach(
+                image =>
+                    image.classList.remove(
+                        "active"
+                    )
+            );
+
+
+            thumbs.forEach(
+                thumb =>
+                    thumb.classList.remove(
+                        "active"
+                    )
+            );
+
+
+            if (images[index]) {
+
+                images[index]
+                    .classList.add(
+                        "active"
+                    );
+
+            }
+
+
+            if (thumbs[index]) {
+
+                thumbs[index]
+                    .classList.add(
+                        "active"
+                    );
+
+            }
+
+        }
+
+
+        function renderizarColores(
+            colores
+        ) {
+
+            const contenedor =
+                document.getElementById(
+                    "colorOptions"
+                );
+
+
+            contenedor.innerHTML = "";
+
+
+            const mapaColores = {
+
+                Negro: "#000000",
+
+                Blanco: "#ffffff",
+
+                Rosa: "#ff9abb",
+
+                Azul: "#2980b9",
+
+                Lila: "#9b59b6"
+
+            };
+
+
+            colores.forEach(
+                (color, index) => {
+
+                    const boton =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    boton.type =
+                        "button";
+
+
+                    boton.className =
+                        "color-option"
+                        + (
+                            index === 0
+                                ? " active"
+                                : ""
+                        );
+
+
+                    boton.dataset.color =
+                        normalizarColor(
+                            color
+                        );
+
+
+                    boton.setAttribute(
+                        "aria-label",
+                        color
+                    );
+
+
+                    const borde =
+                        color === "Blanco"
+                            ? "border: 1px solid #ddd;"
+                            : "";
+
+
+                    boton.innerHTML =
+                        `
+                        <span
+                            class="color-swatch"
+                            style="
+                                background:
+                                ${mapaColores[color] || "#777"};
+                                ${borde}
+                            "
+                        ></span>
+
+                        <span class="color-name">
+                            ${color}
+                        </span>
+                        `;
+
+
+                    boton.addEventListener(
+                        "click",
+                        () => {
+
+                            document
+                                .querySelectorAll(
+                                    ".color-option"
+                                )
+                                .forEach(
+                                    option =>
+                                        option.classList
+                                            .remove(
+                                                "active"
+                                            )
+                                );
+
+
+                            boton.classList.add(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    contenedor.appendChild(
+                        boton
+                    );
+
+                }
+            );
+
+        }
+
+
+        function normalizarColor(
+            color
+        ) {
+
+            const mapa = {
+
+                Negro: "black",
+
+                Blanco: "white",
+
+                Rosa: "pink",
+
+                Azul: "blue",
+
+                Lila: "purple"
+
+            };
+
+
+            return mapa[color]
+                || color.toLowerCase();
+
+        }
+
+
+        function renderizarEstrellas(
+            rating
+        ) {
+
+            const estrellas =
+                document.getElementById(
+                    "productStars"
+                );
+
+
+            estrellas.innerHTML = "";
+
+
+            const completas =
+                Math.floor(rating);
+
+
+            const decimal =
+                rating - completas;
+
+
+            for (
+                let i = 0;
+                i < 5;
+                i++
+            ) {
+
+                const estrella =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                estrella.className =
+                    "material-icons";
+
+
+                if (i < completas) {
+
+                    estrella.textContent =
+                        "star";
+
+                } else if (
+                    i === completas
+                    && decimal >= 0.5
+                ) {
+
+                    estrella.textContent =
+                        "star_half";
+
+                } else {
+
+                    estrella.textContent =
+                        "star_border";
+
+                }
+
+
+                estrellas.appendChild(
+                    estrella
+                );
+
+            }
+
+        }
+
+
+        function renderizarCaracteristicas(
+            caracteristicas
+        ) {
+
+            const lista =
+                document.getElementById(
+                    "featuresList"
+                );
+
+
+            lista.innerHTML = "";
+
+
+            caracteristicas.forEach(
+                caracteristica => {
+
+                    const item =
+                        document.createElement(
+                            "li"
+                        );
+
+
+                    item.textContent =
+                        caracteristica;
+
+
+                    lista.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+        }
+
+
+        function renderizarEspecificaciones(
+            especificaciones
+        ) {
+
+            const contenedor =
+                document.getElementById(
+                    "specsGrid"
+                );
+
+
+            contenedor.innerHTML = "";
+
+
+            const nombres = {
+
+                sensor:
+                    "Sensor",
+
+                connectivity:
+                    "Conectividad",
+
+                responseRate:
+                    "Velocidad de Respuesta",
+
+                weight:
+                    "Peso",
+
+                battery:
+                    "Batería",
+
+                buttons:
+                    "Botones Programables",
+
+                dimensions:
+                    "Dimensiones",
+
+                compatibility:
+                    "Compatible con"
+
+            };
+
+
+            Object.entries(
+                especificaciones
+            ).forEach(
+                ([clave, valor]) => {
+
+                    if (!valor) {
+                        return;
+                    }
+
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "spec-item";
+
+
+                    item.innerHTML =
+                        `
+                        <h4>
+                            ${nombres[clave] || clave}
+                        </h4>
+
+                        <p>
+                            ${valor}
+                        </p>
+                        `;
+
+
+                    contenedor.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+        }
+
+
+        function renderizarRelacionados(
+            productoId,
+            productos
+        ) {
+
+            const contenedor =
+                document.getElementById(
+                    "relatedProductsGrid"
+                );
+
+
+            contenedor.innerHTML = "";
+
+
+            const relacionados =
+                productos
+                    .filter(
+                        producto =>
+                            producto.id
+                            !== productoId
+                    )
+                    .slice(
+                        0,
+                        4
+                    );
+
+
+            relacionados.forEach(
+                producto => {
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    card.className =
+                        "product-card";
+
+
+                    const imagen =
+                        producto.images
+                        && producto.images.length
+                            ? producto.images[0]
+                            : "";
+
+
+                    card.innerHTML =
+                        `
+                        <a
+                            href="product.html?id=${producto.id}"
+                            class="product-link"
+                        >
+
+                            <div class="product-image">
+
+                                <img
+                                    src="${imagen}"
+                                    alt="${producto.name}"
+                                    class="related-product-img"
+                                >
+
+                            </div>
+
+                            <div class="product-info">
+
+                                <h3 class="product-name">
+                                    ${producto.name}
+                                </h3>
+
+                                <p class="product-subtitle">
+                                    ${producto.subtitle}
+                                </p>
+
+                                <div class="product-price">
+
+                                    <span class="price-current">
+                                        ${formatearPrecio(producto.price)}
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </a>
+                        `;
+
+
+                    contenedor.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+        function configurarCantidad() {
+
+            const minus =
+                document.getElementById(
+                    "qtyMinus"
+                );
+
+            const plus =
+                document.getElementById(
+                    "qtyPlus"
+                );
+
+            const quantity =
+                document.getElementById(
+                    "quantity"
+                );
+
+
+            minus.addEventListener(
+                "click",
+                () => {
+
+                    let valor =
+                        Number(
+                            quantity.value
+                        );
+
+
+                    if (valor > 1) {
+
+                        valor--;
+
+                        quantity.value =
+                            valor;
+
+                    }
+
+                }
+            );
+
+
+            plus.addEventListener(
+                "click",
+                () => {
+
+                    let valor =
+                        Number(
+                            quantity.value
+                        );
+
+
+                    if (valor < 10) {
+
+                        valor++;
+
+                        quantity.value =
+                            valor;
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        function configurarTabs() {
+
+            const botones =
+                document.querySelectorAll(
+                    ".tab-btn"
+                );
+
+
+            const panels =
+                document.querySelectorAll(
+                    ".tab-panel"
+                );
+
+
+            botones.forEach(
+                boton => {
+
+                    boton.addEventListener(
+                        "click",
+                        () => {
+
+                            botones.forEach(
+                                item =>
+                                    item.classList
+                                        .remove(
+                                            "active"
+                                        )
+                            );
+
+
+                            panels.forEach(
+                                panel =>
+                                    panel.classList
+                                        .remove(
+                                            "active"
+                                        )
+                            );
+
+
+                            boton.classList.add(
+                                "active"
+                            );
+
+
+                            const panel =
+                                document.getElementById(
+                                    boton.dataset.tab
+                                );
+
+
+                            if (panel) {
+
+                                panel.classList.add(
+                                    "active"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+        function configurarCarrito() {
+
+            const boton =
+                document.getElementById(
+                    "addToCart"
+                );
+
+
+            boton.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        !productoActual
+                    ) {
+                        return;
+                    }
+
+
+                    if (
+                        productoActual.inStock
+                        === false
+                    ) {
+
+                        if (
+                            typeof Swal
+                            !== "undefined"
+                        ) {
+
+                            Swal.fire({
+
+                                icon:
+                                    "warning",
+
+                                title:
+                                    "Producto agotado",
+
+                                text:
+                                    "Este producto no está disponible temporalmente."
+
+                            });
+
+                        }
+
+                        return;
+
+                    }
+
+
+                    const cantidad =
+                        Number(
+                            document.getElementById(
+                                "quantity"
+                            ).value
+                        );
+
+
+                    const colorSeleccionado =
+                        document.querySelector(
+                            ".color-option.active"
+                        );
+
+
+                    const color =
+                        colorSeleccionado
+                            ? colorSeleccionado
+                                .dataset.color
+                            : "black";
+
+
+                    let carrito = [];
+
+
+                    try {
+
+                        carrito =
+                            JSON.parse(
+                                localStorage.getItem(
+                                    "cart"
+                                )
+                            )
+                            || [];
+
+                    } catch {
+
+                        carrito = [];
+
+                    }
+
+
+                    const existente =
+                        carrito.find(
+                            item =>
+                                item.id
+                                === productoActual.id
+                                && item.color
+                                === color
+                        );
+
+
+                    if (existente) {
+
+                        existente.quantity +=
+                            cantidad;
+
+                    } else {
+
+                        carrito.push({
+
+                            id:
+                                productoActual.id,
+
+                            name:
+                                productoActual.name,
+
+                            subtitle:
+                                productoActual.subtitle,
+
+                            price:
+                                productoActual.price,
+
+                            image:
+                                productoActual.images[0],
+
+                            color:
+                                color,
+
+                            quantity:
+                                cantidad
+
+                        });
+
+                    }
+
+
+                    localStorage.setItem(
+                        "cart",
+                        JSON.stringify(
+                            carrito
+                        )
+                    );
+
+
+                    actualizarContadorCarrito(
+                        carrito
+                    );
+
+
+                    if (
+                        typeof Swal
+                        !== "undefined"
+                    ) {
+
+                        Swal.fire({
+
+                            icon:
+                                "success",
+
+                            title:
+                                "Producto agregado",
+
+                            text:
+                                productoActual.name
+                                + " fue agregado al carrito.",
+
+                            timer:
+                                1600,
+
+                            showConfirmButton:
+                                false
+
+                        });
+
+                    }
+
+                }
+            );
+
+
+            actualizarContadorInicial();
+
+        }
+
+
+        function actualizarContadorInicial() {
+
+            try {
+
+                const carrito =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "cart"
+                        )
+                    )
+                    || [];
+
+
+                actualizarContadorCarrito(
+                    carrito
+                );
+
+            } catch {
+
+                actualizarContadorCarrito(
+                    []
+                );
+
+            }
+
+        }
+
+
+        function actualizarContadorCarrito(
+            carrito
+        ) {
+
+            const cantidad =
+                carrito.reduce(
+                    (
+                        total,
+                        item
+                    ) =>
+                        total
+                        + Number(
+                            item.quantity
+                            || 0
+                        ),
+                    0
+                );
+
+
+            document
+                .querySelectorAll(
+                    ".cart-count"
+                )
+                .forEach(
+                    contador => {
+
+                        contador.textContent =
+                            cantidad;
+
+                    }
+                );
+
+        }
+
+
+        function formatearPrecio(
+            precio
+        ) {
+
+            return new Intl.NumberFormat(
+                "es-ES",
+                {
+                    style:
+                        "currency",
+
+                    currency:
+                        "EUR"
+                }
+            ).format(
+                precio
+            );
+
+        }
+
+
+        function mostrarErrorProducto() {
+
+            document.getElementById(
+                "productLoading"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "productLayout"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "productError"
+            ).style.display =
+                "";
+
+        }
+
+    </script>
+
+
+    <!-- JS general -->
     <script src="script.js"></script>
+
 </body>
+
 </html>

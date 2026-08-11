@@ -6,53 +6,148 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.IOException;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
-public class ScreenshotUtils {
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-    public static void tomarCaptura(
+public final class ScreenshotUtils {
+
+    private static final String SCREENSHOT_DIRECTORY =
+            "target/screenshots";
+
+
+    private static final DateTimeFormatter FORMATTER =
+            DateTimeFormatter.ofPattern(
+                    "yyyyMMdd_HHmmss_SSS"
+            );
+
+
+    private ScreenshotUtils() {
+        // Utility class.
+    }
+
+
+    public static String takeScreenshot(
             WebDriver driver,
-            String nombrePrueba) {
+            String testName
+    ) {
 
-        if (driver == null) {
-            return;
+        if (
+                driver == null
+        ) {
+
+            return "";
+
         }
+
+
+        if (
+                !(driver instanceof TakesScreenshot)
+        ) {
+
+            return "";
+
+        }
+
 
         try {
 
-            File screenshot =
+            File source =
                     ((TakesScreenshot) driver)
-                            .getScreenshotAs(OutputType.FILE);
+                            .getScreenshotAs(
+                                    OutputType.FILE
+                            );
 
-            Path carpeta =
-                    Path.of("target", "screenshots");
 
-            Files.createDirectories(carpeta);
-
-            Path destino =
-                    carpeta.resolve(
-                            nombrePrueba + ".png"
+            Path directory =
+                    Path.of(
+                            SCREENSHOT_DIRECTORY
                     );
 
+
+            Files.createDirectories(
+                    directory
+            );
+
+
+            String safeTestName =
+                    sanitizeFileName(
+                            testName
+                    );
+
+
+            String timestamp =
+                    LocalDateTime
+                            .now()
+                            .format(
+                                    FORMATTER
+                            );
+
+
+            String fileName =
+                    safeTestName
+                            + "_"
+                            + timestamp
+                            + ".png";
+
+
+            Path destination =
+                    directory.resolve(
+                            fileName
+                    );
+
+
             Files.copy(
-                    screenshot.toPath(),
-                    destino,
+                    source.toPath(),
+                    destination,
                     StandardCopyOption.REPLACE_EXISTING
             );
 
-            System.out.println(
-                    "[SCREENSHOT] Guardado en: "
-                            + destino
-            );
 
-        } catch (IOException e) {
+            return destination
+                    .toAbsolutePath()
+                    .toString();
+
+        } catch (
+                IOException exception
+        ) {
 
             System.err.println(
-                    "[ERROR] No se pudo guardar screenshot: "
-                            + e.getMessage()
+                    "No se pudo guardar el screenshot: "
+                            + exception.getMessage()
             );
+
+
+            return "";
+
         }
+
     }
+
+
+    private static String sanitizeFileName(
+            String value
+    ) {
+
+        if (
+                value == null
+                || value.isBlank()
+        ) {
+
+            return "test";
+        }
+
+
+        return value
+                .replaceAll(
+                        "[^a-zA-Z0-9._-]",
+                        "_"
+                );
+
+    }
+
 }

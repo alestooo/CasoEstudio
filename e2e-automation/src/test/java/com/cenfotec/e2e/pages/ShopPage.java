@@ -1,168 +1,403 @@
 package com.cenfotec.e2e.pages;
 
-import com.cenfotec.e2e.utils.WaitUtils;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class ShopPage {
 
     private final WebDriver driver;
-    private final WaitUtils wait;
+    private final WebDriverWait wait;
 
-    private final By productCount =
-            By.id("productCount");
-
-    private final By sortSelect =
-            By.id("sortSelect");
 
     private final By productCards =
-            By.cssSelector(".product-card");
+            By.cssSelector(
+                    ".product-card"
+            );
 
-    private final By wirelessCheckbox =
+
+    private final By productCount =
+            By.id(
+                    "productCount"
+            );
+
+
+    private final By wirelessFilter =
             By.cssSelector(
                     "input[name='connectivity'][value='wireless']"
             );
 
-    private final By wiredCheckbox =
-            By.cssSelector(
-                    "input[name='connectivity'][value='wired']"
+
+    private final By sortSelect =
+            By.id(
+                    "sortSelect"
             );
 
-    private final By proSeriesCheckbox =
+
+    private final By proXSuperlight2Link =
             By.cssSelector(
-                    "input[name='series'][value='pro']"
+                    "a[href*='product.html?id=pro-x-superlight-2']"
             );
 
-    private final By g5SeriesCheckbox =
+
+    private final By proXSuperlight2AddCart =
             By.cssSelector(
-                    "input[name='series'][value='g5']"
+                    ".btn-add-cart[data-product-id='pro-x-superlight-2']"
             );
 
-    private final By firstProduct =
+
+    private final By favoriteButtons =
             By.cssSelector(
-                    "a[href='product.html?id=pro-x2-superstrike']"
+                    ".product-card .favorite-btn"
             );
 
-    private final By superlightProduct =
-            By.cssSelector(
-                    "a[href='product.html?id=pro-x-superlight-2']"
-            );
-
-    private final By addSuperlightToCart =
-            By.cssSelector(
-                    "button[data-product-id='pro-x-superlight-2']"
-            );
 
     private final By cartCount =
-            By.className("cart-count");
+            By.cssSelector(
+                    ".cart-count"
+            );
 
-    public ShopPage(WebDriver driver) {
 
-        this.driver = driver;
-        this.wait = new WaitUtils(driver);
+    public ShopPage(
+            WebDriver driver
+    ) {
+
+        this.driver =
+                driver;
+
+        this.wait =
+                new WebDriverWait(
+                        driver,
+                        Duration.ofSeconds(3)
+                );
+
     }
 
-    public String obtenerCantidadProductos() {
 
-        return wait.esperarVisible(
-                productCount
-        ).getText();
+    public int getProductCardCount() {
+
+        wait.until(
+                ExpectedConditions
+                        .presenceOfAllElementsLocatedBy(
+                                productCards
+                        )
+        );
+
+
+        return driver
+                .findElements(
+                        productCards
+                )
+                .size();
+
     }
 
-    public int obtenerCantidadProductosVisibles() {
 
-        List<WebElement> productos =
-                driver.findElements(productCards);
+    public int getDisplayedProductCountAsInt() {
 
-        return (int) productos.stream()
-                .filter(WebElement::isDisplayed)
-                .count();
+        String value =
+                wait.until(
+                        ExpectedConditions
+                                .visibilityOfElementLocated(
+                                        productCount
+                                )
+                )
+                        .getText()
+                        .replaceAll(
+                                "[^0-9]",
+                                ""
+                        );
+
+
+        return value.isBlank()
+                ? 0
+                : Integer.parseInt(
+                        value
+                );
+
     }
 
-    public void ordenarPorPrecioMenorAMayor() {
 
-        WebElement elemento =
-                wait.esperarVisible(sortSelect);
+    public void selectWirelessFilter() {
+
+        WebElement checkbox =
+                wait.until(
+                        ExpectedConditions
+                                .elementToBeClickable(
+                                        wirelessFilter
+                                )
+                );
+
+
+        if (
+                !checkbox.isSelected()
+        ) {
+
+            checkbox.click();
+
+        }
+
+    }
+
+
+    public boolean isWirelessFilterSelected() {
+
+        return driver
+                .findElement(
+                        wirelessFilter
+                )
+                .isSelected();
+
+    }
+
+
+    public void sortPriceLowToHigh() {
 
         Select select =
-                new Select(elemento);
+                new Select(
+                        wait.until(
+                                ExpectedConditions
+                                        .visibilityOfElementLocated(
+                                                sortSelect
+                                        )
+                        )
+                );
+
 
         select.selectByValue(
                 "price-asc"
         );
+
     }
 
-    public void filtrarWireless() {
 
-        int cantidadInicial =
-                obtenerCantidadProductosVisibles();
+    public String getSelectedSortValue() {
 
-        wait.esperarClickeable(
-                wirelessCheckbox
+        Select select =
+                new Select(
+                        driver.findElement(
+                                sortSelect
+                        )
+                );
+
+
+        return select
+                .getFirstSelectedOption()
+                .getAttribute(
+                        "value"
+                );
+
+    }
+
+
+    public boolean isProXSuperlight2Visible() {
+
+        return !driver
+                .findElements(
+                        proXSuperlight2Link
+                )
+                .isEmpty();
+
+    }
+
+
+    public void openProXSuperlight2() {
+
+        wait.until(
+                ExpectedConditions
+                        .elementToBeClickable(
+                                proXSuperlight2Link
+                        )
         ).click();
 
-        wait.esperarCantidadVisiblesMenorQue(
-                productCards,
-                cantidadInicial
+    }
+
+
+    public boolean isOnProductPage() {
+
+        return driver
+                .getCurrentUrl()
+                .contains(
+                        "product.html"
+                );
+
+    }
+
+
+    public String getCurrentUrl() {
+
+        return driver
+                .getCurrentUrl();
+
+    }
+
+
+    public int getCartCount() {
+
+        try {
+
+            String value =
+                    driver
+                            .findElement(
+                                    cartCount
+                            )
+                            .getText()
+                            .replaceAll(
+                                    "[^0-9]",
+                                    ""
+                            );
+
+
+            return value.isBlank()
+                    ? 0
+                    : Integer.parseInt(
+                            value
+                    );
+
+        } catch (
+                Exception exception
+        ) {
+
+            return 0;
+
+        }
+
+    }
+
+
+    public void addProXSuperlight2ToCart() {
+
+        wait.until(
+                ExpectedConditions
+                        .elementToBeClickable(
+                                proXSuperlight2AddCart
+                        )
+        ).click();
+
+    }
+
+
+    public void toggleFavorite(
+            int index
+    ) {
+
+        List<WebElement> buttons =
+                wait.until(
+                        ExpectedConditions
+                                .presenceOfAllElementsLocatedBy(
+                                        favoriteButtons
+                                )
+                );
+
+
+        if (
+                index < 0
+                || index >= buttons.size()
+        ) {
+
+            throw new IllegalArgumentException(
+                    "Índice inválido: "
+                            + index
+            );
+
+        }
+
+
+        WebElement button =
+                buttons.get(
+                        index
+                );
+
+
+        wait.until(
+                ExpectedConditions
+                        .elementToBeClickable(
+                                button
+                        )
+        ).click();
+
+    }
+
+
+    public boolean isFavoriteActive(
+            int index
+    ) {
+
+        List<WebElement> buttons =
+                driver.findElements(
+                        favoriteButtons
+                );
+
+
+        if (
+                index < 0
+                || index >= buttons.size()
+        ) {
+
+            return false;
+
+        }
+
+
+        String icon =
+                buttons
+                        .get(index)
+                        .findElement(
+                                By.cssSelector(
+                                        ".material-icons"
+                                )
+                        )
+                        .getText()
+                        .trim();
+
+
+        return icon.equals(
+                "favorite"
         );
+
     }
 
-    public void filtrarWired() {
 
-        wait.esperarClickeable(
-                wiredCheckbox
-        ).click();
+    public boolean hasFavoritesInStorage() {
+
+        try {
+
+            Object result =
+                    ((JavascriptExecutor) driver)
+                            .executeScript(
+                                    """
+                                    const favorites =
+                                        JSON.parse(
+                                            localStorage.getItem('favorites')
+                                            || '[]'
+                                        );
+
+                                    return favorites.length > 0;
+                                    """
+                            );
+
+
+            return Boolean.TRUE
+                    .equals(
+                            result
+                    );
+
+        } catch (
+                Exception exception
+        ) {
+
+            return false;
+
+        }
+
     }
 
-    public void filtrarProSeries() {
-
-        wait.esperarClickeable(
-                proSeriesCheckbox
-        ).click();
-    }
-
-    public void filtrarG5Series() {
-
-        wait.esperarClickeable(
-                g5SeriesCheckbox
-        ).click();
-    }
-
-    public void abrirPrimerProducto() {
-
-        wait.esperarClickeable(
-                firstProduct
-        ).click();
-    }
-
-    public void abrirSuperlight() {
-
-        wait.esperarClickeable(
-                superlightProduct
-        ).click();
-    }
-
-    public void agregarSuperlightAlCarrito() {
-
-        wait.esperarClickeable(
-                addSuperlightToCart
-        ).click();
-
-        wait.esperarContadorCarritoMayorQueCero(
-                cartCount
-        );
-    }
-
-    public String obtenerCantidadCarrito() {
-
-        return wait.esperarVisible(
-                cartCount
-        ).getText();
-    }
 }

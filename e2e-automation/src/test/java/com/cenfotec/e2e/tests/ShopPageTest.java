@@ -1,76 +1,143 @@
 package com.cenfotec.e2e.tests;
 
 import com.cenfotec.e2e.base.BaseTest;
-import com.cenfotec.e2e.config.ConfigReader;
 import com.cenfotec.e2e.pages.ShopPage;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ShopPageTest extends BaseTest {
 
-    private final String SHOP_URL =
-            ConfigReader.get("teknovation.url")
-                    + "/shop.html";
+    private ShopPage shopPage;
+
+
+    @BeforeMethod
+    public void openShopPage() {
+
+        openTeknovationPage(
+                "shop.html"
+        );
+
+
+        shopPage =
+                new ShopPage(
+                        driver
+                );
+
+    }
+
 
     @Test
-    public void validarCantidadDeProductos() {
+    public void shopShouldDisplayProducts() {
 
-        driver.get(SHOP_URL);
+        Assert.assertTrue(
+                shopPage.getProductCardCount()
+                        > 0
+        );
 
-        ShopPage shopPage =
-                new ShopPage(driver);
+    }
+
+
+    @Test
+    public void wirelessFilterShouldWork() {
+
+        shopPage.selectWirelessFilter();
+
+
+        Assert.assertTrue(
+                shopPage.isWirelessFilterSelected()
+        );
+
+
+        Assert.assertTrue(
+                shopPage.getProductCardCount()
+                        > 0
+        );
+
+    }
+
+
+    @Test
+    public void sortingByPriceShouldWork() {
+
+        shopPage.sortPriceLowToHigh();
+
 
         Assert.assertEquals(
-                shopPage.obtenerCantidadProductos(),
-                "8",
-                "La cantidad inicial de productos no es correcta."
+                shopPage.getSelectedSortValue(),
+                "price-asc"
         );
+
     }
 
-    @Test
-    public void filtrarProductosInalambricos() {
-
-        driver.get(SHOP_URL);
-
-        ShopPage shopPage =
-                new ShopPage(driver);
-
-        int cantidadAntes =
-                shopPage.obtenerCantidadProductosVisibles();
-
-        Assert.assertTrue(
-                cantidadAntes > 0,
-                "Debe haber productos antes de aplicar el filtro."
-        );
-
-        shopPage.filtrarWireless();
-
-        int cantidadDespues =
-                shopPage.obtenerCantidadProductosVisibles();
-
-        Assert.assertTrue(
-                cantidadDespues < cantidadAntes,
-                "El filtro Wireless no modificó la cantidad de productos visibles."
-        );
-    }
 
     @Test
-    public void abrirProductoSuperlight() {
-
-        driver.get(SHOP_URL);
-
-        ShopPage shopPage =
-                new ShopPage(driver);
-
-        shopPage.abrirSuperlight();
+    public void shouldOpenSpecificProduct() {
 
         Assert.assertTrue(
-                driver.getCurrentUrl()
+                shopPage.isProXSuperlight2Visible()
+        );
+
+
+        shopPage.openProXSuperlight2();
+
+
+        Assert.assertTrue(
+                shopPage.isOnProductPage()
+        );
+
+
+        Assert.assertTrue(
+                shopPage
+                        .getCurrentUrl()
                         .contains(
-                                "product.html?id=pro-x-superlight-2"
-                        ),
-                "No se abrió correctamente PRO X SUPERLIGHT 2."
+                                "pro-x-superlight-2"
+                        )
         );
+
     }
+
+
+    @Test
+    public void shouldAddProductToCart() {
+
+        int before =
+                shopPage.getCartCount();
+
+
+        shopPage.addProXSuperlight2ToCart();
+
+
+        Assert.assertTrue(
+                shopPage.getCartCount()
+                        > before
+        );
+
+    }
+
+
+    @Test
+    public void shouldAddFavorite() {
+
+        shopPage.toggleFavorite(
+                0
+        );
+
+
+        Assert.assertTrue(
+                shopPage.isFavoriteActive(
+                        0
+                ),
+                "El corazón debe quedar activo."
+        );
+
+
+        Assert.assertTrue(
+                shopPage.hasFavoritesInStorage(),
+                "El favorito debe guardarse en localStorage."
+        );
+
+    }
+
 }

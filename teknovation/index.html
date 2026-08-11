@@ -1,456 +1,1246 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="TechStore - Productos gaming profesionales con tecnología avanzada"
-    />
-    <title>TechStore - Gaming Profesional</title>
+<head>
+  <meta charset="UTF-8" />
 
-    <!-- Google Material Icons -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <nav class="header-nav">
-        <div class="container">
-          <div class="nav-content">
+  <meta
+    name="description"
+    content="TechStore - Productos gaming profesionales con tecnología avanzada"
+  />
 
-<div class="nav-left">
-  <a href="index.html" class="logo">
-    <img src="./assets/logo-teknovation.png" alt="logo" height="48"/>
-  </a>
+  <title>TechStore - Gaming Profesional</title>
 
-  <ul class="nav-menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="shop.html">Tienda</a></li>
-    <li class="nav-highlight"><a href="#" id="nav-offers">Ofertas</a></li>
-    <li><a href="#footer" id="nav-support">Soporte</a></li>
-  </ul>
-</div>
+  <!-- Google Material Icons -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
 
-            <div class="header-actions">
-              <button class="icon-btn" aria-label="Buscar">
-                <span class="material-icons">search</span>
-              </button>
-              <button class="icon-btn" aria-label="Favoritos">
-                <span class="material-icons">favorite_border</span>
-              </button>
-              <button class="icon-btn" aria-label="Mi cuenta">
-                <span class="material-icons">person_outline</span>
-              </button>
-              <button class="icon-btn cart-btn" aria-label="Carrito">
-                <span class="material-icons">shopping_cart</span>
-                <span class="cart-count">0</span>
-              </button>
-            </div>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet"
+  />
 
-            <button class="mobile-menu-toggle" aria-label="Menú">
-              <span class="material-icons">menu</span>
-            </button>
+  <!-- CSS principal de Teknovation -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="header">
+
+    <nav class="header-nav">
+
+      <div class="container">
+
+        <div class="nav-content">
+
+          <!-- Parte izquierda -->
+          <div class="nav-left">
+
+            <a href="index.html" class="logo">
+
+              <img
+                src="./assets/logo-teknovation.png"
+                alt="Logo Teknovation"
+                height="48"
+              />
+
+            </a>
+
+            <ul class="nav-menu">
+
+              <li>
+                <a href="index.html">
+                  Inicio
+                </a>
+              </li>
+
+              <li>
+                <a href="shop.html">
+                  Tienda
+                </a>
+              </li>
+
+              <li class="nav-highlight">
+
+                <a
+                  href="#"
+                  id="nav-offers"
+                >
+                  Ofertas
+                </a>
+
+              </li>
+
+              <li>
+
+                <a
+                  href="#footer"
+                  id="nav-support"
+                >
+                  Soporte
+                </a>
+
+              </li>
+
+            </ul>
+
           </div>
-        </div>
-      </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-slide active">
-        <div class="hero-content">
-          <div class="hero-text">
-            <span class="hero-label">PRO X2 SUPERSTRIKE</span>
-            <h1 class="hero-title">
-              EL CLIC MÁS RÁPIDO Y TOTALMENTE PERSONALIZABLE
-            </h1>
-            <p class="hero-description">
-              El revolucionario Sistema de Respuesta Háptica Inductiva acelera
-              la velocidad del clic gracias a puntos de actuación y puntos de
-              restablecimiento del activador rápido.
-            </p>
-            <a href="product.html?id=pro-x2-superstrike" class="btn btn-primary"
-              >Comprar Ahora</a
+          <!-- Acciones del header -->
+          <div class="header-actions">
+
+            <!-- Buscar -->
+            <button
+              type="button"
+              class="icon-btn"
+              id="searchBtn"
+              aria-label="Buscar"
             >
+
+              <span class="material-icons">
+                search
+              </span>
+
+            </button>
+
+            <!-- Favoritos -->
+            <button
+              type="button"
+              class="icon-btn"
+              id="wishlistBtn"
+              aria-label="Favoritos"
+            >
+
+              <span class="material-icons">
+                favorite_border
+              </span>
+
+            </button>
+
+            <!-- Cuenta -->
+            <a
+              href="auth.html"
+              class="icon-btn"
+              id="accountBtn"
+              aria-label="Mi cuenta"
+            >
+
+              <span class="material-icons">
+                person_outline
+              </span>
+
+            </a>
+
+            <!-- Carrito -->
+            <button
+              type="button"
+              class="icon-btn cart-btn"
+              id="cartBtn"
+              aria-label="Carrito"
+            >
+
+              <span class="material-icons">
+                shopping_cart
+              </span>
+
+              <span class="cart-count">
+                0
+              </span>
+
+            </button>
+
           </div>
-          <div class="hero-image">
-            <div class="hero-image-placeholder">
-              <span class="material-icons">mouse</span>
-            </div>
-          </div>
+
+          <!-- Menú móvil -->
+          <button
+            type="button"
+            class="mobile-menu-toggle"
+            aria-label="Menú"
+          >
+
+            <span class="material-icons">
+              menu
+            </span>
+
+          </button>
+
         </div>
+
       </div>
 
-      <div class="hero-slide">
-        <div class="hero-content">
-          <div class="hero-text">
-            <span class="hero-label">RACING SERIES</span>
-            <h1 class="hero-title">PRESENTAMOS R SERIES</h1>
-            <p class="hero-description">
-              Un ecosistema de élite y personalizable creado para pilotos que
-              exigen precisión, personalización y rendimiento en cada curva.
-            </p>
-            <a href="shop.html" class="btn btn-primary">Descubrir R Series</a>
-          </div>
-          <div class="hero-image">
-            <div class="hero-image-placeholder">
-              <span class="material-icons">directions_car</span>
-            </div>
-          </div>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="hero">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+
+      <div class="hero-content">
+
+        <div class="hero-text">
+
+          <span class="hero-label">
+            PRO X2 SUPERSTRIKE
+          </span>
+
+          <h1 class="hero-title">
+            EL CLIC MÁS RÁPIDO Y TOTALMENTE PERSONALIZABLE
+          </h1>
+
+          <p class="hero-description">
+
+            El revolucionario Sistema de Respuesta Háptica Inductiva
+            acelera la velocidad del clic gracias a puntos de actuación
+            y puntos de restablecimiento del activador rápido.
+
+          </p>
+
+          <a
+            href="product.html?id=pro-x2-superstrike"
+            class="btn btn-primary"
+          >
+            Comprar Ahora
+          </a>
+
         </div>
-      </div>
 
-      <div class="hero-slide">
-        <div class="hero-content">
-          <div class="hero-text">
-            <span class="hero-label">G515 RAPID TKL</span>
-            <h1 class="hero-title">PERFIL BAJO. RENDIMIENTO RÁPIDO.</h1>
-            <p class="hero-description">
-              Combina la tecnología de interruptores analógicos ultrarrápidos y
-              de perfil bajo con un diseño excepcionalmente estilizado.
-            </p>
-            <a href="shop.html" class="btn btn-primary">Descubrir G515</a>
+        <div class="hero-image">
+
+          <div class="hero-image-placeholder">
+
+            <span class="material-icons">
+              mouse
+            </span>
+
           </div>
-          <div class="hero-image">
-            <div class="hero-image-placeholder">
-              <span class="material-icons">keyboard</span>
-            </div>
-          </div>
+
         </div>
+
       </div>
 
-      <div class="hero-slide">
-        <div class="hero-content">
-          <div class="hero-text">
-            <span class="hero-label">ASTRO SERIES</span>
-            <h1 class="hero-title">CONCEBIDOS PARA JUGAR</h1>
-            <p class="hero-description">
-              Juega en varias consolas con unos mismos auriculares. El modelo
-              A20 X con PLAYSYNC AUDIO te permite alternar al instante entre
-              consolas.
-            </p>
-            <a href="shop.html" class="btn btn-primary">Descubrir A20 X</a>
-          </div>
-          <div class="hero-image">
-            <div class="hero-image-placeholder">
-              <span class="material-icons">headset</span>
-            </div>
-          </div>
+    </div>
+
+
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+
+      <div class="hero-content">
+
+        <div class="hero-text">
+
+          <span class="hero-label">
+            RACING SERIES
+          </span>
+
+          <h1 class="hero-title">
+            PRESENTAMOS R SERIES
+          </h1>
+
+          <p class="hero-description">
+
+            Un ecosistema de élite y personalizable creado para pilotos
+            que exigen precisión, personalización y rendimiento en cada
+            curva.
+
+          </p>
+
+          <a
+            href="shop.html"
+            class="btn btn-primary"
+          >
+            Descubrir R Series
+          </a>
+
         </div>
-      </div>
 
-      <div class="hero-indicators">
-        <button class="indicator active" data-slide="0"></button>
-        <button class="indicator" data-slide="1"></button>
-        <button class="indicator" data-slide="2"></button>
-        <button class="indicator" data-slide="3"></button>
-      </div>
-    </section>
+        <div class="hero-image">
 
-    <!-- Promo Banner -->
-    <section class="promo-banner">
-      <div class="container">
-        <div class="promo-content">
-          <div class="promo-icon">
-            <span class="material-icons">card_giftcard</span>
+          <div class="hero-image-placeholder">
+
+            <span class="material-icons">
+              directions_car
+            </span>
+
           </div>
-          <div class="promo-text">
-            <h3>30€ DE DESCUENTO EN 2 O MÁS ARTÍCULOS</h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+
+      <div class="hero-content">
+
+        <div class="hero-text">
+
+          <span class="hero-label">
+            G515 RAPID TKL
+          </span>
+
+          <h1 class="hero-title">
+            PERFIL BAJO. RENDIMIENTO RÁPIDO.
+          </h1>
+
+          <p class="hero-description">
+
+            Combina la tecnología de interruptores analógicos
+            ultrarrápidos y de perfil bajo con un diseño
+            excepcionalmente estilizado.
+
+          </p>
+
+          <a
+            href="shop.html"
+            class="btn btn-primary"
+          >
+            Descubrir G515
+          </a>
+
+        </div>
+
+        <div class="hero-image">
+
+          <div class="hero-image-placeholder">
+
+            <span class="material-icons">
+              keyboard
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Slide 4 -->
+    <div class="hero-slide">
+
+      <div class="hero-content">
+
+        <div class="hero-text">
+
+          <span class="hero-label">
+            ASTRO SERIES
+          </span>
+
+          <h1 class="hero-title">
+            CONCEBIDOS PARA JUGAR
+          </h1>
+
+          <p class="hero-description">
+
+            Juega en varias consolas con unos mismos auriculares.
+            El modelo A20 X con PLAYSYNC AUDIO te permite alternar
+            al instante entre consolas.
+
+          </p>
+
+          <a
+            href="shop.html"
+            class="btn btn-primary"
+          >
+            Descubrir A20 X
+          </a>
+
+        </div>
+
+        <div class="hero-image">
+
+          <div class="hero-image-placeholder">
+
+            <span class="material-icons">
+              headset
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Indicadores -->
+    <div class="hero-indicators">
+
+      <button
+        type="button"
+        class="indicator active"
+        data-slide="0"
+        aria-label="Slide 1"
+      ></button>
+
+      <button
+        type="button"
+        class="indicator"
+        data-slide="1"
+        aria-label="Slide 2"
+      ></button>
+
+      <button
+        type="button"
+        class="indicator"
+        data-slide="2"
+        aria-label="Slide 3"
+      ></button>
+
+      <button
+        type="button"
+        class="indicator"
+        data-slide="3"
+        aria-label="Slide 4"
+      ></button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROMOCIÓN
+  ========================== -->
+  <section class="promo-banner">
+
+    <div class="container">
+
+      <div class="promo-content">
+
+        <div class="promo-icon">
+
+          <span class="material-icons">
+            card_giftcard
+          </span>
+
+        </div>
+
+        <div class="promo-text">
+
+          <h3>
+            30€ DE DESCUENTO EN 2 O MÁS ARTÍCULOS
+          </h3>
+
+          <p>
+
+            Consigue descuento al comprar 2 o más artículos.
+            Equípate y haz que cada partida sea inolvidable.
+
+          </p>
+
+        </div>
+
+        <a
+          href="shop.html"
+          class="btn btn-secondary"
+        >
+          Compra Ahora
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SERIES
+  ========================== -->
+  <section class="series-section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Descubre Nuestras Series
+      </h2>
+
+      <div class="series-grid">
+
+
+        <!-- PRO -->
+        <div class="series-card">
+
+          <div class="series-image">
+
+            <div class="series-image-placeholder">
+
+              <span class="material-icons">
+                emoji_events
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="series-content">
+
+            <h3>
+              PRO Series
+            </h3>
+
             <p>
-              Consigue descuento al comprar 2 o más artículos. Equípate y haz
-              que cada partida sea inolvidable.
+              Sin distracciones. Nada se interpone entre tú y la victoria.
             </p>
+
+            <a
+              href="shop.html"
+              class="series-link"
+            >
+
+              Descubrir PRO Series
+
+              <span class="material-icons">
+                arrow_forward
+              </span>
+
+            </a>
+
           </div>
-          <a href="shop.html" class="btn btn-secondary">Compra Ahora</a>
+
         </div>
-      </div>
-    </section>
 
-    <!-- Series Section -->
-    <section class="series-section">
-      <div class="container">
-        <h2 class="section-title">Descubre Nuestras Series</h2>
 
-        <div class="series-grid">
-          <div class="series-card">
-            <div class="series-image">
-              <div class="series-image-placeholder">
-                <span class="material-icons">emoji_events</span>
-              </div>
+        <!-- RACING -->
+        <div class="series-card">
+
+          <div class="series-image">
+
+            <div class="series-image-placeholder">
+
+              <span class="material-icons">
+                directions_car
+              </span>
+
             </div>
-            <div class="series-content">
-              <h3>PRO Series</h3>
-              <p>
-                Sin distracciones. Nada se interpone entre tú y la victoria.
-              </p>
-              <a href="shop.html" class="series-link">
-                Descubrir PRO Series
-                <span class="material-icons">arrow_forward</span>
-              </a>
-            </div>
+
           </div>
 
-          <div class="series-card">
-            <div class="series-image">
-              <div class="series-image-placeholder">
-                <span class="material-icons">directions_car</span>
-              </div>
-            </div>
-            <div class="series-content">
-              <h3>Simulación de Carreras</h3>
-              <p>
-                Siente la emoción de la carrera con las innovaciones en realismo
-                inmersivo.
-              </p>
-              <a href="shop.html" class="series-link">
-                Descubrir SIM Series
-                <span class="material-icons">arrow_forward</span>
-              </a>
-            </div>
-          </div>
+          <div class="series-content">
 
-          <div class="series-card">
-            <div class="series-image">
-              <div class="series-image-placeholder">
-                <span class="material-icons">headset</span>
-              </div>
-            </div>
-            <div class="series-content">
-              <h3>ASTRO Series</h3>
-              <p>
-                Realismo, detalle y estilo sin igual que te sacarán del sofá y
-                te sumergerán en la partida.
-              </p>
-              <a href="shop.html" class="series-link">
-                Descubrir ASTRO Series
-                <span class="material-icons">arrow_forward</span>
-              </a>
-            </div>
-          </div>
+            <h3>
+              Simulación de Carreras
+            </h3>
 
-          <div class="series-card">
-            <div class="series-image">
-              <div class="series-image-placeholder">
-                <span class="material-icons">gamepad</span>
-              </div>
-            </div>
-            <div class="series-content">
-              <h3>G5 Series</h3>
-              <p>Conviértete en una leyenda con el equipo legendario.</p>
-              <a href="shop.html" class="series-link">
-                Descubrir G5 Series
-                <span class="material-icons">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories-section">
-      <div class="container">
-        <h2 class="section-title">Comprar por Categoría</h2>
-
-        <div class="categories-grid">
-          <a href="shop.html?category=mice" class="category-card">
-            <div class="category-icon">
-              <span class="material-icons">mouse</span>
-            </div>
-            <span class="category-name">Ratones Gaming</span>
-          </a>
-
-          <a href="shop.html?category=keyboards" class="category-card">
-            <div class="category-icon">
-              <span class="material-icons">keyboard</span>
-            </div>
-            <span class="category-name">Teclados Gaming</span>
-          </a>
-
-          <a href="shop.html?category=headsets" class="category-card">
-            <div class="category-icon">
-              <span class="material-icons">headset_mic</span>
-            </div>
-            <span class="category-name">Auriculares</span>
-          </a>
-
-          <a href="shop.html?category=mousepads" class="category-card">
-            <div class="category-icon">
-              <span class="material-icons">crop_square</span>
-            </div>
-            <span class="category-name">Alfombrillas</span>
-          </a>
-
-          <a href="shop.html?category=microphones" class="category-card">
-            <div class="category-icon">
-              <span class="material-icons">mic</span>
-            </div>
-            <span class="category-name">Micrófonos</span>
-          </a>
-
-          <a href="shop.html?category=cameras" class="category-card">
-            <div class="category-icon">
-              <span class="material-icons">videocam</span>
-            </div>
-            <span class="category-name">Cámaras</span>
-          </a>
-
-          <a href="shop.html?category=controllers" class="category-card">
-            <div class="category-icon">
-              <span class="material-icons">sports_esports</span>
-            </div>
-            <span class="category-name">Mandos</span>
-          </a>
-
-          <a href="shop.html?category=accessories" class="category-card">
-            <div class="category-icon">
-              <span class="material-icons">extension</span>
-            </div>
-            <span class="category-name">Accesorios</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-      <div class="container">
-        <h2 class="section-title">Todo Está Aquí</h2>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <span class="material-icons">local_shipping</span>
-            </div>
-            <h3>Envío Gratuito</h3>
             <p>
-              En pedidos superiores a 39€. Comprueba tu región para ver si
-              cumples los requisitos.
+
+              Siente la emoción de la carrera con las innovaciones
+              en realismo inmersivo.
+
             </p>
+
+            <a
+              href="shop.html"
+              class="series-link"
+            >
+
+              Descubrir SIM Series
+
+              <span class="material-icons">
+                arrow_forward
+              </span>
+
+            </a>
+
           </div>
 
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <span class="material-icons">assignment_return</span>
+        </div>
+
+
+        <!-- ASTRO -->
+        <div class="series-card">
+
+          <div class="series-image">
+
+            <div class="series-image-placeholder">
+
+              <span class="material-icons">
+                headset
+              </span>
+
             </div>
-            <h3>Devoluciones Sencillas</h3>
+
+          </div>
+
+          <div class="series-content">
+
+            <h3>
+              ASTRO Series
+            </h3>
+
             <p>
-              Garantía de reembolso en 30 días. Consulta nuestra política de
-              devoluciones.
+
+              Realismo, detalle y estilo sin igual que te sacarán
+              del sofá y te sumergerán en la partida.
+
             </p>
+
+            <a
+              href="shop.html"
+              class="series-link"
+            >
+
+              Descubrir ASTRO Series
+
+              <span class="material-icons">
+                arrow_forward
+              </span>
+
+            </a>
+
           </div>
 
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <span class="material-icons">payment</span>
+        </div>
+
+
+        <!-- G5 -->
+        <div class="series-card">
+
+          <div class="series-image">
+
+            <div class="series-image-placeholder">
+
+              <span class="material-icons">
+                gamepad
+              </span>
+
             </div>
-            <h3>Compra Ahora, Paga Después</h3>
-            <p>Opciones de pago flexibles para ajustarte a tu presupuesto.</p>
+
           </div>
 
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <span class="material-icons">support_agent</span>
-            </div>
-            <h3>Atención al Cliente 24/7</h3>
+          <div class="series-content">
+
+            <h3>
+              G5 Series
+            </h3>
+
             <p>
-              Por chat, teléfono o correo electrónico, como más te convenga.
+              Conviértete en una leyenda con el equipo legendario.
             </p>
+
+            <a
+              href="shop.html"
+              class="series-link"
+            >
+
+              Descubrir G5 Series
+
+              <span class="material-icons">
+                arrow_forward
+              </span>
+
+            </a>
+
           </div>
+
         </div>
+
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-column">
-            <h4>TechStore</h4>
-            <ul>
-              <li><a href="#">Nuestra historia</a></li>
-              <li><a href="#">Empleo</a></li>
-              <li><a href="#">Inversores</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Sostenibilidad</a></li>
-            </ul>
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CATEGORÍAS
+  ========================== -->
+  <section class="categories-section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Comprar por Categoría
+      </h2>
+
+      <div class="categories-grid">
+
+
+        <a
+          href="shop.html?category=mice"
+          class="category-card"
+        >
+
+          <div class="category-icon">
+
+            <span class="material-icons">
+              mouse
+            </span>
+
           </div>
 
-          <div class="footer-column">
-            <h4>Ver Productos</h4>
-            <ul>
-              <li><a href="shop.html">Ratones Gaming</a></li>
-              <li><a href="shop.html">Teclados Gaming</a></li>
-              <li><a href="shop.html">Auriculares</a></li>
-              <li><a href="shop.html">Alfombrillas</a></li>
-              <li><a href="shop.html">Accesorios</a></li>
-            </ul>
+          <span class="category-name">
+            Ratones Gaming
+          </span>
+
+        </a>
+
+
+        <a
+          href="shop.html?category=keyboards"
+          class="category-card"
+        >
+
+          <div class="category-icon">
+
+            <span class="material-icons">
+              keyboard
+            </span>
+
           </div>
 
-          <div class="footer-column">
-            <h4>Atención al Cliente</h4>
-            <ul>
-              <li><a href="#">Asistencia</a></li>
-              <li><a href="#">Contacto</a></li>
-              <li><a href="#">Política de devoluciones</a></li>
-              <li><a href="#">Envíos</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
+          <span class="category-name">
+            Teclados Gaming
+          </span>
+
+        </a>
+
+
+        <a
+          href="shop.html?category=headsets"
+          class="category-card"
+        >
+
+          <div class="category-icon">
+
+            <span class="material-icons">
+              headset_mic
+            </span>
+
           </div>
 
-          <div class="footer-column">
-            <h4>Síguenos</h4>
-            <div class="social-links">
-              <a href="#" aria-label="Instagram">
-                <span class="material-icons">photo_camera</span>
-              </a>
-              <a href="#" aria-label="Twitter">
-                <span class="material-icons">chat</span>
-              </a>
-              <a href="#" aria-label="Facebook">
-                <span class="material-icons">public</span>
-              </a>
-              <a href="#" aria-label="YouTube">
-                <span class="material-icons">play_circle</span>
-              </a>
-            </div>
+          <span class="category-name">
+            Auriculares
+          </span>
 
-            <div class="newsletter">
-              <h5>Newsletter</h5>
-              <form class="newsletter-form">
-                <input type="email" placeholder="Tu email" required />
-                <button type="submit" class="btn btn-primary">
-                  <span class="material-icons">send</span>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
+        </a>
 
-        <div class="footer-bottom">
-          <p>&copy; 2026 TechStore. Todos los derechos reservados.</p>
-          <div class="footer-legal">
-            <a href="#">Política de Privacidad</a>
-            <a href="#">Términos de Servicio</a>
-            <a href="#">Cookies</a>
+
+        <a
+          href="shop.html?category=mousepads"
+          class="category-card"
+        >
+
+          <div class="category-icon">
+
+            <span class="material-icons">
+              crop_square
+            </span>
+
           </div>
-        </div>
+
+          <span class="category-name">
+            Alfombrillas
+          </span>
+
+        </a>
+
+
+        <a
+          href="shop.html?category=microphones"
+          class="category-card"
+        >
+
+          <div class="category-icon">
+
+            <span class="material-icons">
+              mic
+            </span>
+
+          </div>
+
+          <span class="category-name">
+            Micrófonos
+          </span>
+
+        </a>
+
+
+        <a
+          href="shop.html?category=cameras"
+          class="category-card"
+        >
+
+          <div class="category-icon">
+
+            <span class="material-icons">
+              videocam
+            </span>
+
+          </div>
+
+          <span class="category-name">
+            Cámaras
+          </span>
+
+        </a>
+
+
+        <a
+          href="shop.html?category=controllers"
+          class="category-card"
+        >
+
+          <div class="category-icon">
+
+            <span class="material-icons">
+              sports_esports
+            </span>
+
+          </div>
+
+          <span class="category-name">
+            Mandos
+          </span>
+
+        </a>
+
+
+        <a
+          href="shop.html?category=accessories"
+          class="category-card"
+        >
+
+          <div class="category-icon">
+
+            <span class="material-icons">
+              extension
+            </span>
+
+          </div>
+
+          <span class="category-name">
+            Accesorios
+          </span>
+
+        </a>
+
       </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
+  </section>
+
+
+  <!-- =========================
+       BENEFICIOS
+  ========================== -->
+  <section class="benefits-section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Todo Está Aquí
+      </h2>
+
+      <div class="benefits-grid">
+
+
+        <div class="benefit-card">
+
+          <div class="benefit-icon">
+
+            <span class="material-icons">
+              local_shipping
+            </span>
+
+          </div>
+
+          <h3>
+            Envío Gratuito
+          </h3>
+
+          <p>
+
+            En pedidos superiores a 39€.
+            Comprueba tu región para ver si cumples los requisitos.
+
+          </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+          <div class="benefit-icon">
+
+            <span class="material-icons">
+              assignment_return
+            </span>
+
+          </div>
+
+          <h3>
+            Devoluciones Sencillas
+          </h3>
+
+          <p>
+
+            Garantía de reembolso en 30 días.
+            Consulta nuestra política de devoluciones.
+
+          </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+          <div class="benefit-icon">
+
+            <span class="material-icons">
+              payment
+            </span>
+
+          </div>
+
+          <h3>
+            Compra Ahora, Paga Después
+          </h3>
+
+          <p>
+            Opciones de pago flexibles para ajustarte a tu presupuesto.
+          </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+          <div class="benefit-icon">
+
+            <span class="material-icons">
+              support_agent
+            </span>
+
+          </div>
+
+          <h3>
+            Atención al Cliente 24/7
+          </h3>
+
+          <p>
+
+            Por chat, teléfono o correo electrónico,
+            como más te convenga.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer
+    class="footer"
+    id="footer"
+  >
+
+    <div class="container">
+
+      <div class="footer-content">
+
+
+        <!-- TechStore -->
+        <div class="footer-column">
+
+          <h4>
+            TechStore
+          </h4>
+
+          <ul>
+
+            <li>
+              <a href="#">
+                Nuestra historia
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Empleo
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Inversores
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Blog
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Sostenibilidad
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- Productos -->
+        <div class="footer-column">
+
+          <h4>
+            Ver Productos
+          </h4>
+
+          <ul>
+
+            <li>
+              <a href="shop.html?category=mice">
+                Ratones Gaming
+              </a>
+            </li>
+
+            <li>
+              <a href="shop.html?category=keyboards">
+                Teclados Gaming
+              </a>
+            </li>
+
+            <li>
+              <a href="shop.html?category=headsets">
+                Auriculares
+              </a>
+            </li>
+
+            <li>
+              <a href="shop.html?category=mousepads">
+                Alfombrillas
+              </a>
+            </li>
+
+            <li>
+              <a href="shop.html?category=accessories">
+                Accesorios
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- Atención -->
+        <div class="footer-column">
+
+          <h4>
+            Atención al Cliente
+          </h4>
+
+          <ul>
+
+            <li>
+              <a href="#footer">
+                Asistencia
+              </a>
+            </li>
+
+            <li>
+              <a href="#footer">
+                Contacto
+              </a>
+            </li>
+
+            <li>
+              <a href="#footer">
+                Política de devoluciones
+              </a>
+            </li>
+
+            <li>
+              <a href="#footer">
+                Envíos
+              </a>
+            </li>
+
+            <li>
+              <a href="#footer">
+                FAQ
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- Redes -->
+        <div class="footer-column">
+
+          <h4>
+            Síguenos
+          </h4>
+
+          <div class="social-links">
+
+            <a
+              href="#"
+              aria-label="Instagram"
+            >
+
+              <span class="material-icons">
+                photo_camera
+              </span>
+
+            </a>
+
+
+            <a
+              href="#"
+              aria-label="Twitter"
+            >
+
+              <span class="material-icons">
+                chat
+              </span>
+
+            </a>
+
+
+            <a
+              href="#"
+              aria-label="Facebook"
+            >
+
+              <span class="material-icons">
+                public
+              </span>
+
+            </a>
+
+
+            <a
+              href="#"
+              aria-label="YouTube"
+            >
+
+              <span class="material-icons">
+                play_circle
+              </span>
+
+            </a>
+
+          </div>
+
+
+          <!-- Newsletter -->
+          <div class="newsletter">
+
+            <h5>
+              Newsletter
+            </h5>
+
+            <form class="newsletter-form">
+
+              <label for="newsletter-email">
+                Correo electrónico
+              </label>
+
+              <input
+                id="newsletter-email"
+                type="email"
+                placeholder="Tu email"
+                required
+              />
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+                aria-label="Enviar correo"
+              >
+
+                <span class="material-icons">
+                  send
+                </span>
+
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Footer inferior -->
+      <div class="footer-bottom">
+
+        <p>
+          &copy; 2026 TechStore.
+          Todos los derechos reservados.
+        </p>
+
+        <div class="footer-legal">
+
+          <a href="#">
+            Política de Privacidad
+          </a>
+
+          <a href="#">
+            Términos de Servicio
+          </a>
+
+          <a href="#">
+            Cookies
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Librerías -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  </script>
+
+  <!-- JavaScript principal -->
+  <script src="script.js"></script>
+
+</body>
 </html>

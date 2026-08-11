@@ -1,70 +1,111 @@
 package com.cenfotec.e2e.tests;
 
 import com.cenfotec.e2e.base.BaseTest;
-import com.cenfotec.e2e.config.ConfigReader;
 import com.cenfotec.e2e.pages.HomePage;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class HomePageTest extends BaseTest {
 
-    private final String HOME_URL =
-            ConfigReader.get("teknovation.url")
-                    + "/index.html";
+    private HomePage homePage;
 
-    @Test
-    public void navegarATienda() {
 
-        driver.get(HOME_URL);
+    @BeforeMethod
+    public void openHomePage() {
 
-        HomePage homePage =
-                new HomePage(driver);
-
-        homePage.irATienda();
-
-        Assert.assertTrue(
-                driver.getCurrentUrl()
-                        .contains("shop.html"),
-                "No se navegó correctamente hacia la tienda."
+        openTeknovationPage(
+                "index.html"
         );
+
+
+        homePage =
+                new HomePage(
+                        driver
+                );
+
     }
 
-    @Test
-    public void navegarACategoriaMice() {
-
-        driver.get(HOME_URL);
-
-        HomePage homePage =
-                new HomePage(driver);
-
-        homePage.abrirCategoriaMice();
-
-        Assert.assertTrue(
-                driver.getCurrentUrl()
-                        .contains(
-                                "shop.html?category=mice"
-                        ),
-                "No se abrió correctamente la categoría de mice."
-        );
-    }
 
     @Test
-    public void abrirProductoDestacado() {
-
-        driver.get(HOME_URL);
-
-        HomePage homePage =
-                new HomePage(driver);
-
-        homePage.comprarProductoDestacado();
+    public void homePageShouldLoad() {
 
         Assert.assertTrue(
-                driver.getCurrentUrl()
-                        .contains(
-                                "product.html?id=pro-x2-superstrike"
-                        ),
-                "No se abrió correctamente el producto destacado."
+                homePage.isOnHomePage()
         );
+
+
+        Assert.assertTrue(
+                homePage.isLogoVisible()
+        );
+
     }
+
+
+    @Test
+    public void heroShouldBeVisible() {
+
+        Assert.assertTrue(
+                homePage.isHeroVisible()
+        );
+
+
+        Assert.assertTrue(
+                homePage.getHeroSlideCount()
+                        > 0
+        );
+
+    }
+
+
+    @Test
+    public void shopNavigationShouldWork() {
+
+        homePage.clickShop();
+
+
+        Assert.assertTrue(
+                homePage.isOnShopPage()
+        );
+
+    }
+
+
+    @Test
+    public void searchShouldFindProduct() {
+
+        homePage.clickSearch();
+
+
+        Assert.assertTrue(
+                homePage.isSearchModalVisible()
+        );
+
+
+        homePage.searchProduct(
+                "SUPERLIGHT"
+        );
+
+
+        Assert.assertTrue(
+                homePage.getSearchResultCount()
+                        > 0
+        );
+
+    }
+
+
+    @Test
+    public void favoritesShouldOpen() {
+
+        homePage.clickWishlist();
+
+
+        Assert.assertTrue(
+                homePage.isFavoritesModalVisible()
+        );
+
+    }
+
 }

@@ -9,7 +9,6 @@ com\cenfotec\e2e\tests\ChromeTest.class
 com\cenfotec\e2e\data\LoginData.class
 com\cenfotec\e2e\pages\ProductPage.class
 com\cenfotec\e2e\pages\HomePage.class
-com\cenfotec\e2e\utils\JsonDataReader$1.class
 com\cenfotec\e2e\pages\CartPage.class
 com\cenfotec\e2e\utils\JsonDataReader.class
 com\cenfotec\e2e\tests\HomePageTest.class

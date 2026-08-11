@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Carrito de compras - Teknovation"
+  >
+
+  <title>Mi Carrito | Teknovation</title>
+
+  <!-- Material Icons -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  >
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body class="cart-page">
+
+
+  <!-- ==================================================
+       HEADER
+  =================================================== -->
+  <header class="header">
+
+    <nav class="header-nav">
+
+      <div class="container">
+
+        <div class="nav-content">
+
+
+          <div class="nav-left">
+
+            <a
+              href="index.html"
+              class="logo"
+            >
+
+              <img
+                src="./assets/logo-teknovation.png"
+                alt="Teknovation"
+                height="48"
+              >
+
+            </a>
+
+
+            <ul class="nav-menu">
+
+              <li>
+                <a href="index.html">
+                  Inicio
+                </a>
+              </li>
+
+              <li>
+                <a href="shop.html">
+                  Tienda
+                </a>
+              </li>
+
+              <li class="nav-highlight">
+                <a href="shop.html">
+                  Ofertas
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="header-actions">
+
+            <!-- BUSCAR -->
+            <button
+              type="button"
+              class="icon-btn"
+              id="searchBtn"
+              aria-label="Buscar productos"
+            >
+              <span class="material-icons">
+                search
+              </span>
+            </button>
+
+
+            <!-- FAVORITOS -->
+            <button
+              type="button"
+              class="icon-btn"
+              id="wishlistBtn"
+              aria-label="Mis favoritos"
+            >
+              <span class="material-icons">
+                favorite_border
+              </span>
+
+              <span
+                class="wishlist-count"
+                id="wishlistCount"
+                style="display: none;"
+              >
+                0
+              </span>
+            </button>
+
+
+            <!-- CUENTA -->
+            <a
+              href="auth.html"
+              class="icon-btn"
+              id="accountBtn"
+              aria-label="Mi cuenta"
+            >
+              <span class="material-icons">
+                person_outline
+              </span>
+            </a>
+
+
+            <!-- CARRITO ACTIVO -->
+            <a
+              href="cart.html"
+              class="icon-btn cart-btn active-page"
+              id="cartBtn"
+              aria-label="Carrito"
+            >
+              <span class="material-icons">
+                shopping_cart
+              </span>
+
+              <span
+                class="cart-count"
+                id="cartCount"
+                style="display: none;"
+              >
+                0
+              </span>
+            </a>
+
+          </div>
+
+          <button
+            type="button"
+            class="mobile-menu-toggle"
+            aria-label="Menú"
+          >
+
+            <span class="material-icons">
+              menu
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ==================================================
+       BREADCRUMB
+  =================================================== -->
+  <div class="breadcrumb">
+
+    <div class="container">
+
+      <nav aria-label="breadcrumb">
+
+        <ol>
+
+          <li>
+            <a href="index.html">
+              Inicio
+            </a>
+          </li>
+
+          <li aria-current="page">
+            Mi Carrito
+          </li>
+
+        </ol>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==================================================
+       CART
+  =================================================== -->
+  <section class="cart-section">
+
+    <div class="container">
+
+
+      <!-- Título -->
+      <div class="cart-page-title">
+
+        <h1>
+
+          Mi Carrito
+
+          <span
+            class="cart-item-count"
+            id="cartPageTitle"
+          ></span>
+
+        </h1>
+
+
+        <button
+          type="button"
+          class="btn btn-secondary"
+          id="clearCartBtn"
+          style="display: none;"
+        >
+
+          <span class="material-icons">
+            delete_sweep
+          </span>
+
+          Vaciar carrito
+
+        </button>
+
+      </div>
+
+
+      <!-- ==============================================
+           VACÍO
+      =============================================== -->
+      <div
+        class="cart-empty"
+        id="cartEmpty"
+        style="display: none;"
+      >
+
+        <div class="cart-empty__icon">
+
+          <span class="material-icons">
+            shopping_cart
+          </span>
+
+        </div>
+
+
+        <h2>
+          Tu carrito está vacío
+        </h2>
+
+
+        <p>
+          Añade productos para comenzar tu compra
+        </p>
+
+
+        <a
+          href="shop.html"
+          class="btn btn-primary"
+        >
+
+          <span class="material-icons">
+            storefront
+          </span>
+
+          Explorar Productos
+
+        </a>
+
+      </div>
+
+
+      <!-- ==============================================
+           CONTENIDO
+      =============================================== -->
+      <div
+        class="cart-layout"
+        id="cartContent"
+        style="display: none;"
+      >
+
+
+        <!-- IZQUIERDA -->
+        <div class="cart-items-panel">
+
+          <div style="overflow-x: auto;">
+
+            <table
+              class="cart-table"
+              id="cartTable"
+              aria-label="Productos en tu carrito"
+            >
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Producto
+                  </th>
+
+                  <th>
+                    Precio
+                  </th>
+
+                  <th>
+                    Cantidad
+                  </th>
+
+                  <th>
+                    Total
+                  </th>
+
+                  <th>
+                    Acción
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody id="cartTableBody">
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <div class="cart-continue">
+
+            <a href="shop.html">
+
+              <span class="material-icons">
+                arrow_back
+              </span>
+
+              Seguir comprando
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- DERECHA -->
+        <div class="order-summary-card">
+
+          <h2 class="order-summary-card__title">
+            Resumen del Pedido
+          </h2>
+
+
+          <!-- Cupón -->
+          <div class="order-summary-card__coupon">
+
+            <input
+              type="text"
+              id="couponInput"
+              placeholder="GAMING10"
+              aria-label="Código de descuento"
+              maxlength="20"
+            >
+
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="applyCoupon"
+            >
+              Aplicar
+            </button>
+
+          </div>
+
+
+          <div
+            class="coupon-feedback"
+            id="couponFeedback"
+            aria-live="polite"
+          ></div>
+
+
+          <!-- Promo -->
+          <div
+            class="promo-alert"
+            id="promoAlert"
+            style="display: none;"
+          >
+
+            <span class="material-icons">
+              card_giftcard
+            </span>
+
+            <p id="promoAlertText">
+              Añade 1 artículo más y obtén 30€ de descuento
+            </p>
+
+          </div>
+
+
+          <!-- Resumen -->
+          <div class="summary-lines">
+
+
+            <div class="order-summary-card__row">
+
+              <span>
+                Subtotal
+                (<span id="summaryItemCount">0</span> art.)
+              </span>
+
+              <span id="summarySubtotal">
+                0,00 €
+              </span>
+
+            </div>
+
+
+            <div
+              class="order-summary-card__row order-summary-card__row--savings"
+              id="discountRow"
+              style="display: none;"
+            >
+
+              <span>
+                Descuento aplicado
+              </span>
+
+              <span id="summaryDiscount">
+                -0,00 €
+              </span>
+
+            </div>
+
+
+            <div class="order-summary-card__row">
+
+              <span>
+                Envío
+              </span>
+
+              <span id="summaryShipping">
+                0,00 €
+              </span>
+
+            </div>
+
+
+            <div class="order-summary-card__row order-summary-card__row--total">
+
+              <span>
+                Total
+              </span>
+
+              <span id="summaryTotal">
+                0,00 €
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="btn btn-primary btn-checkout"
+            id="checkoutBtn"
+          >
+
+            <span class="material-icons">
+              lock
+            </span>
+
+            Finalizar Compra
+
+          </button>
+
+
+          <div class="cart-trust">
+
+            <div>
+
+              <span class="material-icons">
+                verified_user
+              </span>
+
+              Pago 100% seguro
+
+            </div>
+
+
+            <div>
+
+              <span class="material-icons">
+                assignment_return
+              </span>
+
+              Devolución gratuita 30 días
+
+            </div>
+
+
+            <div>
+
+              <span class="material-icons">
+                local_shipping
+              </span>
+
+              Envío gratis en pedidos +39€
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       RECOMENDADOS
+  =================================================== -->
+  <section
+    class="related-products"
+    id="recommendedSection"
+    style="display: none;"
+  >
+
+    <div class="container">
+
+      <h2 class="section-title">
+        También te Puede Gustar
+      </h2>
+
+      <div
+        class="products-carousel"
+        id="recommendedProducts"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       FOOTER
+  =================================================== -->
+  <footer
+    class="footer"
+    id="footer"
+  >
+
+    <div class="container">
+
+      <div class="footer-content">
+
+
+        <div class="footer-column">
+
+          <h4>
+            Teknovation
+          </h4>
+
+          <ul>
+
+            <li>
+              <a href="#">
+                Nuestra historia
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Empleo
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Inversores
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Blog
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Ver Productos
+          </h4>
+
+          <ul>
+
+            <li>
+              <a href="shop.html">
+                Ratones Gaming
+              </a>
+            </li>
+
+            <li>
+              <a href="shop.html">
+                Teclados Gaming
+              </a>
+            </li>
+
+            <li>
+              <a href="shop.html">
+                Auriculares
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Atención al Cliente
+          </h4>
+
+          <ul>
+
+            <li>
+              <a href="#">
+                Asistencia
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Contacto
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                FAQ
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Síguenos
+          </h4>
+
+          <div class="social-links">
+
+            <a
+              href="#"
+              aria-label="Instagram"
+            >
+
+              <span class="material-icons">
+                photo_camera
+              </span>
+
+            </a>
+
+            <a
+              href="#"
+              aria-label="Facebook"
+            >
+
+              <span class="material-icons">
+                public
+              </span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p>
+          &copy; 2026 Teknovation.
+          Todos los derechos reservados.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+</body>
+</html>

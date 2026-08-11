@@ -1,8 +1,7 @@
 package com.cenfotec.e2e.utils;
 
-import com.cenfotec.e2e.config.ConfigReader;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -10,119 +9,326 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
-public class WaitUtils {
+public final class WaitUtils {
 
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+    private static final long DEFAULT_WAIT_SECONDS =
+            10;
 
-    public WaitUtils(WebDriver driver) {
 
-        this.driver = driver;
+    private WaitUtils() {
+        // Utility class.
+    }
 
-        int timeout =
-                ConfigReader.getInt("explicit.wait");
 
-        this.wait =
-                new WebDriverWait(
-                        driver,
-                        Duration.ofSeconds(timeout)
+    public static WebElement waitForVisible(
+            WebDriver driver,
+            By locator
+    ) {
+
+        return waitForVisible(
+                driver,
+                locator,
+                DEFAULT_WAIT_SECONDS
+        );
+
+    }
+
+
+    public static WebElement waitForVisible(
+            WebDriver driver,
+            By locator,
+            long seconds
+    ) {
+
+        return createWait(
+                driver,
+                seconds
+        )
+                .until(
+                        ExpectedConditions
+                                .visibilityOfElementLocated(
+                                        locator
+                                )
                 );
+
     }
 
-    public WebElement esperarVisible(By locator) {
 
-        return wait.until(
-                ExpectedConditions
-                        .visibilityOfElementLocated(locator)
+    public static WebElement waitForPresent(
+            WebDriver driver,
+            By locator
+    ) {
+
+        return waitForPresent(
+                driver,
+                locator,
+                DEFAULT_WAIT_SECONDS
         );
+
     }
 
-    public WebElement esperarClickeable(By locator) {
 
-        return wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(locator)
-        );
-    }
-
-    public boolean esperarUrlContenga(String texto) {
-
-        return wait.until(
-                ExpectedConditions
-                        .urlContains(texto)
-        );
-    }
-
-    public boolean esperarTexto(
+    public static WebElement waitForPresent(
+            WebDriver driver,
             By locator,
-            String texto) {
+            long seconds
+    ) {
 
-        return wait.until(
-                ExpectedConditions
-                        .textToBePresentInElementLocated(
-                                locator,
-                                texto
+        return createWait(
+                driver,
+                seconds
+        )
+                .until(
+                        ExpectedConditions
+                                .presenceOfElementLocated(
+                                        locator
+                                )
+                );
+
+    }
+
+
+    public static WebElement waitForClickable(
+            WebDriver driver,
+            By locator
+    ) {
+
+        return waitForClickable(
+                driver,
+                locator,
+                DEFAULT_WAIT_SECONDS
+        );
+
+    }
+
+
+    public static WebElement waitForClickable(
+            WebDriver driver,
+            By locator,
+            long seconds
+    ) {
+
+        return createWait(
+                driver,
+                seconds
+        )
+                .until(
+                        ExpectedConditions
+                                .elementToBeClickable(
+                                        locator
+                                )
+                );
+
+    }
+
+
+    public static boolean waitForUrlContains(
+            WebDriver driver,
+            String value
+    ) {
+
+        return waitForUrlContains(
+                driver,
+                value,
+                DEFAULT_WAIT_SECONDS
+        );
+
+    }
+
+
+    public static boolean waitForUrlContains(
+            WebDriver driver,
+            String value,
+            long seconds
+    ) {
+
+        return createWait(
+                driver,
+                seconds
+        )
+                .until(
+                        ExpectedConditions
+                                .urlContains(
+                                        value
+                                )
+                );
+
+    }
+
+
+    public static boolean waitForTitleContains(
+            WebDriver driver,
+            String value
+    ) {
+
+        return waitForTitleContains(
+                driver,
+                value,
+                DEFAULT_WAIT_SECONDS
+        );
+
+    }
+
+
+    public static boolean waitForTitleContains(
+            WebDriver driver,
+            String value,
+            long seconds
+    ) {
+
+        return createWait(
+                driver,
+                seconds
+        )
+                .until(
+                        ExpectedConditions
+                                .titleContains(
+                                        value
+                                )
+                );
+
+    }
+
+
+    public static boolean waitForInvisible(
+            WebDriver driver,
+            By locator
+    ) {
+
+        return waitForInvisible(
+                driver,
+                locator,
+                DEFAULT_WAIT_SECONDS
+        );
+
+    }
+
+
+    public static boolean waitForInvisible(
+            WebDriver driver,
+            By locator,
+            long seconds
+    ) {
+
+        return createWait(
+                driver,
+                seconds
+        )
+                .until(
+                        ExpectedConditions
+                                .invisibilityOfElementLocated(
+                                        locator
+                                )
+                );
+
+    }
+
+
+    public static void scrollToElement(
+            WebDriver driver,
+            WebElement element
+    ) {
+
+        ((JavascriptExecutor) driver)
+                .executeScript(
+                        """
+                        arguments[0].scrollIntoView({
+                            behavior: 'instant',
+                            block: 'center',
+                            inline: 'nearest'
+                        });
+                        """,
+                        element
+                );
+
+    }
+
+
+    public static void safeClick(
+            WebDriver driver,
+            By locator
+    ) {
+
+        WebElement element =
+                waitForClickable(
+                        driver,
+                        locator
+                );
+
+
+        scrollToElement(
+                driver,
+                element
+        );
+
+
+        try {
+
+            element.click();
+
+        } catch (
+                Exception exception
+        ) {
+
+            ((JavascriptExecutor) driver)
+                    .executeScript(
+                            "arguments[0].click();",
+                            element
+                    );
+
+        }
+
+    }
+
+
+    public static void waitForPageReady(
+            WebDriver driver
+    ) {
+
+        WebDriverWait wait =
+                createWait(
+                        driver,
+                        DEFAULT_WAIT_SECONDS
+                );
+
+
+        wait.until(
+                webDriver -> {
+
+                    Object state =
+                            ((JavascriptExecutor) webDriver)
+                                    .executeScript(
+                                            "return document.readyState;"
+                                    );
+
+
+                    return "complete"
+                            .equals(
+                                    state
+                            );
+
+                }
+        );
+
+    }
+
+
+    private static WebDriverWait createWait(
+            WebDriver driver,
+            long seconds
+    ) {
+
+        return new WebDriverWait(
+                driver,
+                Duration.ofSeconds(
+                        Math.max(
+                                seconds,
+                                1
                         )
+                )
         );
+
     }
 
-    public boolean esperarAtributoContenga(
-            By locator,
-            String atributo,
-            String valor) {
-
-        return wait.until(
-                ExpectedConditions
-                        .attributeContains(
-                                locator,
-                                atributo,
-                                valor
-                        )
-        );
-    }
-
-    public void esperarCantidadVisiblesMenorQue(
-            By locator,
-            int cantidadInicial) {
-
-        wait.until(driver -> {
-
-            List<WebElement> elementos =
-                    driver.findElements(locator);
-
-            long visibles =
-                    elementos.stream()
-                            .filter(WebElement::isDisplayed)
-                            .count();
-
-            return visibles < cantidadInicial;
-        });
-    }
-
-    public void esperarContadorCarritoMayorQueCero(
-            By locator) {
-
-        wait.until(driver -> {
-
-            String texto =
-                    driver.findElement(locator)
-                            .getText()
-                            .trim();
-
-            if (texto.isEmpty()) {
-                return false;
-            }
-
-            try {
-
-                return Integer.parseInt(texto) > 0;
-
-            } catch (NumberFormatException e) {
-
-                return false;
-            }
-        });
-    }
 }

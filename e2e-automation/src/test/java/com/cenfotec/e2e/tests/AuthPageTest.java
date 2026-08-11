@@ -1,87 +1,168 @@
 package com.cenfotec.e2e.tests;
 
 import com.cenfotec.e2e.base.BaseTest;
-import com.cenfotec.e2e.config.ConfigReader;
-import com.cenfotec.e2e.data.LoginData;
 import com.cenfotec.e2e.pages.AuthPage;
-import com.cenfotec.e2e.utils.JsonDataReader;
 
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class AuthPageTest extends BaseTest {
 
-    private final String AUTH_URL =
-            ConfigReader.get("base.url")
-                    + "/auth.html";
+    private AuthPage authPage;
 
-    @DataProvider(name = "loginData")
-    public Object[][] loginData() {
 
-        List<LoginData> datos = JsonDataReader.leerDatosLogin();
+    @BeforeMethod
+    public void openAuthPage() {
 
-        Object[][] data = new Object[datos.size()][2];
+        openTeknovationPage(
+                "auth.html"
+        );
 
-        for (int i = 0; i < datos.size(); i++) {
-            data[i][0] = datos.get(i).getEmail();
-            data[i][1] = datos.get(i).getPassword();
-        }
 
-        return data;
+        authPage =
+                new AuthPage(
+                        driver
+                );
+
     }
+
 
     @Test
-    public void validarCamposObligatoriosLogin() {
-
-        driver.get(AUTH_URL);
-
-        AuthPage authPage = new AuthPage(driver);
+    public void loginPanelShouldBeVisibleByDefault() {
 
         Assert.assertTrue(
-                authPage.emailLoginEsObligatorio(),
-                "El campo de correo debería ser obligatorio."
+                authPage.isLoginPanelVisible()
         );
 
-        Assert.assertTrue(
-                authPage.passwordLoginEsObligatorio(),
-                "El campo de contraseña debería ser obligatorio."
-        );
     }
 
-    @Test(dataProvider = "loginData")
-    public void loginConCredencialesInvalidas(
-            String email,
-            String password) {
-
-        driver.get(AUTH_URL);
-
-        AuthPage authPage = new AuthPage(driver);
-
-        authPage.ingresarEmailLogin(email);
-        authPage.ingresarPasswordLogin(password);
-        authPage.iniciarSesion();
-
-        Assert.assertTrue(
-                driver.getCurrentUrl().contains("auth.html"),
-                "El sistema permitió navegar fuera del login con credenciales inválidas."
-        );
-    }
 
     @Test
-    public void cambiarARegistro() {
+    public void shouldOpenRegisterTab() {
 
-        driver.get(AUTH_URL);
+        authPage.openRegisterTab();
 
-        AuthPage authPage = new AuthPage(driver);
-
-        authPage.abrirRegistro();
 
         Assert.assertTrue(
-                authPage.registroEstaVisible(),
-                "El formulario de registro no se mostró correctamente."
+                authPage.isRegisterPanelVisible()
         );
+
     }
+
+
+    @Test
+    public void shouldRegisterNewUser() {
+
+        String email =
+                uniqueEmail();
+
+
+        authPage.register(
+                "Alejandro",
+                "Soto",
+                email,
+                "8888-8888",
+                "Tekno123!"
+        );
+
+
+        Assert.assertTrue(
+                authPage.isAuthSuccessVisible()
+        );
+
+    }
+
+
+    @Test
+    public void shouldLoginWithValidCredentials() {
+
+        String email =
+                uniqueEmail();
+
+
+        String password =
+                "Tekno123!";
+
+
+        authPage.register(
+                "Alejandro",
+                "Soto",
+                email,
+                "8888-8888",
+                password
+        );
+
+
+        Assert.assertTrue(
+                authPage.isAuthSuccessVisible()
+        );
+
+
+        authPage.logout();
+
+
+        authPage.login(
+                email,
+                password
+        );
+
+
+        Assert.assertTrue(
+                authPage.isAuthSuccessVisible()
+        );
+
+    }
+
+
+    @Test
+    public void shouldRejectInvalidLogin() {
+
+        authPage.login(
+                "noexiste@teknovation.com",
+                "Incorrecta123!"
+        );
+
+
+        Assert.assertTrue(
+                authPage
+                        .getLoginGlobalMessage()
+                        .toLowerCase()
+                        .contains(
+                                "incorrect"
+                        ),
+                "Debe mostrar correo o contraseña incorrectos."
+        );
+
+    }
+
+
+    @Test
+    public void shouldToggleLoginPasswordVisibility() {
+
+        Assert.assertEquals(
+                authPage.getLoginPasswordType(),
+                "password"
+        );
+
+
+        authPage.toggleLoginPassword();
+
+
+        Assert.assertEquals(
+                authPage.getLoginPasswordType(),
+                "text"
+        );
+
+    }
+
+
+    private String uniqueEmail() {
+
+        return "alejandro"
+                + System.currentTimeMillis()
+                + "@teknovation.com";
+
+    }
+
 }

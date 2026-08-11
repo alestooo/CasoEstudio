@@ -9,12 +9,19 @@
       "discount": 0,
       "series": "pro",
       "connectivity": "wireless",
-      "features": ["rgb", "wireless-charging", "programmable"],
+      "features": [
+        "rgb",
+        "wireless-charging",
+        "programmable"
+      ],
       "inStock": false,
       "isNew": true,
       "rating": 4.5,
       "reviewCount": 36,
-      "colors": ["Negro", "Blanco"],
+      "colors": [
+        "Negro",
+        "Blanco"
+      ],
       "description": "PRO X2 SUPERSTRIKE supone un gran avance en la tecnología de latencia de clic ultrabaja. El revolucionario Sistema de Respuesta Háptica Inductiva (HITS) acelera la velocidad de clic con puntos de activación ajustables y puntos de reinicio del disparador rápido para ambas teclas principales del mouse.",
       "features_list": [
         "Sistema de Respuesta Háptica Inductiva (HITS) para velocidad de clic ultrarrápida",
@@ -35,8 +42,11 @@
         "dimensions": "125 x 63.5 x 40 mm",
         "compatibility": "Windows 10+, macOS 10.14+"
       },
-      "images": ["mouse", "mouse", "mouse", "mouse"]
+      "images": [
+        "./assets/productos/PRO X2 SUPERSTRIKE.jpg"
+      ]
     },
+
     {
       "id": "pro-x-superlight-2",
       "name": "PRO X SUPERLIGHT 2",
@@ -46,12 +56,19 @@
       "discount": 15,
       "series": "pro",
       "connectivity": "wireless",
-      "features": ["programmable", "wireless-charging"],
+      "features": [
+        "programmable",
+        "wireless-charging"
+      ],
       "inStock": true,
       "isNew": false,
       "rating": 4.8,
       "reviewCount": 124,
-      "colors": ["Negro", "Blanco", "Rosa"],
+      "colors": [
+        "Negro",
+        "Blanco",
+        "Rosa"
+      ],
       "description": "El ratón inalámbrico más ligero y rápido de la serie PRO. Con un peso de solo 63g y el sensor HERO 2, ofrece precisión absoluta sin comprometer la duración de la batería.",
       "features_list": [
         "Solo 63g de peso para máxima agilidad",
@@ -70,8 +87,11 @@
         "dimensions": "125 x 63.5 x 40 mm",
         "compatibility": "Windows, macOS"
       },
-      "images": ["mouse", "mouse", "mouse", "mouse"]
+      "images": [
+        "./assets/productos/PRO X SUPERLIGHT 2.jpg"
+      ]
     },
+
     {
       "id": "pro-2-lightspeed",
       "name": "PRO 2 LIGHTSPEED",
@@ -81,12 +101,19 @@
       "discount": 0,
       "series": "pro",
       "connectivity": "wireless",
-      "features": ["ambidextrous", "programmable"],
+      "features": [
+        "ambidextrous",
+        "programmable"
+      ],
       "inStock": true,
       "isNew": false,
       "rating": 4.6,
       "reviewCount": 89,
-      "colors": ["Negro", "Blanco", "Rosa"],
+      "colors": [
+        "Negro",
+        "Blanco",
+        "Rosa"
+      ],
       "description": "Diseñado para jugadores ambidiestros profesionales. Forma simétrica con 8 botones programables y rendimiento sin compromiso.",
       "features_list": [
         "Diseño ambidiestro perfectamente simétrico",
@@ -105,8 +132,11 @@
         "dimensions": "130 x 65 x 42 mm",
         "compatibility": "Windows, macOS, Linux"
       },
-      "images": ["mouse", "mouse", "mouse", "mouse"]
+      "images": [
+        "./assets/productos/PRO 2 LIGHTSPEED.jpg"
+      ]
     },
+
     {
       "id": "g502-x-plus",
       "name": "G502 X PLUS",
@@ -116,12 +146,19 @@
       "discount": 33,
       "series": "g5",
       "connectivity": "wireless",
-      "features": ["rgb", "programmable", "wireless-charging"],
+      "features": [
+        "rgb",
+        "programmable",
+        "wireless-charging"
+      ],
       "inStock": true,
       "isNew": false,
       "rating": 4.7,
       "reviewCount": 256,
-      "colors": ["Negro", "Blanco"],
+      "colors": [
+        "Negro",
+        "Blanco"
+      ],
       "description": "El icónico G502 reimaginado con tecnología inalámbrica LIGHTSPEED, iluminación RGB LIGHTSYNC y switches LIGHTFORCE híbridos.",
       "features_list": [
         "Switches híbridos LIGHTFORCE opto-mecánicos",
@@ -141,8 +178,11 @@
         "dimensions": "132 x 75 x 41 mm",
         "compatibility": "Windows, macOS"
       },
-      "images": ["mouse", "mouse", "mouse", "mouse"]
+      "images": [
+        "./assets/productos/G502 X PLUS.jpg"
+      ]
     },
+
     {
       "id": "g502-x",
       "name": "G502 X",
@@ -152,12 +192,18 @@
       "discount": 0,
       "series": "g5",
       "connectivity": "wired",
-      "features": ["rgb", "programmable"],
+      "features": [
+        "rgb",
+        "programmable"
+      ],
       "inStock": true,
       "isNew": false,
       "rating": 4.6,
       "reviewCount": 178,
-      "colors": ["Negro", "Blanco"],
+      "colors": [
+        "Negro",
+        "Blanco"
+      ],
       "description": "Versión con cable del legendario G502 con switches LIGHTFORCE y rendimiento profesional.",
       "features_list": [
         "Switches híbridos LIGHTFORCE",
@@ -175,8 +221,11 @@
         "dimensions": "132 x 75 x 41 mm",
         "compatibility": "Windows, macOS"
       },
-      "images": ["mouse", "mouse", "mouse", "mouse"]
+      "images": [
+        "./assets/productos/G502 X.jpg"
+      ]
     },
+
     {
       "id": "g502-hero",
       "name": "G502 HERO",
@@ -186,12 +235,17 @@
       "discount": 46,
       "series": "g5",
       "connectivity": "wired",
-      "features": ["rgb", "programmable"],
+      "features": [
+        "rgb",
+        "programmable"
+      ],
       "inStock": true,
       "isNew": false,
       "rating": 4.8,
       "reviewCount": 1523,
-      "colors": ["Negro"],
+      "colors": [
+        "Negro"
+      ],
       "description": "El ratón gaming más vendido de todos los tiempos. Rendimiento legendario a precio imbatible.",
       "features_list": [
         "Sensor HERO 25K de próxima generación",
@@ -209,8 +263,11 @@
         "dimensions": "132 x 75 x 40 mm",
         "compatibility": "Windows, macOS"
       },
-      "images": ["mouse", "mouse", "mouse", "mouse"]
+      "images": [
+        "./assets/productos/G502 HERO.jpg"
+      ]
     },
+
     {
       "id": "g305-lightspeed",
       "name": "G305 LIGHTSPEED",
@@ -220,12 +277,19 @@
       "discount": 0,
       "series": "g5",
       "connectivity": "wireless",
-      "features": ["programmable"],
+      "features": [
+        "programmable"
+      ],
       "inStock": true,
       "isNew": false,
       "rating": 4.5,
       "reviewCount": 432,
-      "colors": ["Negro", "Blanco", "Azul", "Lila"],
+      "colors": [
+        "Negro",
+        "Blanco",
+        "Azul",
+        "Lila"
+      ],
       "description": "Ratón inalámbrico compacto con tecnología LIGHTSPEED y hasta 250 horas de batería.",
       "features_list": [
         "Conectividad LIGHTSPEED de 1ms",
@@ -244,8 +308,11 @@
         "dimensions": "117 x 62 x 38 mm",
         "compatibility": "Windows, macOS, Linux"
       },
-      "images": ["mouse", "mouse", "mouse", "mouse"]
+      "images": [
+        "./assets/productos/G305 LIGHTSPEED.jpg"
+      ]
     },
+
     {
       "id": "g203-lightsync",
       "name": "G203 LIGHTSYNC",
@@ -255,12 +322,19 @@
       "discount": 0,
       "series": "g5",
       "connectivity": "wired",
-      "features": ["rgb"],
+      "features": [
+        "rgb"
+      ],
       "inStock": true,
       "isNew": false,
       "rating": 4.4,
       "reviewCount": 876,
-      "colors": ["Negro", "Blanco", "Azul", "Lila"],
+      "colors": [
+        "Negro",
+        "Blanco",
+        "Azul",
+        "Lila"
+      ],
       "description": "Ratón gaming asequible con iluminación RGB LIGHTSYNC y sensor de alto rendimiento.",
       "features_list": [
         "Sensor de 8,000 DPI",
@@ -274,11 +348,14 @@
         "connectivity": "USB con cable",
         "responseRate": "1ms",
         "weight": "85g",
+        "battery": null,
         "buttons": "6 botones",
         "dimensions": "116.6 x 62.15 x 38.2 mm",
         "compatibility": "Windows, macOS, ChromeOS"
       },
-      "images": ["mouse", "mouse", "mouse", "mouse"]
+      "images": [
+        "./assets/productos/G203 LIGHTSYNC.jpg"
+      ]
     }
   ]
 }

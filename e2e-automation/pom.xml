@@ -1,60 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cenfotec.e2e</groupId>
-    <artifactId>e2e-automation</artifactId>
+
+    <!-- ======================================================
+         INFORMACIÓN DEL PROYECTO
+         ====================================================== -->
+
+    <groupId>com.teknovation</groupId>
+
+    <artifactId>api-automation</artifactId>
+
     <version>1.0-SNAPSHOT</version>
 
+    <name>Teknovation E2E Automation</name>
+
+    <description>
+        Automatización de pruebas E2E para Teknovation
+        utilizando Selenium WebDriver, TestNG y Maven.
+    </description>
+
+
+    <!-- ======================================================
+         PROPIEDADES
+         ====================================================== -->
+
     <properties>
+
+        <!-- Java -->
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <selenium.version>4.46.0</selenium.version>
-        <testng.version>7.11.0</testng.version>
-        <jackson.version>2.20.0</jackson.version>
+
+        <project.build.sourceEncoding>
+            UTF-8
+        </project.build.sourceEncoding>
+
+
+        <!-- Selenium -->
+        <selenium.version>
+            4.46.0
+        </selenium.version>
+
+
+        <!-- TestNG -->
+        <testng.version>
+            7.11.0
+        </testng.version>
+
+
+        <!-- Jackson -->
+        <jackson.version>
+            2.17.2
+        </jackson.version>
+
+
+        <!-- Maven Plugins -->
+        <maven.compiler.plugin.version>
+            3.13.0
+        </maven.compiler.plugin.version>
+
+        <maven.surefire.plugin.version>
+            3.5.2
+        </maven.surefire.plugin.version>
+
     </properties>
+
+
+    <!-- ======================================================
+         DEPENDENCIAS
+         ====================================================== -->
 
     <dependencies>
 
-        <!-- Selenium WebDriver -->
+
+        <!-- ==================================================
+             SELENIUM WEBDRIVER
+             ================================================== -->
+
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
+
+            <groupId>
+                org.seleniumhq.selenium
+            </groupId>
+
+            <artifactId>
+                selenium-java
+            </artifactId>
+
+            <version>
+                ${selenium.version}
+            </version>
+
         </dependency>
 
-        <!-- TestNG -->
+
+        <!-- ==================================================
+             TESTNG
+             ================================================== -->
+
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>test</scope>
+
+            <groupId>
+                org.testng
+            </groupId>
+
+            <artifactId>
+                testng
+            </artifactId>
+
+            <version>
+                ${testng.version}
+            </version>
+
+            <scope>
+                test
+            </scope>
+
         </dependency>
 
-        <!-- Jackson para leer archivos JSON -->
+
+        <!-- ==================================================
+             JACKSON
+             Necesario para JsonDataReader.java
+             ================================================== -->
+
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
+
+            <groupId>
+                com.fasterxml.jackson.core
+            </groupId>
+
+            <artifactId>
+                jackson-databind
+            </artifactId>
+
+            <version>
+                ${jackson.version}
+            </version>
+
+            <scope>
+                test
+            </scope>
+
         </dependency>
+
 
     </dependencies>
 
+
+    <!-- ======================================================
+         BUILD
+         ====================================================== -->
+
     <build>
+
+
         <plugins>
 
-            <!-- Maven Surefire para ejecutar TestNG -->
+
+            <!-- ==================================================
+                 COMPILADOR JAVA
+                 ================================================== -->
+
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.4</version>
+
+                <groupId>
+                    org.apache.maven.plugins
+                </groupId>
+
+                <artifactId>
+                    maven-compiler-plugin
+                </artifactId>
+
+                <version>
+                    ${maven.compiler.plugin.version}
+                </version>
+
+
+                <configuration>
+
+                    <release>
+                        17
+                    </release>
+
+                    <encoding>
+                        UTF-8
+                    </encoding>
+
+                </configuration>
+
             </plugin>
 
+
+            <!-- ==================================================
+                 TESTNG / SUREFIRE
+                 ================================================== -->
+
+            <plugin>
+
+                <groupId>
+                    org.apache.maven.plugins
+                </groupId>
+
+                <artifactId>
+                    maven-surefire-plugin
+                </artifactId>
+
+                <version>
+                    ${maven.surefire.plugin.version}
+                </version>
+
+
+                <configuration>
+
+
+                    <!--
+                        Ejecutar todos los archivos
+                        cuyo nombre termine en Test.java
+                    -->
+
+                    <includes>
+
+                        <include>
+                            **/*Test.java
+                        </include>
+
+                    </includes>
+
+
+                    <!--
+                        No detener Maven inmediatamente
+                        después del primer test fallido.
+                    -->
+
+                    <testFailureIgnore>
+                        false
+                    </testFailureIgnore>
+
+
+                    <!--
+                        Mostrar información de las pruebas
+                        directamente en consola.
+                    -->
+
+                    <useFile>
+                        false
+                    </useFile>
+
+
+                    <!--
+                        Mantener stack traces completos
+                        cuando una prueba falle.
+                    -->
+
+                    <trimStackTrace>
+                        false
+                    </trimStackTrace>
+
+
+                    <!--
+                        Evitar ejecución paralela por ahora.
+
+                        Esto es importante porque nuestras
+                        pruebas utilizan localStorage y una
+                        instancia independiente de navegador.
+                    -->
+
+                    <parallel>
+                        none
+                    </parallel>
+
+
+                    <!--
+                        Listener de TestNG.
+
+                        TestListener tomará screenshots
+                        automáticamente si una prueba falla.
+                    -->
+
+                    <properties>
+
+                        <property>
+
+                            <name>
+                                listener
+                            </name>
+
+                            <value>
+                             com.cenfotec.e2e.utils.TestListener
+                            </value>
+
+                        </property>
+
+                    </properties>
+
+
+                    <!--
+                        Argumentos para la JVM.
+                    -->
+
+                    <argLine>
+                        -Dfile.encoding=UTF-8
+                    </argLine>
+
+
+                </configuration>
+
+            </plugin>
+
+
         </plugins>
+
+
     </build>
+
 
 </project>
