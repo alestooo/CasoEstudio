@@ -60,7 +60,10 @@
   ========================== -->
   <header class="header">
 
-    <nav class="header-nav">
+    <nav
+        class="header-nav"
+        aria-label="Navegación principal"
+    >
 
       <div class="container">
 
@@ -306,10 +309,11 @@
               Ordenar por
             </h4>
 
-            <select
-              id="sortSelect"
-              class="sort-select-sidebar"
-            >
+        <select
+            id="sortSelect"
+            class="sort-select-sidebar"
+            aria-label="Ordenar productos"
+        >
 
               <option value="featured">
                 Destacado
@@ -1571,9 +1575,7 @@
 
 
   <!-- SweetAlert -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
-  </script>
+    <script src="assets/sweetalert2.all.min.js"></script>
 
   <!-- JS principal -->
   <script src="script.js"></script>

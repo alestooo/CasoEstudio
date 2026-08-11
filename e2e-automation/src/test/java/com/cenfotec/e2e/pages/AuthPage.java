@@ -1,5 +1,7 @@
 package com.cenfotec.e2e.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,136 +9,244 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 
 public class AuthPage {
 
-    private final WebDriver driver;
     private final WebDriverWait wait;
 
 
+    /*
+     * ============================================================
+     * TABS
+     * ============================================================
+     */
+
     private final By loginTab =
-            By.id("loginTab");
+        By.id(
+            "loginTab"
+        );
+
 
     private final By registerTab =
-            By.id("registerTab");
+        By.id(
+            "registerTab"
+        );
+
 
     private final By loginPanel =
-            By.id("loginPanel");
+        By.id(
+            "loginPanel"
+        );
+
 
     private final By registerPanel =
-            By.id("registerPanel");
-
-
-    private final By loginEmail =
-            By.id("loginEmail");
-
-    private final By loginPassword =
-            By.id("loginPassword");
-
-    private final By loginSubmit =
-            By.id("loginSubmit");
-
-    private final By loginGlobalMessage =
-            By.id("loginGlobalMessage");
-
-
-    private final By firstName =
-            By.id("firstName");
-
-    private final By lastName =
-            By.id("lastName");
-
-    private final By registerEmail =
-            By.id("registerEmail");
-
-    private final By phone =
-            By.id("phone");
-
-    private final By registerPassword =
-            By.id("registerPassword");
-
-    private final By confirmPassword =
-            By.id("confirmPassword");
-
-    private final By acceptTerms =
-            By.id("acceptTerms");
-
-    private final By registerSubmit =
-            By.id("registerSubmit");
-
-
-    private final By authSuccess =
-            By.id("authSuccess");
-
-    private final By logoutBtn =
-            By.id("logoutBtn");
+        By.id(
+            "registerPanel"
+        );
 
 
     /*
-     * SELECTORES REALES DE LOS OJOS
+     * ============================================================
+     * LOGIN
+     * ============================================================
+     */
+
+    private final By loginEmail =
+        By.id(
+            "loginEmail"
+        );
+
+
+    private final By loginPassword =
+        By.id(
+            "loginPassword"
+        );
+
+
+    private final By loginSubmit =
+        By.id(
+            "loginSubmit"
+        );
+
+
+    private final By loginGlobalMessage =
+        By.id(
+            "loginGlobalMessage"
+        );
+
+
+    /*
+     * Selector real utilizado por auth.html.
      */
 
     private final By loginPasswordToggle =
-            By.cssSelector(
-                    ".toggle-password[data-target='loginPassword']"
-            );
+        By.cssSelector(
+            ".toggle-password[data-target='loginPassword']"
+        );
+
+
+    /*
+     * ============================================================
+     * REGISTRO
+     * ============================================================
+     */
+
+    private final By firstName =
+        By.id(
+            "firstName"
+        );
+
+
+    private final By lastName =
+        By.id(
+            "lastName"
+        );
+
+
+    private final By registerEmail =
+        By.id(
+            "registerEmail"
+        );
+
+
+    private final By phone =
+        By.id(
+            "phone"
+        );
+
+
+    private final By registerPassword =
+        By.id(
+            "registerPassword"
+        );
+
+
+    private final By confirmPassword =
+        By.id(
+            "confirmPassword"
+        );
+
+
+    private final By acceptTerms =
+        By.id(
+            "acceptTerms"
+        );
+
+
+    private final By registerSubmit =
+        By.id(
+            "registerSubmit"
+        );
+
+
+    private final By registerGlobalMessage =
+        By.id(
+            "registerGlobalMessage"
+        );
+
 
     private final By registerPasswordToggle =
-            By.cssSelector(
-                    ".toggle-password[data-target='registerPassword']"
-            );
+        By.cssSelector(
+            ".toggle-password[data-target='registerPassword']"
+        );
+
 
     private final By confirmPasswordToggle =
-            By.cssSelector(
-                    ".toggle-password[data-target='confirmPassword']"
-            );
+        By.cssSelector(
+            ".toggle-password[data-target='confirmPassword']"
+        );
 
+
+    /*
+     * ============================================================
+     * ÉXITO
+     * ============================================================
+     */
+
+    private final By authSuccess =
+        By.id(
+            "authSuccess"
+        );
+
+
+    private final By successTitle =
+        By.id(
+            "successTitle"
+        );
+
+
+    private final By successMessage =
+        By.id(
+            "successMessage"
+        );
+
+
+    /*
+     * ============================================================
+     * CONSTRUCTOR
+     * ============================================================
+     */
 
     public AuthPage(
-            WebDriver driver
+        WebDriver driver
     ) {
 
-        this.driver =
-                driver;
-
         this.wait =
-                new WebDriverWait(
-                        driver,
-                        Duration.ofSeconds(3)
+            new WebDriverWait(
+                driver,
+                Duration.ofSeconds(
+                    3
+                )
+            );
+
+    }
+
+
+    /*
+     * ============================================================
+     * TABS
+     * ============================================================
+     */
+
+    public boolean isLoginPanelVisible() {
+
+        try {
+
+            WebElement panel =
+                wait.until(
+                    ExpectedConditions
+                        .visibilityOfElementLocated(
+                            loginPanel
+                        )
                 );
+
+
+            return panel.isDisplayed();
+
+        } catch (
+            RuntimeException exception
+        ) {
+
+            return false;
+
+        }
 
     }
 
 
     public void openLoginTab() {
 
-        wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(
-                                loginTab
-                        )
-        ).click();
+        click(
+            loginTab
+        );
 
     }
 
 
     public void openRegisterTab() {
 
-        wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(
-                                registerTab
-                        )
-        ).click();
-
-    }
-
-
-    public boolean isLoginPanelVisible() {
-
-        return isVisible(
-                loginPanel
+        click(
+            registerTab
         );
 
     }
@@ -144,63 +254,85 @@ public class AuthPage {
 
     public boolean isRegisterPanelVisible() {
 
-        return isVisible(
-                registerPanel
-        );
+        try {
+
+            WebElement panel =
+                wait.until(
+                    ExpectedConditions
+                        .visibilityOfElementLocated(
+                            registerPanel
+                        )
+                );
+
+
+            return panel.isDisplayed();
+
+        } catch (
+            RuntimeException exception
+        ) {
+
+            return false;
+
+        }
 
     }
 
 
+    /*
+     * ============================================================
+     * LOGIN
+     * ============================================================
+     */
+
     public void enterLoginEmail(
-            String email
+        String email
     ) {
 
         type(
-                loginEmail,
-                email
+            loginEmail,
+            email
         );
 
     }
 
 
     public void enterLoginPassword(
-            String password
+        String password
     ) {
 
         type(
-                loginPassword,
-                password
+            loginPassword,
+            password
         );
 
     }
 
 
-    public void clickLogin() {
+    public void submitLogin() {
 
-        wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(
-                                loginSubmit
-                        )
-        ).click();
+        click(
+            loginSubmit
+        );
 
     }
 
 
     public void login(
-            String email,
-            String password
+        String email,
+        String password
     ) {
 
         enterLoginEmail(
-                email
+            email
         );
+
 
         enterLoginPassword(
-                password
+            password
         );
 
-        clickLogin();
+
+        submitLogin();
 
     }
 
@@ -211,15 +343,15 @@ public class AuthPage {
 
             return wait.until(
                     ExpectedConditions
-                            .visibilityOfElementLocated(
-                                    loginGlobalMessage
-                            )
-            )
-                    .getText()
-                    .trim();
+                        .visibilityOfElementLocated(
+                            loginGlobalMessage
+                        )
+                )
+                .getText()
+                .trim();
 
         } catch (
-                Exception exception
+            RuntimeException exception
         ) {
 
             return "";
@@ -229,91 +361,140 @@ public class AuthPage {
     }
 
 
-    public void enterFirstName(
-            String value
+    /*
+     * ============================================================
+     * REGISTRO
+     * ============================================================
+     */
+
+    public void register(
+        String name,
+        String surname,
+        String email,
+        String password
     ) {
 
+        openRegisterTab();
+
+
         type(
-                firstName,
-                value
+            firstName,
+            name
+        );
+
+
+        type(
+            lastName,
+            surname
+        );
+
+
+        type(
+            registerEmail,
+            email
+        );
+
+
+        type(
+            registerPassword,
+            password
+        );
+
+
+        type(
+            confirmPassword,
+            password
+        );
+
+
+        selectTerms();
+
+
+        click(
+            registerSubmit
         );
 
     }
 
 
-    public void enterLastName(
-            String value
+    public void register(
+        String name,
+        String surname,
+        String email,
+        String phoneNumber,
+        String password
     ) {
 
-        type(
-                lastName,
-                value
-        );
+        openRegisterTab();
 
-    }
-
-
-    public void enterRegisterEmail(
-            String value
-    ) {
 
         type(
-                registerEmail,
-                value
+            firstName,
+            name
         );
 
-    }
-
-
-    public void enterPhone(
-            String value
-    ) {
 
         type(
-                phone,
-                value
+            lastName,
+            surname
         );
 
-    }
-
-
-    public void enterRegisterPassword(
-            String value
-    ) {
 
         type(
-                registerPassword,
-                value
+            registerEmail,
+            email
         );
-
-    }
-
-
-    public void enterConfirmPassword(
-            String value
-    ) {
-
-        type(
-                confirmPassword,
-                value
-        );
-
-    }
-
-
-    public void acceptTerms() {
-
-        WebElement checkbox =
-                wait.until(
-                        ExpectedConditions
-                                .presenceOfElementLocated(
-                                        acceptTerms
-                                )
-                );
 
 
         if (
-                !checkbox.isSelected()
+            phoneNumber != null
+            &&
+            !phoneNumber.isBlank()
+        ) {
+
+            type(
+                phone,
+                phoneNumber
+            );
+
+        }
+
+
+        type(
+            registerPassword,
+            password
+        );
+
+
+        type(
+            confirmPassword,
+            password
+        );
+
+
+        selectTerms();
+
+
+        click(
+            registerSubmit
+        );
+
+    }
+
+
+    private void selectTerms() {
+
+        WebElement checkbox =
+            wait.until(
+                ExpectedConditions
+                    .elementToBeClickable(
+                        acceptTerms
+                    )
+            );
+
+
+        if (
+            !checkbox.isSelected()
         ) {
 
             checkbox.click();
@@ -323,126 +504,68 @@ public class AuthPage {
     }
 
 
-    public void clickRegister() {
+    public String getRegisterGlobalMessage() {
 
-        wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(
-                                registerSubmit
+        try {
+
+            return wait.until(
+                    ExpectedConditions
+                        .visibilityOfElementLocated(
+                            registerGlobalMessage
                         )
-        ).click();
+                )
+                .getText()
+                .trim();
+
+        } catch (
+            RuntimeException exception
+        ) {
+
+            return "";
+
+        }
 
     }
 
 
-    public void register(
-            String first,
-            String last,
-            String email,
-            String phoneNumber,
-            String password
-    ) {
-
-        openRegisterTab();
-
-
-        enterFirstName(
-                first
-        );
-
-        enterLastName(
-                last
-        );
-
-        enterRegisterEmail(
-                email
-        );
-
-        enterPhone(
-                phoneNumber
-        );
-
-        enterRegisterPassword(
-                password
-        );
-
-        enterConfirmPassword(
-                password
-        );
-
-        acceptTerms();
-
-        clickRegister();
-
-    }
-
-
-    public boolean isAuthSuccessVisible() {
-
-        return isVisible(
-                authSuccess
-        );
-
-    }
-
-
-    public void logout() {
-
-        wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(
-                                logoutBtn
-                        )
-        ).click();
-
-    }
-
+    /*
+     * ============================================================
+     * PASSWORD TOGGLES
+     * ============================================================
+     */
 
     public void toggleLoginPassword() {
 
-        wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(
-                                loginPasswordToggle
-                        )
-        ).click();
+        click(
+            loginPasswordToggle
+        );
 
     }
 
 
     public void toggleRegisterPassword() {
 
-        wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(
-                                registerPasswordToggle
-                        )
-        ).click();
+        click(
+            registerPasswordToggle
+        );
 
     }
 
 
     public void toggleConfirmPassword() {
 
-        wait.until(
-                ExpectedConditions
-                        .elementToBeClickable(
-                                confirmPasswordToggle
-                        )
-        ).click();
+        click(
+            confirmPasswordToggle
+        );
 
     }
 
 
     public String getLoginPasswordType() {
 
-        return wait.until(
-                ExpectedConditions
-                        .presenceOfElementLocated(
-                                loginPassword
-                        )
-        ).getAttribute(
-                "type"
+        return getAttribute(
+            loginPassword,
+            "type"
         );
 
     }
@@ -450,13 +573,9 @@ public class AuthPage {
 
     public String getRegisterPasswordType() {
 
-        return wait.until(
-                ExpectedConditions
-                        .presenceOfElementLocated(
-                                registerPassword
-                        )
-        ).getAttribute(
-                "type"
+        return getAttribute(
+            registerPassword,
+            "type"
         );
 
     }
@@ -464,61 +583,153 @@ public class AuthPage {
 
     public String getConfirmPasswordType() {
 
-        return wait.until(
-                ExpectedConditions
-                        .presenceOfElementLocated(
-                                confirmPassword
-                        )
-        ).getAttribute(
-                "type"
+        return getAttribute(
+            confirmPassword,
+            "type"
         );
 
     }
 
 
-    private void type(
-            By locator,
-            String value
-    ) {
+    /*
+     * ============================================================
+     * ÉXITO
+     * ============================================================
+     */
 
-        WebElement element =
-                wait.until(
-                        ExpectedConditions
-                                .visibilityOfElementLocated(
-                                        locator
-                                )
-                );
-
-
-        element.clear();
-
-        element.sendKeys(
-                value
-        );
-
-    }
-
-
-    private boolean isVisible(
-            By locator
-    ) {
+    public boolean isAuthSuccessVisible() {
 
         try {
 
-            return wait.until(
+            WebElement success =
+                wait.until(
                     ExpectedConditions
-                            .visibilityOfElementLocated(
-                                    locator
-                            )
-            ).isDisplayed();
+                        .visibilityOfElementLocated(
+                            authSuccess
+                        )
+                );
+
+
+            return success.isDisplayed();
 
         } catch (
-                Exception exception
+            RuntimeException exception
         ) {
 
             return false;
 
         }
+
+    }
+
+
+    public String getSuccessTitle() {
+
+        try {
+
+            return wait.until(
+                    ExpectedConditions
+                        .visibilityOfElementLocated(
+                            successTitle
+                        )
+                )
+                .getText()
+                .trim();
+
+        } catch (
+            RuntimeException exception
+        ) {
+
+            return "";
+
+        }
+
+    }
+
+
+    public String getSuccessMessage() {
+
+        try {
+
+            return wait.until(
+                    ExpectedConditions
+                        .visibilityOfElementLocated(
+                            successMessage
+                        )
+                )
+                .getText()
+                .trim();
+
+        } catch (
+            RuntimeException exception
+        ) {
+
+            return "";
+
+        }
+
+    }
+
+
+    /*
+     * ============================================================
+     * UTILIDADES
+     * ============================================================
+     */
+
+    private void click(
+        By locator
+    ) {
+
+        wait.until(
+                ExpectedConditions
+                    .elementToBeClickable(
+                        locator
+                    )
+            )
+            .click();
+
+    }
+
+
+    private void type(
+        By locator,
+        String value
+    ) {
+
+        WebElement element =
+            wait.until(
+                ExpectedConditions
+                    .visibilityOfElementLocated(
+                        locator
+                    )
+            );
+
+
+        element.clear();
+
+
+        element.sendKeys(
+            value
+        );
+
+    }
+
+
+    private String getAttribute(
+        By locator,
+        String attribute
+    ) {
+
+        return wait.until(
+                ExpectedConditions
+                    .presenceOfElementLocated(
+                        locator
+                    )
+            )
+            .getAttribute(
+                attribute
+            );
 
     }
 
