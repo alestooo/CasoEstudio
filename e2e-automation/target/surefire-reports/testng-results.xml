@@ -2,362 +2,362 @@
 <testng-results ignored="0" total="22" passed="22" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-08-10T20:50:57 CST" name="Surefire suite" finished-at="2026-08-10T20:52:23 CST" duration-ms="86231">
+  <suite started-at="2026-08-10T20:59:36 CST" name="Surefire suite" finished-at="2026-08-10T21:00:58 CST" duration-ms="82893">
     <groups>
     </groups>
-    <test started-at="2026-08-10T20:50:57 CST" name="Surefire test" finished-at="2026-08-10T20:52:23 CST" duration-ms="86231">
+    <test started-at="2026-08-10T20:59:36 CST" name="Surefire test" finished-at="2026-08-10T21:00:58 CST" duration-ms="82893">
       <class name="com.cenfotec.e2e.tests.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:29 CST" name="setUp" finished-at="2026-08-10T20:51:31 CST" duration-ms="1720" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:08 CST" name="setUp" finished-at="2026-08-10T21:00:10 CST" duration-ms="1728" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:31 CST" name="openHomePage" finished-at="2026-08-10T20:51:32 CST" duration-ms="627" status="PASS">
+        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:10 CST" name="openHomePage" finished-at="2026-08-10T21:00:10 CST" duration-ms="626" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openHomePage -->
-        <test-method signature="favoritesShouldOpen()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:32 CST" name="favoritesShouldOpen" finished-at="2026-08-10T20:51:32 CST" duration-ms="75" status="PASS">
+        <test-method signature="favoritesShouldOpen()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:10 CST" name="favoritesShouldOpen" finished-at="2026-08-10T21:00:11 CST" duration-ms="76" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- favoritesShouldOpen -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:32 CST" name="tearDown" finished-at="2026-08-10T20:51:33 CST" duration-ms="1170" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:11 CST" name="tearDown" finished-at="2026-08-10T21:00:12 CST" duration-ms="1153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:33 CST" name="setUp" finished-at="2026-08-10T20:51:35 CST" duration-ms="1747" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:12 CST" name="setUp" finished-at="2026-08-10T21:00:13 CST" duration-ms="1737" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:35 CST" name="openHomePage" finished-at="2026-08-10T20:51:35 CST" duration-ms="676" status="PASS">
+        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:13 CST" name="openHomePage" finished-at="2026-08-10T21:00:14 CST" duration-ms="637" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openHomePage -->
-        <test-method signature="heroShouldBeVisible()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:35 CST" name="heroShouldBeVisible" finished-at="2026-08-10T20:51:35 CST" duration-ms="26" status="PASS">
+        <test-method signature="heroShouldBeVisible()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:14 CST" name="heroShouldBeVisible" finished-at="2026-08-10T21:00:14 CST" duration-ms="25" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- heroShouldBeVisible -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:35 CST" name="tearDown" finished-at="2026-08-10T20:51:37 CST" duration-ms="1160" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:14 CST" name="tearDown" finished-at="2026-08-10T21:00:15 CST" duration-ms="1126" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:37 CST" name="setUp" finished-at="2026-08-10T20:51:38 CST" duration-ms="1731" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:15 CST" name="setUp" finished-at="2026-08-10T21:00:17 CST" duration-ms="1712" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:38 CST" name="openHomePage" finished-at="2026-08-10T20:51:39 CST" duration-ms="603" status="PASS">
+        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:17 CST" name="openHomePage" finished-at="2026-08-10T21:00:18 CST" duration-ms="635" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openHomePage -->
-        <test-method signature="homePageShouldLoad()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:39 CST" name="homePageShouldLoad" finished-at="2026-08-10T20:51:39 CST" duration-ms="21" status="PASS">
+        <test-method signature="homePageShouldLoad()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:18 CST" name="homePageShouldLoad" finished-at="2026-08-10T21:00:18 CST" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- homePageShouldLoad -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:39 CST" name="tearDown" finished-at="2026-08-10T20:51:40 CST" duration-ms="1155" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:18 CST" name="tearDown" finished-at="2026-08-10T21:00:19 CST" duration-ms="1146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:40 CST" name="setUp" finished-at="2026-08-10T20:51:42 CST" duration-ms="1703" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:19 CST" name="setUp" finished-at="2026-08-10T21:00:20 CST" duration-ms="1728" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:42 CST" name="openHomePage" finished-at="2026-08-10T20:51:42 CST" duration-ms="607" status="PASS">
+        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:20 CST" name="openHomePage" finished-at="2026-08-10T21:00:21 CST" duration-ms="636" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openHomePage -->
-        <test-method signature="searchShouldFindProduct()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:42 CST" name="searchShouldFindProduct" finished-at="2026-08-10T20:51:43 CST" duration-ms="136" status="PASS">
+        <test-method signature="searchShouldFindProduct()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:21 CST" name="searchShouldFindProduct" finished-at="2026-08-10T21:00:21 CST" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchShouldFindProduct -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:43 CST" name="tearDown" finished-at="2026-08-10T20:51:44 CST" duration-ms="1166" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:21 CST" name="tearDown" finished-at="2026-08-10T21:00:22 CST" duration-ms="1146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:44 CST" name="setUp" finished-at="2026-08-10T20:51:45 CST" duration-ms="1712" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:22 CST" name="setUp" finished-at="2026-08-10T21:00:24 CST" duration-ms="1731" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:45 CST" name="openHomePage" finished-at="2026-08-10T20:51:47 CST" duration-ms="1907" status="PASS">
+        <test-method is-config="true" signature="openHomePage()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:24 CST" name="openHomePage" finished-at="2026-08-10T21:00:25 CST" duration-ms="631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openHomePage -->
-        <test-method signature="shopNavigationShouldWork()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:47 CST" name="shopNavigationShouldWork" finished-at="2026-08-10T20:51:47 CST" duration-ms="117" status="PASS">
+        <test-method signature="shopNavigationShouldWork()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:25 CST" name="shopNavigationShouldWork" finished-at="2026-08-10T21:00:25 CST" duration-ms="117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shopNavigationShouldWork -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T20:51:47 CST" name="tearDown" finished-at="2026-08-10T20:51:49 CST" duration-ms="1146" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.HomePageTest@7e0b85f9]" started-at="2026-08-10T21:00:25 CST" name="tearDown" finished-at="2026-08-10T21:00:26 CST" duration-ms="1146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.cenfotec.e2e.tests.HomePageTest -->
       <class name="com.cenfotec.e2e.tests.ProductPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:49 CST" name="setUp" finished-at="2026-08-10T20:51:50 CST" duration-ms="1745" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:26 CST" name="setUp" finished-at="2026-08-10T21:00:28 CST" duration-ms="1718" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openProductPage()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:50 CST" name="openProductPage" finished-at="2026-08-10T20:51:51 CST" duration-ms="616" status="PASS">
+        <test-method is-config="true" signature="openProductPage()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:28 CST" name="openProductPage" finished-at="2026-08-10T21:00:28 CST" duration-ms="610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openProductPage -->
-        <test-method signature="addToCartShouldUpdateHeader()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:51 CST" name="addToCartShouldUpdateHeader" finished-at="2026-08-10T20:51:51 CST" duration-ms="75" status="PASS">
+        <test-method signature="addToCartShouldUpdateHeader()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:28 CST" name="addToCartShouldUpdateHeader" finished-at="2026-08-10T21:00:28 CST" duration-ms="75" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCartShouldUpdateHeader -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:51 CST" name="tearDown" finished-at="2026-08-10T20:51:52 CST" duration-ms="1173" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:28 CST" name="tearDown" finished-at="2026-08-10T21:00:30 CST" duration-ms="1157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:52 CST" name="setUp" finished-at="2026-08-10T20:51:54 CST" duration-ms="1759" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:30 CST" name="setUp" finished-at="2026-08-10T21:00:31 CST" duration-ms="1732" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openProductPage()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:54 CST" name="openProductPage" finished-at="2026-08-10T20:51:56 CST" duration-ms="1642" status="PASS">
+        <test-method is-config="true" signature="openProductPage()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:31 CST" name="openProductPage" finished-at="2026-08-10T21:00:32 CST" duration-ms="659" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openProductPage -->
-        <test-method signature="productShouldLoad()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:56 CST" name="productShouldLoad" finished-at="2026-08-10T20:51:56 CST" duration-ms="56" status="PASS">
+        <test-method signature="productShouldLoad()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:32 CST" name="productShouldLoad" finished-at="2026-08-10T21:00:32 CST" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productShouldLoad -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:56 CST" name="tearDown" finished-at="2026-08-10T20:51:57 CST" duration-ms="1155" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:32 CST" name="tearDown" finished-at="2026-08-10T21:00:33 CST" duration-ms="1152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:57 CST" name="setUp" finished-at="2026-08-10T20:51:59 CST" duration-ms="1709" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:33 CST" name="setUp" finished-at="2026-08-10T21:00:35 CST" duration-ms="1747" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openProductPage()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:51:59 CST" name="openProductPage" finished-at="2026-08-10T20:52:00 CST" duration-ms="1669" status="PASS">
+        <test-method is-config="true" signature="openProductPage()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:35 CST" name="openProductPage" finished-at="2026-08-10T21:00:36 CST" duration-ms="628" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openProductPage -->
-        <test-method signature="quantityShouldIncrease()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:52:00 CST" name="quantityShouldIncrease" finished-at="2026-08-10T20:52:00 CST" duration-ms="75" status="PASS">
+        <test-method signature="quantityShouldIncrease()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:36 CST" name="quantityShouldIncrease" finished-at="2026-08-10T21:00:36 CST" duration-ms="70" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quantityShouldIncrease -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@9353778]" started-at="2026-08-10T20:52:00 CST" name="tearDown" finished-at="2026-08-10T20:52:01 CST" duration-ms="1149" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ProductPageTest@63355449]" started-at="2026-08-10T21:00:36 CST" name="tearDown" finished-at="2026-08-10T21:00:37 CST" duration-ms="1148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.cenfotec.e2e.tests.ProductPageTest -->
       <class name="com.cenfotec.e2e.tests.CartPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.CartPageTest@6a400542]" started-at="2026-08-10T20:51:22 CST" name="setUp" finished-at="2026-08-10T20:51:23 CST" duration-ms="1701" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.CartPageTest@6a400542]" started-at="2026-08-10T21:00:00 CST" name="setUp" finished-at="2026-08-10T21:00:02 CST" duration-ms="1716" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="checkoutShouldCompletePurchase()[pri:0, instance:com.cenfotec.e2e.tests.CartPageTest@6a400542]" started-at="2026-08-10T20:51:23 CST" name="checkoutShouldCompletePurchase" finished-at="2026-08-10T20:51:25 CST" duration-ms="1314" status="PASS">
+        <test-method signature="checkoutShouldCompletePurchase()[pri:0, instance:com.cenfotec.e2e.tests.CartPageTest@6a400542]" started-at="2026-08-10T21:00:02 CST" name="checkoutShouldCompletePurchase" finished-at="2026-08-10T21:00:03 CST" duration-ms="1376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkoutShouldCompletePurchase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.CartPageTest@6a400542]" started-at="2026-08-10T20:51:25 CST" name="tearDown" finished-at="2026-08-10T20:51:26 CST" duration-ms="1159" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.CartPageTest@6a400542]" started-at="2026-08-10T21:00:03 CST" name="tearDown" finished-at="2026-08-10T21:00:05 CST" duration-ms="1156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.cenfotec.e2e.tests.CartPageTest -->
       <class name="com.cenfotec.e2e.tests.AuthPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:50:57 CST" name="setUp" finished-at="2026-08-10T20:50:59 CST" duration-ms="2108" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:36 CST" name="setUp" finished-at="2026-08-10T20:59:38 CST" duration-ms="2105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:50:59 CST" name="openAuthPage" finished-at="2026-08-10T20:51:00 CST" duration-ms="645" status="PASS">
+        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:38 CST" name="openAuthPage" finished-at="2026-08-10T20:59:38 CST" duration-ms="624" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAuthPage -->
-        <test-method signature="loginPanelShouldBeVisibleByDefault()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:00 CST" name="loginPanelShouldBeVisibleByDefault" finished-at="2026-08-10T20:51:00 CST" duration-ms="33" status="PASS">
+        <test-method signature="loginPanelShouldBeVisibleByDefault()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:38 CST" name="loginPanelShouldBeVisibleByDefault" finished-at="2026-08-10T20:59:38 CST" duration-ms="34" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPanelShouldBeVisibleByDefault -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:00 CST" name="tearDown" finished-at="2026-08-10T20:51:01 CST" duration-ms="1163" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:38 CST" name="tearDown" finished-at="2026-08-10T20:59:40 CST" duration-ms="1180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:01 CST" name="setUp" finished-at="2026-08-10T20:51:03 CST" duration-ms="1764" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:40 CST" name="setUp" finished-at="2026-08-10T20:59:41 CST" duration-ms="1734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:03 CST" name="openAuthPage" finished-at="2026-08-10T20:51:03 CST" duration-ms="610" status="PASS">
+        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:41 CST" name="openAuthPage" finished-at="2026-08-10T20:59:42 CST" duration-ms="684" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAuthPage -->
-        <test-method signature="shouldLoginWithValidCredentials()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:03 CST" name="shouldLoginWithValidCredentials" finished-at="2026-08-10T20:51:06 CST" duration-ms="2309" status="PASS">
+        <test-method signature="shouldLoginWithValidCredentials()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:42 CST" name="shouldLoginWithValidCredentials" finished-at="2026-08-10T20:59:44 CST" duration-ms="2332" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldLoginWithValidCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:06 CST" name="tearDown" finished-at="2026-08-10T20:51:07 CST" duration-ms="1142" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:44 CST" name="tearDown" finished-at="2026-08-10T20:59:46 CST" duration-ms="1164" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:07 CST" name="setUp" finished-at="2026-08-10T20:51:08 CST" duration-ms="1701" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:46 CST" name="setUp" finished-at="2026-08-10T20:59:47 CST" duration-ms="1735" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:08 CST" name="openAuthPage" finished-at="2026-08-10T20:51:09 CST" duration-ms="628" status="PASS">
+        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:47 CST" name="openAuthPage" finished-at="2026-08-10T20:59:48 CST" duration-ms="631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAuthPage -->
-        <test-method signature="shouldOpenRegisterTab()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:09 CST" name="shouldOpenRegisterTab" finished-at="2026-08-10T20:51:09 CST" duration-ms="62" status="PASS">
+        <test-method signature="shouldOpenRegisterTab()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:48 CST" name="shouldOpenRegisterTab" finished-at="2026-08-10T20:59:48 CST" duration-ms="59" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldOpenRegisterTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:09 CST" name="tearDown" finished-at="2026-08-10T20:51:10 CST" duration-ms="1155" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:48 CST" name="tearDown" finished-at="2026-08-10T20:59:49 CST" duration-ms="1156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:10 CST" name="setUp" finished-at="2026-08-10T20:51:12 CST" duration-ms="1734" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:49 CST" name="setUp" finished-at="2026-08-10T20:59:51 CST" duration-ms="1707" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:12 CST" name="openAuthPage" finished-at="2026-08-10T20:51:13 CST" duration-ms="637" status="PASS">
+        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:51 CST" name="openAuthPage" finished-at="2026-08-10T20:59:51 CST" duration-ms="651" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAuthPage -->
-        <test-method signature="shouldRegisterNewUser()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:13 CST" name="shouldRegisterNewUser" finished-at="2026-08-10T20:51:13 CST" duration-ms="506" status="PASS">
+        <test-method signature="shouldRegisterNewUser()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:51 CST" name="shouldRegisterNewUser" finished-at="2026-08-10T20:59:52 CST" duration-ms="509" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldRegisterNewUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:13 CST" name="tearDown" finished-at="2026-08-10T20:51:14 CST" duration-ms="1199" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:52 CST" name="tearDown" finished-at="2026-08-10T20:59:53 CST" duration-ms="1148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:14 CST" name="setUp" finished-at="2026-08-10T20:51:16 CST" duration-ms="1734" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:53 CST" name="setUp" finished-at="2026-08-10T20:59:55 CST" duration-ms="1752" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:16 CST" name="openAuthPage" finished-at="2026-08-10T20:51:17 CST" duration-ms="619" status="PASS">
+        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:55 CST" name="openAuthPage" finished-at="2026-08-10T20:59:55 CST" duration-ms="633" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAuthPage -->
-        <test-method signature="shouldRejectInvalidLogin()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:17 CST" name="shouldRejectInvalidLogin" finished-at="2026-08-10T20:51:17 CST" duration-ms="185" status="PASS">
+        <test-method signature="shouldRejectInvalidLogin()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:55 CST" name="shouldRejectInvalidLogin" finished-at="2026-08-10T20:59:56 CST" duration-ms="179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldRejectInvalidLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:17 CST" name="tearDown" finished-at="2026-08-10T20:51:18 CST" duration-ms="1165" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:56 CST" name="tearDown" finished-at="2026-08-10T20:59:57 CST" duration-ms="1142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:18 CST" name="setUp" finished-at="2026-08-10T20:51:20 CST" duration-ms="1720" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:57 CST" name="setUp" finished-at="2026-08-10T20:59:59 CST" duration-ms="1703" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:20 CST" name="openAuthPage" finished-at="2026-08-10T20:51:20 CST" duration-ms="647" status="PASS">
+        <test-method is-config="true" signature="openAuthPage()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:59 CST" name="openAuthPage" finished-at="2026-08-10T20:59:59 CST" duration-ms="627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAuthPage -->
-        <test-method signature="shouldToggleLoginPasswordVisibility()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:20 CST" name="shouldToggleLoginPasswordVisibility" finished-at="2026-08-10T20:51:20 CST" duration-ms="59" status="PASS">
+        <test-method signature="shouldToggleLoginPasswordVisibility()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:59 CST" name="shouldToggleLoginPasswordVisibility" finished-at="2026-08-10T20:59:59 CST" duration-ms="74" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldToggleLoginPasswordVisibility -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:51:20 CST" name="tearDown" finished-at="2026-08-10T20:51:22 CST" duration-ms="1133" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.AuthPageTest@48e4374]" started-at="2026-08-10T20:59:59 CST" name="tearDown" finished-at="2026-08-10T21:00:00 CST" duration-ms="1173" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.cenfotec.e2e.tests.AuthPageTest -->
       <class name="com.cenfotec.e2e.tests.ShopPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:01 CST" name="setUp" finished-at="2026-08-10T20:52:03 CST" duration-ms="1722" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:37 CST" name="setUp" finished-at="2026-08-10T21:00:39 CST" duration-ms="1718" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:03 CST" name="openShopPage" finished-at="2026-08-10T20:52:04 CST" duration-ms="614" status="PASS">
+        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:39 CST" name="openShopPage" finished-at="2026-08-10T21:00:39 CST" duration-ms="612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openShopPage -->
-        <test-method signature="shopShouldDisplayProducts()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:04 CST" name="shopShouldDisplayProducts" finished-at="2026-08-10T20:52:04 CST" duration-ms="22" status="PASS">
+        <test-method signature="shopShouldDisplayProducts()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:39 CST" name="shopShouldDisplayProducts" finished-at="2026-08-10T21:00:39 CST" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shopShouldDisplayProducts -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:04 CST" name="tearDown" finished-at="2026-08-10T20:52:05 CST" duration-ms="1159" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:39 CST" name="tearDown" finished-at="2026-08-10T21:00:40 CST" duration-ms="1168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:05 CST" name="setUp" finished-at="2026-08-10T20:52:07 CST" duration-ms="1731" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:40 CST" name="setUp" finished-at="2026-08-10T21:00:42 CST" duration-ms="1740" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:07 CST" name="openShopPage" finished-at="2026-08-10T20:52:07 CST" duration-ms="615" status="PASS">
+        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:42 CST" name="openShopPage" finished-at="2026-08-10T21:00:43 CST" duration-ms="836" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openShopPage -->
-        <test-method signature="shouldAddFavorite()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:07 CST" name="shouldAddFavorite" finished-at="2026-08-10T20:52:07 CST" duration-ms="74" status="PASS">
+        <test-method signature="shouldAddFavorite()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:43 CST" name="shouldAddFavorite" finished-at="2026-08-10T21:00:43 CST" duration-ms="82" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldAddFavorite -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:07 CST" name="tearDown" finished-at="2026-08-10T20:52:09 CST" duration-ms="1156" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:43 CST" name="tearDown" finished-at="2026-08-10T21:00:44 CST" duration-ms="1142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:09 CST" name="setUp" finished-at="2026-08-10T20:52:10 CST" duration-ms="1747" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:44 CST" name="setUp" finished-at="2026-08-10T21:00:46 CST" duration-ms="1721" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:10 CST" name="openShopPage" finished-at="2026-08-10T20:52:11 CST" duration-ms="637" status="PASS">
+        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:46 CST" name="openShopPage" finished-at="2026-08-10T21:00:46 CST" duration-ms="645" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openShopPage -->
-        <test-method signature="shouldAddProductToCart()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:11 CST" name="shouldAddProductToCart" finished-at="2026-08-10T20:52:11 CST" duration-ms="78" status="PASS">
+        <test-method signature="shouldAddProductToCart()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:46 CST" name="shouldAddProductToCart" finished-at="2026-08-10T21:00:47 CST" duration-ms="72" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldAddProductToCart -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:11 CST" name="tearDown" finished-at="2026-08-10T20:52:12 CST" duration-ms="1162" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:47 CST" name="tearDown" finished-at="2026-08-10T21:00:48 CST" duration-ms="1150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:12 CST" name="setUp" finished-at="2026-08-10T20:52:14 CST" duration-ms="1729" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:48 CST" name="setUp" finished-at="2026-08-10T21:00:49 CST" duration-ms="1716" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:14 CST" name="openShopPage" finished-at="2026-08-10T20:52:14 CST" duration-ms="598" status="PASS">
+        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:49 CST" name="openShopPage" finished-at="2026-08-10T21:00:50 CST" duration-ms="627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openShopPage -->
-        <test-method signature="shouldOpenSpecificProduct()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:14 CST" name="shouldOpenSpecificProduct" finished-at="2026-08-10T20:52:15 CST" duration-ms="117" status="PASS">
+        <test-method signature="shouldOpenSpecificProduct()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:50 CST" name="shouldOpenSpecificProduct" finished-at="2026-08-10T21:00:50 CST" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldOpenSpecificProduct -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:15 CST" name="tearDown" finished-at="2026-08-10T20:52:16 CST" duration-ms="1148" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:50 CST" name="tearDown" finished-at="2026-08-10T21:00:51 CST" duration-ms="1186" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:16 CST" name="setUp" finished-at="2026-08-10T20:52:17 CST" duration-ms="1731" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:51 CST" name="setUp" finished-at="2026-08-10T21:00:53 CST" duration-ms="1729" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:17 CST" name="openShopPage" finished-at="2026-08-10T20:52:18 CST" duration-ms="625" status="PASS">
+        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:53 CST" name="openShopPage" finished-at="2026-08-10T21:00:54 CST" duration-ms="627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openShopPage -->
-        <test-method signature="sortingByPriceShouldWork()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:18 CST" name="sortingByPriceShouldWork" finished-at="2026-08-10T20:52:18 CST" duration-ms="84" status="PASS">
+        <test-method signature="sortingByPriceShouldWork()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:54 CST" name="sortingByPriceShouldWork" finished-at="2026-08-10T21:00:54 CST" duration-ms="82" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sortingByPriceShouldWork -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:18 CST" name="tearDown" finished-at="2026-08-10T20:52:19 CST" duration-ms="1161" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:54 CST" name="tearDown" finished-at="2026-08-10T21:00:55 CST" duration-ms="1149" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:19 CST" name="setUp" finished-at="2026-08-10T20:52:21 CST" duration-ms="1722" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:55 CST" name="setUp" finished-at="2026-08-10T21:00:57 CST" duration-ms="1734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:21 CST" name="openShopPage" finished-at="2026-08-10T20:52:22 CST" duration-ms="840" status="PASS">
+        <test-method is-config="true" signature="openShopPage()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:57 CST" name="openShopPage" finished-at="2026-08-10T21:00:57 CST" duration-ms="615" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openShopPage -->
-        <test-method signature="wirelessFilterShouldWork()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:22 CST" name="wirelessFilterShouldWork" finished-at="2026-08-10T20:52:22 CST" duration-ms="71" status="PASS">
+        <test-method signature="wirelessFilterShouldWork()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:57 CST" name="wirelessFilterShouldWork" finished-at="2026-08-10T21:00:57 CST" duration-ms="65" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- wirelessFilterShouldWork -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T20:52:22 CST" name="tearDown" finished-at="2026-08-10T20:52:23 CST" duration-ms="1182" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ShopPageTest@6a28ffa4]" started-at="2026-08-10T21:00:57 CST" name="tearDown" finished-at="2026-08-10T21:00:58 CST" duration-ms="1146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.cenfotec.e2e.tests.ShopPageTest -->
       <class name="com.cenfotec.e2e.tests.ChromeTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ChromeTest@6580cfdd]" started-at="2026-08-10T20:51:26 CST" name="setUp" finished-at="2026-08-10T20:51:28 CST" duration-ms="1735" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.cenfotec.e2e.tests.ChromeTest@6580cfdd]" started-at="2026-08-10T21:00:05 CST" name="setUp" finished-at="2026-08-10T21:00:06 CST" duration-ms="1714" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="chromeShouldOpenTeknovation()[pri:0, instance:com.cenfotec.e2e.tests.ChromeTest@6580cfdd]" started-at="2026-08-10T20:51:28 CST" name="chromeShouldOpenTeknovation" finished-at="2026-08-10T20:51:28 CST" duration-ms="681" status="PASS">
+        <test-method signature="chromeShouldOpenTeknovation()[pri:0, instance:com.cenfotec.e2e.tests.ChromeTest@6580cfdd]" started-at="2026-08-10T21:00:06 CST" name="chromeShouldOpenTeknovation" finished-at="2026-08-10T21:00:07 CST" duration-ms="657" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- chromeShouldOpenTeknovation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ChromeTest@6580cfdd]" started-at="2026-08-10T20:51:28 CST" name="tearDown" finished-at="2026-08-10T20:51:29 CST" duration-ms="1173" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cenfotec.e2e.tests.ChromeTest@6580cfdd]" started-at="2026-08-10T21:00:07 CST" name="tearDown" finished-at="2026-08-10T21:00:08 CST" duration-ms="1142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
