@@ -81,16 +81,45 @@ public class ProductPage {
         this.wait =
                 new WebDriverWait(
                         driver,
-                        Duration.ofSeconds(5)
+                        Duration.ofSeconds(10)
                 );
     }
 
 
     public boolean isProductLayoutVisible() {
 
-        return isVisible(
-                productLayout
-        );
+        try {
+
+            WebElement layout =
+                    wait.until(
+                            ExpectedConditions
+                                    .visibilityOfElementLocated(
+                                            productLayout
+                                    )
+                    );
+
+            wait.until(
+                    ExpectedConditions
+                            .visibilityOfElementLocated(
+                                    productTitle
+                            )
+            );
+
+            wait.until(
+                    ExpectedConditions
+                            .visibilityOfElementLocated(
+                                    currentPrice
+                            )
+            );
+
+            return layout.isDisplayed();
+
+        } catch (
+                RuntimeException exception
+        ) {
+
+            return false;
+        }
     }
 
 
@@ -278,27 +307,5 @@ public class ProductPage {
         )
                 .getText()
                 .trim();
-    }
-
-
-    private boolean isVisible(
-            By locator
-    ) {
-
-        try {
-
-            return wait.until(
-                    ExpectedConditions
-                            .visibilityOfElementLocated(
-                                    locator
-                            )
-            ).isDisplayed();
-
-        } catch (
-                RuntimeException exception
-        ) {
-
-            return false;
-        }
     }
 }

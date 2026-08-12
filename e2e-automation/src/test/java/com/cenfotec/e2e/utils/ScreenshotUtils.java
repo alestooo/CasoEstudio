@@ -3,6 +3,7 @@ package com.cenfotec.e2e.utils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,7 +42,6 @@ public final class ScreenshotUtils {
         ) {
 
             return "";
-
         }
 
 
@@ -50,7 +50,6 @@ public final class ScreenshotUtils {
         ) {
 
             return "";
-
         }
 
 
@@ -121,11 +120,20 @@ public final class ScreenshotUtils {
                             + exception.getMessage()
             );
 
-
             return "";
 
-        }
+        } catch (
+                WebDriverException exception
+        ) {
 
+            System.out.println(
+                    "[SCREENSHOT] No se pudo tomar la captura de "
+                            + testName
+                            + ". El navegador puede tener un alert abierto."
+            );
+
+            return "";
+        }
     }
 
 
@@ -147,7 +155,5 @@ public final class ScreenshotUtils {
                         "[^a-zA-Z0-9._-]",
                         "_"
                 );
-
     }
-
 }
