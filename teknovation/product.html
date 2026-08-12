@@ -103,7 +103,10 @@
     ====================================================== -->
     <header class="header">
 
-        <nav class="header-nav">
+            <nav
+                class="header-nav"
+                aria-label="Navegación principal"
+            >
 
             <div class="container">
 
@@ -447,14 +450,15 @@
                                 </button>
 
 
-                                <input
-                                    type="number"
-                                    id="quantity"
-                                    value="1"
-                                    min="1"
-                                    max="10"
-                                    readonly
-                                >
+                            <input
+                                type="number"
+                                id="quantity"
+                                value="1"
+                                min="1"
+                                max="10"
+                                readonly
+                                aria-label="Cantidad del producto"
+                            >
 
 
                                 <button
@@ -1020,10 +1024,7 @@
 
 
     <!-- SweetAlert -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
-    </script>
-
+<script src="assets/sweetalert2.all.min.js"></script>
 
     <!-- =====================================================
          LÓGICA DEL PRODUCTO

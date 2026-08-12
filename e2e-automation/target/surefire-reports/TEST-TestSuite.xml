@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="83.255" tests="22" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="60.176" tests="22" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.19.10-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\Alejandro\AppData\Local\Temp\surefire2141571577966894736\surefirebooter-20260810205935571_3.jar C:\Users\Alejandro\AppData\Local\Temp\surefire2141571577966894736 2026-08-10T20-59-35_448-jvmRun1 surefire-20260810205935571_1tmp surefire_0-20260810205935571_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Alejandro\AppData\Local\Temp\surefire2825823353213138010\surefirebooter-20260810223914096_3.jar C:\Users\Alejandro\AppData\Local\Temp\surefire2825823353213138010 2026-08-10T22-39-13_917-jvmRun1 surefire-20260810223914096_1tmp surefire_0-20260810223914096_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Alejandro\OneDrive\Desktop\programacion-web-avanzada-dev-ale-backend\e2e-automation\target\test-classes;C:\Users\Alejandro\OneDrive\Desktop\programacion-web-avanzada-dev-ale-backend\e2e-automation\target\classes;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-java\4.46.0\selenium-java-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-api\4.46.0\selenium-api-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.46.0\selenium-chrome-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.46.0\selenium-chromium-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-json\4.46.0\selenium-json-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.46.0\selenium-manager-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-latest\4.46.0\selenium-devtools-latest-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v148\4.46.0\selenium-devtools-v148-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v149\4.46.0\selenium-devtools-v149-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v150\4.46.0\selenium-devtools-v150-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.46.0\selenium-edge-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.46.0\selenium-firefox-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-http\4.46.0\selenium-http-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.46.0\selenium-ie-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.46.0\selenium-remote-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\guava\33.6.0-jre\guava-33.6.0-jre.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\Alejandro\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Alejandro\.m2\repository\com\google\errorprone\error_prone_annotations\2.47.0\error_prone_annotations-2.47.0.jar;C:\Users\Alejandro\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-api\1.64.0\opentelemetry-api-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-context\1.64.0\opentelemetry-context-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-common\1.64.0\opentelemetry-common-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.64.0\opentelemetry-exporter-logging-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.64.0\opentelemetry-sdk-common-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.64.0\opentelemetry-sdk-extension-autoconfigure-spi-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.64.0\opentelemetry-sdk-extension-autoconfigure-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.64.0\opentelemetry-sdk-trace-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.64.0\opentelemetry-sdk-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.64.0\opentelemetry-sdk-metrics-1.64.0.jar;C:\Users\Alejandro\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.64.0\opentelemetry-sdk-logs-1.64.0.jar;C:\Users\Alejandro\.m2\repository\net\bytebuddy\byte-buddy\1.18.11\byte-buddy-1.18.11.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-os\4.46.0\selenium-os-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.46.0\selenium-safari-driver-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\seleniumhq\selenium\selenium-support\4.46.0\selenium-support-4.46.0.jar;C:\Users\Alejandro\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\Alejandro\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\Alejandro\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\Alejandro\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar;C:\Users\Alejandro\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Alejandro\AppData\Local\Temp\surefire2141571577966894736\surefirebooter-20260810205935571_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Alejandro\AppData\Local\Temp\surefire2825823353213138010\surefirebooter-20260810223914096_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.19+10"/>
@@ -58,186 +58,251 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="loginPanelShouldBeVisibleByDefault" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.034">
+  <testcase name="loginPanelShouldBeVisibleByDefault" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.028">
     <system-out><![CDATA[
 ==========================================
 INICIANDO SUITE: Surefire test
 ==========================================
 
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: loginPanelShouldBeVisibleByDefault
 ]]></system-out>
     <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
 SLF4J(W): Defaulting to no-operation (NOP) logger implementation
 SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-ago. 10, 2026 8:59:37 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ago. 10, 2026 10:39:15 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shouldLoginWithValidCredentials" classname="com.cenfotec.e2e.tests.AuthPageTest" time="2.332">
+  <testcase name="shouldLoginWithValidCredentials" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.241">
     <system-out><![CDATA[✓ PASÓ: loginPanelShouldBeVisibleByDefault
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shouldLoginWithValidCredentials
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 8:59:40 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:18 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
   <testcase name="shouldOpenRegisterTab" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.06">
     <system-out><![CDATA[✓ PASÓ: shouldLoginWithValidCredentials
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shouldOpenRegisterTab
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 8:59:46 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:20 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shouldRegisterNewUser" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.509">
+  <testcase name="shouldRegisterNewUser" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.436">
     <system-out><![CDATA[✓ PASÓ: shouldOpenRegisterTab
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shouldRegisterNewUser
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 8:59:50 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:23 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shouldRejectInvalidLogin" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.179">
+  <testcase name="shouldRejectInvalidLogin" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.165">
     <system-out><![CDATA[✓ PASÓ: shouldRegisterNewUser
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shouldRejectInvalidLogin
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 8:59:54 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:26 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shouldToggleLoginPasswordVisibility" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.073">
+  <testcase name="shouldToggleLoginPasswordVisibility" classname="com.cenfotec.e2e.tests.AuthPageTest" time="0.104">
     <system-out><![CDATA[✓ PASÓ: shouldRejectInvalidLogin
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shouldToggleLoginPasswordVisibility
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 8:59:57 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:28 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="checkoutShouldCompletePurchase" classname="com.cenfotec.e2e.tests.CartPageTest" time="1.376">
+  <testcase name="checkoutShouldCompletePurchase" classname="com.cenfotec.e2e.tests.CartPageTest" time="0.779">
     <system-out><![CDATA[✓ PASÓ: shouldToggleLoginPasswordVisibility
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: checkoutShouldCompletePurchase
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:01 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:31 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="chromeShouldOpenTeknovation" classname="com.cenfotec.e2e.tests.ChromeTest" time="0.657">
+  <testcase name="chromeShouldOpenTeknovation" classname="com.cenfotec.e2e.tests.ChromeTest" time="0.649">
     <system-out><![CDATA[✓ PASÓ: checkoutShouldCompletePurchase
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: chromeShouldOpenTeknovation
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:05 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:35 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="favoritesShouldOpen" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.075">
+  <testcase name="favoritesShouldOpen" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.083">
     <system-out><![CDATA[✓ PASÓ: chromeShouldOpenTeknovation
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: favoritesShouldOpen
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:09 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:37 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="heroShouldBeVisible" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.024">
+  <testcase name="heroShouldBeVisible" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.027">
     <system-out><![CDATA[✓ PASÓ: favoritesShouldOpen
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: heroShouldBeVisible
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:12 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:40 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="homePageShouldLoad" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.021">
+  <testcase name="homePageShouldLoad" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.025">
     <system-out><![CDATA[✓ PASÓ: heroShouldBeVisible
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: homePageShouldLoad
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:16 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:42 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="searchShouldFindProduct" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.152">
+  <testcase name="searchShouldFindProduct" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.145">
     <system-out><![CDATA[✓ PASÓ: homePageShouldLoad
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: searchShouldFindProduct
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:19 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:45 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shopNavigationShouldWork" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.116">
+  <testcase name="shopNavigationShouldWork" classname="com.cenfotec.e2e.tests.HomePageTest" time="0.107">
     <system-out><![CDATA[✓ PASÓ: searchShouldFindProduct
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shopNavigationShouldWork
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:23 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:47 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="addToCartShouldUpdateHeader" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.075">
+  <testcase name="addToCartShouldUpdateHeader" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.077">
     <system-out><![CDATA[✓ PASÓ: shopNavigationShouldWork
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: addToCartShouldUpdateHeader
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:27 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:50 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="productShouldLoad" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.05">
+  <testcase name="productShouldLoad" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.066">
     <system-out><![CDATA[✓ PASÓ: addToCartShouldUpdateHeader
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: productShouldLoad
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:30 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:53 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="quantityShouldIncrease" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.07">
+  <testcase name="quantityShouldIncrease" classname="com.cenfotec.e2e.tests.ProductPageTest" time="0.087">
     <system-out><![CDATA[✓ PASÓ: productShouldLoad
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: quantityShouldIncrease
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:34 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:56 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shopShouldDisplayProducts" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.012">
+  <testcase name="shopShouldDisplayProducts" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.013">
     <system-out><![CDATA[✓ PASÓ: quantityShouldIncrease
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shopShouldDisplayProducts
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:37 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:39:59 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shouldAddFavorite" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.082">
+  <testcase name="shouldAddFavorite" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.083">
     <system-out><![CDATA[✓ PASÓ: shopShouldDisplayProducts
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shouldAddFavorite
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:41 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:40:01 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shouldAddProductToCart" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.073">
+  <testcase name="shouldAddProductToCart" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.071">
     <system-out><![CDATA[✓ PASÓ: shouldAddFavorite
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shouldAddProductToCart
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:45 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:40:04 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="shouldOpenSpecificProduct" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.108">
+  <testcase name="shouldOpenSpecificProduct" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.137">
     <system-out><![CDATA[✓ PASÓ: shouldAddProductToCart
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: shouldOpenSpecificProduct
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:48 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:40:06 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="sortingByPriceShouldWork" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.082">
+  <testcase name="sortingByPriceShouldWork" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.084">
     <system-out><![CDATA[✓ PASÓ: shouldOpenSpecificProduct
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: sortingByPriceShouldWork
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:52 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:40:09 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>
-  <testcase name="wirelessFilterShouldWork" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.064">
+  <testcase name="wirelessFilterShouldWork" classname="com.cenfotec.e2e.tests.ShopPageTest" time="0.066">
     <system-out><![CDATA[✓ PASÓ: sortingByPriceShouldWork
+[TEARDOWN] Navegador cerrado.
+[CONFIG] config.properties cargado correctamente
+[SETUP] Navegador iniciado: chrome
 ▶ Ejecutando: wirelessFilterShouldWork
 ]]></system-out>
-    <system-err><![CDATA[ago. 10, 2026 9:00:56 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[ago. 10, 2026 10:40:11 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 151, returning the closest version; found: 150; Please update to a Selenium version that supports CDP version 151
 ]]></system-err>
   </testcase>

@@ -1,3 +1,5 @@
+
+
 package com.cenfotec.e2e.utils;
 
 import org.openqa.selenium.WebDriver;
@@ -41,7 +43,6 @@ public class TestListener
         );
 
         System.out.println();
-
     }
 
 
@@ -54,7 +55,6 @@ public class TestListener
                 "▶ Ejecutando: "
                         + result.getName()
         );
-
     }
 
 
@@ -65,12 +65,15 @@ public class TestListener
 
         successfulTests++;
 
-
         System.out.println(
                 "✓ PASÓ: "
                         + result.getName()
         );
 
+        saveScreenshot(
+                result,
+                "EXITOSA"
+        );
     }
 
 
@@ -80,7 +83,6 @@ public class TestListener
     ) {
 
         failedTests++;
-
 
         System.out.println(
                 "✗ FALLÓ: "
@@ -100,44 +102,13 @@ public class TestListener
                     "Motivo: "
                             + throwable.getMessage()
             );
-
         }
 
 
-        WebDriver driver =
-                extractDriver(
-                        result
-                );
-
-
-        if (
-                driver != null
-        ) {
-
-            String path =
-                    ScreenshotUtils
-                            .takeScreenshot(
-                                    driver,
-                                    result.getName()
-                            );
-
-
-            if (
-                    !path.isBlank()
-            ) {
-
-                System.out.println(
-                        "Screenshot guardado en:"
-                );
-
-                System.out.println(
-                        path
-                );
-
-            }
-
-        }
-
+        saveScreenshot(
+                result,
+                "FALLIDA"
+        );
     }
 
 
@@ -148,12 +119,16 @@ public class TestListener
 
         skippedTests++;
 
-
         System.out.println(
                 "○ OMITIDO: "
                         + result.getName()
         );
 
+
+        saveScreenshot(
+                result,
+                "OMITIDA"
+        );
     }
 
 
@@ -192,7 +167,54 @@ public class TestListener
         );
 
         System.out.println();
+    }
 
+
+    private void saveScreenshot(
+            ITestResult result,
+            String status
+    ) {
+
+        WebDriver driver =
+                extractDriver(
+                        result
+                );
+
+
+        if (
+                driver == null
+        ) {
+
+            return;
+        }
+
+
+        String screenshotName =
+                result.getName()
+                        + "_"
+                        + status;
+
+
+        String path =
+                ScreenshotUtils
+                        .takeScreenshot(
+                                driver,
+                                screenshotName
+                        );
+
+
+        if (
+                !path.isBlank()
+        ) {
+
+            System.out.println(
+                    "Screenshot guardado en:"
+            );
+
+            System.out.println(
+                    path
+            );
+        }
     }
 
 
@@ -209,7 +231,6 @@ public class TestListener
         ) {
 
             return null;
-
         }
 
 
@@ -247,7 +268,6 @@ public class TestListener
                 ) {
 
                     return webDriver;
-
                 }
 
             } catch (
@@ -258,7 +278,6 @@ public class TestListener
                         currentClass
                                 .getSuperclass();
 
-
                 continue;
 
             } catch (
@@ -266,19 +285,15 @@ public class TestListener
             ) {
 
                 return null;
-
             }
 
 
             currentClass =
                     currentClass
                             .getSuperclass();
-
         }
 
 
         return null;
-
     }
-
 }

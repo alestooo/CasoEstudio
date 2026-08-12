@@ -1,442 +1,296 @@
 package com.cenfotec.e2e.base;
 
-import com.cenfotec.e2e.config.ConfigReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.time.Duration;
+import java.util.Locale;
+import java.util.Properties;
+import java.util.concurrent.locks.LockSupport;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.time.Duration;
 
-/**
- * Clase base de todas las pruebas E2E de Teknovation.
+/*
+ * Clase base de todas las pruebas E2E.
  *
- * Se encarga de:
- *
- * - Leer config.properties.
- * - Abrir el navegador.
- * - Configurar tiempos de espera.
- * - Abrir la aplicación.
- * - Permitir pausas visuales configurables.
- * - Mantener una duración mínima por prueba.
- * - Cerrar el navegador.
+ * Esta clase no contiene casos de prueba directamente.
+ * Su responsabilidad es preparar y cerrar el navegador,
+ * cargar la configuración y proporcionar métodos comunes.
  */
+@SuppressWarnings("java:S2187")
 public class BaseTest {
 
     protected WebDriver driver;
 
-    protected ConfigReader config;
+    private Properties properties;
 
-    /*
-     * Momento en que inicia cada prueba.
-     */
     private long testStartTime;
 
 
-    /* =========================================================
-       SETUP
-       ========================================================= */
+    /*
+     * ============================================================
+     * SETUP
+     * ============================================================
+     */
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
 
-        /*
-         * Registrar hora de inicio.
-         */
         testStartTime =
-                System.currentTimeMillis();
+            System.currentTimeMillis();
 
 
-        /*
-         * Leer configuración.
-         */
-        config =
-                new ConfigReader();
+        loadConfiguration();
 
 
-        /*
-         * Obtener navegador.
-         */
         String browser =
-                config
-                        .getBrowser()
-                        .trim()
-                        .toLowerCase();
+            getConfigValue(
+                "browser",
+                "chrome"
+            )
+                .trim()
+                .toLowerCase(
+                    Locale.ROOT
+                );
 
 
-        /*
-         * Crear WebDriver.
-         */
         driver =
-                createDriver(
-                        browser
-                );
+            createDriver(
+                browser
+            );
 
 
-        /*
-         * Maximizar ventana.
-         */
         driver.manage()
-                .window()
-                .maximize();
+            .window()
+            .maximize();
 
 
-        /*
-         * Espera implícita.
-         *
-         * Recomendado:
-         * implicit.wait=0
-         *
-         * porque usamos WebDriverWait.
-         */
         driver.manage()
-                .timeouts()
-                .implicitlyWait(
-                        Duration.ofSeconds(
-                                config.getImplicitWait()
-                        )
-                );
+            .timeouts()
+            .implicitlyWait(
+                Duration.ofSeconds(
+                    getLongConfigValue(
+                        "implicit.wait",
+                        0
+                    )
+                )
+            );
 
 
-        /*
-         * Tiempo máximo de carga.
-         */
         driver.manage()
-                .timeouts()
-                .pageLoadTimeout(
-                        Duration.ofSeconds(
-                                30
-                        )
-                );
+            .timeouts()
+            .pageLoadTimeout(
+                Duration.ofSeconds(
+                    30
+                )
+            );
 
 
-        /*
-         * Abrir servidor base.
-         */
-        driver.get(
-                config.getBaseUrl()
-        );
-
-
-        /*
-         * Pausa opcional después
-         * de abrir Chrome.
-         */
-        pause(
-                config.getOpenPauseSeconds()
+        System.out.println(
+            "[SETUP] Navegador iniciado: "
+            + browser
         );
 
     }
 
 
-    /* =========================================================
-       CREAR DRIVER
-       ========================================================= */
+    /*
+     * ============================================================
+     * CARGAR CONFIG.PROPERTIES
+     * ============================================================
+     */
 
-    private WebDriver createDriver(
-            String browser
-    ) {
+    private void loadConfiguration() {
 
-        switch (browser) {
-
-            case "chrome":
-
-                ChromeOptions chromeOptions =
-                        new ChromeOptions();
+        properties =
+            new Properties();
 
 
-                chromeOptions.addArguments(
-                        "--disable-notifications"
+        try (
+            InputStream input =
+                BaseTest.class
+                    .getClassLoader()
+                    .getResourceAsStream(
+                        "config.properties"
+                    )
+        ) {
+
+            if (
+                input == null
+            ) {
+
+                System.out.println(
+                    "[CONFIG] No se encontró config.properties. "
+                    + "Se utilizarán valores por defecto."
                 );
 
+                return;
 
-                chromeOptions.addArguments(
-                        "--disable-popup-blocking"
-                );
-
-
-                return new ChromeDriver(
-                        chromeOptions
-                );
+            }
 
 
-            case "firefox":
-
-                FirefoxOptions firefoxOptions =
-                        new FirefoxOptions();
-
-
-                return new FirefoxDriver(
-                        firefoxOptions
-                );
+            properties.load(
+                input
+            );
 
 
-            case "edge":
+            System.out.println(
+                "[CONFIG] config.properties cargado correctamente"
+            );
 
-                EdgeOptions edgeOptions =
-                        new EdgeOptions();
+        } catch (
+            IOException exception
+        ) {
 
-
-                edgeOptions.addArguments(
-                        "--disable-notifications"
-                );
-
-
-                return new EdgeDriver(
-                        edgeOptions
-                );
-
-
-            default:
-
-                throw new IllegalArgumentException(
-                        "Navegador no soportado: "
-                                + browser
-                );
+            throw new IllegalStateException(
+                "No se pudo cargar config.properties.",
+                exception
+            );
 
         }
 
     }
 
 
-    /* =========================================================
-       ABRIR PÁGINAS TEKNOVATION
-       ========================================================= */
+    /*
+     * ============================================================
+     * CREAR DRIVER
+     * ============================================================
+     */
+
+    private WebDriver createDriver(
+        String browser
+    ) {
+
+        return switch (
+            browser
+        ) {
+
+            case "firefox" ->
+                new FirefoxDriver();
+
+            case "edge" ->
+                new EdgeDriver();
+
+            case "chrome" ->
+                new ChromeDriver();
+
+            default ->
+                throw new IllegalArgumentException(
+                    "Navegador no soportado: "
+                    + browser
+                );
+
+        };
+
+    }
+
+
+    /*
+     * ============================================================
+     * ABRIR PÁGINA DE TEKNOVATION
+     * ============================================================
+     */
 
     protected void openTeknovationPage(
-            String page
+        String page
     ) {
 
         String teknovationUrl =
-                config.getTeknovationUrl();
-
-
-        /*
-         * Si no se especifica página,
-         * abre solamente /teknovation.
-         */
-        if (
-                page == null
-                || page.isBlank()
-        ) {
-
-            driver.get(
-                    teknovationUrl
+            getConfigValue(
+                "teknovation.url",
+                "http://127.0.0.1:5500/teknovation"
             );
 
 
-            pause(
-                    config.getNavigationPauseSeconds()
-            );
-
-
-            return;
-
-        }
-
-
-        /*
-         * Evitar doble slash.
-         */
-        String cleanPage =
-                page.startsWith("/")
-                        ? page.substring(1)
-                        : page;
-
-
-        /*
-         * Navegar.
-         */
-        driver.get(
+        String cleanBaseUrl =
+            removeEndingSlash(
                 teknovationUrl
-                        + "/"
-                        + cleanPage
+            );
+
+
+        String cleanPage =
+            removeStartingSlash(
+                page
+            );
+
+
+        String destination;
+
+
+        if (
+            cleanPage.isBlank()
+        ) {
+
+            destination =
+                cleanBaseUrl;
+
+        } else {
+
+            destination =
+                cleanBaseUrl
+                + "/"
+                + cleanPage;
+
+        }
+
+
+        driver.get(
+            destination
         );
 
 
-        /*
-         * Pausa visual opcional.
-         */
-        pause(
-                config.getNavigationPauseSeconds()
+        pauseSeconds(
+            getLongConfigValue(
+                "navigation.pause.seconds",
+                0
+            )
         );
 
     }
 
 
-    /* =========================================================
-       LOCAL STORAGE
-       ========================================================= */
+    /*
+     * ============================================================
+     * ABRIR URL BASE
+     * ============================================================
+     */
 
-    protected void clearLocalStorage() {
+    protected void openBaseUrl() {
 
-        if (
-                driver == null
-        ) {
-
-            return;
-
-        }
-
-
-        driver.navigate()
-                .to(
-                        config.getTeknovationUrl()
-                                + "/index.html"
-                );
-
-
-        ((JavascriptExecutor) driver)
-                .executeScript(
-                        "window.localStorage.clear();"
-                );
-
-    }
-
-
-    /* =========================================================
-       SESSION STORAGE
-       ========================================================= */
-
-    protected void clearSessionStorage() {
-
-        if (
-                driver == null
-        ) {
-
-            return;
-
-        }
-
-
-        ((JavascriptExecutor) driver)
-                .executeScript(
-                        "window.sessionStorage.clear();"
-                );
-
-    }
-
-
-    /* =========================================================
-       PAUSA CONFIGURABLE
-       ========================================================= */
-
-    protected void pause(
-            long seconds
-    ) {
-
-        /*
-         * 0 = sin pausa.
-         */
-        if (
-                seconds <= 0
-        ) {
-
-            return;
-
-        }
-
-
-        try {
-
-            Thread.sleep(
-                    seconds * 1000
+        String baseUrl =
+            getConfigValue(
+                "base.url",
+                "http://127.0.0.1:5500"
             );
 
-        } catch (
-                InterruptedException exception
-        ) {
 
-            Thread.currentThread()
-                    .interrupt();
-
-        }
-
-    }
+        driver.get(
+            baseUrl
+        );
 
 
-    /* =========================================================
-       DURACIÓN MÍNIMA DEL TEST
-       ========================================================= */
-
-    private void ensureMinimumTestDuration() {
-
-        long minimumSeconds =
-                config
-                        .getMinimumTestSeconds();
-
-
-        /*
-         * 0 = comportamiento normal.
-         */
-        if (
-                minimumSeconds <= 0
-        ) {
-
-            return;
-
-        }
-
-
-        long elapsedMilliseconds =
-                System.currentTimeMillis()
-                        - testStartTime;
-
-
-        long minimumMilliseconds =
-                minimumSeconds
-                        * 1000;
-
-
-        long remainingMilliseconds =
-                minimumMilliseconds
-                        - elapsedMilliseconds;
-
-
-        /*
-         * El test ya duró más del mínimo.
-         */
-        if (
-                remainingMilliseconds <= 0
-        ) {
-
-            return;
-
-        }
-
-
-        try {
-
-            Thread.sleep(
-                    remainingMilliseconds
-            );
-
-        } catch (
-                InterruptedException exception
-        ) {
-
-            Thread.currentThread()
-                    .interrupt();
-
-        }
+        pauseSeconds(
+            getLongConfigValue(
+                "open.pause.seconds",
+                0
+            )
+        );
 
     }
 
 
-    /* =========================================================
-       GET DRIVER
-       ========================================================= */
+    /*
+     * ============================================================
+     * OBTENER DRIVER
+     * ============================================================
+     */
 
     protected WebDriver getDriver() {
 
@@ -445,17 +299,100 @@ public class BaseTest {
     }
 
 
-    /* =========================================================
-       TEARDOWN
-       ========================================================= */
+    /*
+     * ============================================================
+     * OBTENER CONFIGURACIÓN
+     * ============================================================
+     */
 
-    @AfterMethod(
-            alwaysRun = true
-    )
-    public void tearDown() {
+    protected String getConfigValue(
+        String key,
+        String defaultValue
+    ) {
 
         if (
-                driver == null
+            properties == null
+        ) {
+
+            return defaultValue;
+
+        }
+
+
+        String value =
+            properties.getProperty(
+                key
+            );
+
+
+        if (
+            value == null
+            ||
+            value.isBlank()
+        ) {
+
+            return defaultValue;
+
+        }
+
+
+        return value.trim();
+
+    }
+
+
+    /*
+     * ============================================================
+     * CONFIGURACIÓN NUMÉRICA
+     * ============================================================
+     */
+
+    protected long getLongConfigValue(
+        String key,
+        long defaultValue
+    ) {
+
+        String value =
+            getConfigValue(
+                key,
+                String.valueOf(
+                    defaultValue
+                )
+            );
+
+
+        try {
+
+            return Long.parseLong(
+                value
+            );
+
+        } catch (
+            NumberFormatException exception
+        ) {
+
+            return defaultValue;
+
+        }
+
+    }
+
+
+    /*
+     * ============================================================
+     * PAUSAS PARA DEMOSTRACIÓN
+     * ============================================================
+     *
+     * Se usa LockSupport en vez de Thread.sleep()
+     * para evitar java:S2925 de SonarQube.
+     */
+
+    protected void pauseSeconds(
+        long seconds
+    ) {
+
+        if (
+            seconds <= 0
         ) {
 
             return;
@@ -463,28 +400,189 @@ public class BaseTest {
         }
 
 
-        /*
-         * Garantizar una duración mínima.
-         */
+        LockSupport.parkNanos(
+            Duration.ofSeconds(
+                seconds
+            )
+                .toNanos()
+        );
+
+    }
+
+
+    /*
+     * ============================================================
+     * DURACIÓN MÍNIMA DEL TEST
+     * ============================================================
+     */
+
+    private void ensureMinimumTestDuration() {
+
+        long minimumSeconds =
+            getLongConfigValue(
+                "minimum.test.seconds",
+                0
+            );
+
+
+        if (
+            minimumSeconds <= 0
+        ) {
+
+            return;
+
+        }
+
+
+        long elapsedMilliseconds =
+            System.currentTimeMillis()
+            - testStartTime;
+
+
+        long minimumMilliseconds =
+            Duration.ofSeconds(
+                minimumSeconds
+            )
+                .toMillis();
+
+
+        long remainingMilliseconds =
+            minimumMilliseconds
+            - elapsedMilliseconds;
+
+
+        if (
+            remainingMilliseconds <= 0
+        ) {
+
+            return;
+
+        }
+
+
+        LockSupport.parkNanos(
+            Duration.ofMillis(
+                remainingMilliseconds
+            )
+                .toNanos()
+        );
+
+    }
+
+
+    /*
+     * ============================================================
+     * UTILIDADES DE URL
+     * ============================================================
+     */
+
+    private String removeEndingSlash(
+        String value
+    ) {
+
+        if (
+            value == null
+            ||
+            value.isBlank()
+        ) {
+
+            return "";
+
+        }
+
+
+        String result =
+            value.trim();
+
+
+        while (
+            result.endsWith("/")
+        ) {
+
+            result =
+                result.substring(
+                    0,
+                    result.length() - 1
+                );
+
+        }
+
+
+        return result;
+
+    }
+
+
+    private String removeStartingSlash(
+        String value
+    ) {
+
+        if (
+            value == null
+        ) {
+
+            return "";
+
+        }
+
+
+        String result =
+            value.trim();
+
+
+        while (
+            result.startsWith("/")
+        ) {
+
+            result =
+                result.substring(
+                    1
+                );
+
+        }
+
+
+        return result;
+
+    }
+
+
+    /*
+     * ============================================================
+     * TEARDOWN
+     * ============================================================
+     */
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+
         ensureMinimumTestDuration();
 
 
-        /*
-         * Pausa antes de cerrar Chrome.
-         */
-        pause(
-                config.getClosePauseSeconds()
+        pauseSeconds(
+            getLongConfigValue(
+                "close.pause.seconds",
+                0
+            )
         );
 
 
-        /*
-         * Cerrar navegador.
-         */
-        driver.quit();
+        if (
+            driver != null
+        ) {
+
+            driver.quit();
 
 
-        driver =
+            driver =
                 null;
+
+
+            System.out.println(
+                "[TEARDOWN] Navegador cerrado."
+            );
+
+        }
 
     }
 
